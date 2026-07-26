@@ -1,0 +1,348 @@
+{
+  "hero": {
+    "subtitle": "CREATIVE DIRECTOR & EDITOR",
+    "titleLine1": "CRAFTING",
+    "titleLine2": "VISUAL",
+    "titleLine3": "LEGACIES.",
+    "textAlign": "center"
+  },
+  "about": {
+    "title": "CREATIVE VISION.",
+    "description": "Hi, I'm Ahmed. I am a multidisciplinary creative specializing in high-end graphic design, cinematic video editing, and motion graphics. With years of experience pushing pixels and crafting narratives, my goal is simple: to transform raw ideas into striking visual realities.\n\nWhether I'm developing a robust brand identity from scratch or editing a fast-paced commercial reel, I obsess over the micro-details that separate good design from unforgettable design.",
+    "stats": [
+      {
+        "number": "8+",
+        "label": "YEARS EXP."
+      },
+      {
+        "number": "120+",
+        "label": "PROJECTS"
+      }
+    ],
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    "textAlign": "left"
+  },
+  "services": [
+    {
+      "id": "01",
+      "title": "BRAND IDENTITY",
+      "desc": "Crafting comprehensive, scalable visual systems. From iconic logo marks to typography and full brand guidelines that ensure your business stands out."
+    },
+    {
+      "id": "02",
+      "title": "VIDEO EDITING",
+      "desc": "Cinematic storytelling tailored for high retention. Commercials, documentaries, and social reels cut with precision, perfect pacing, and advanced color grading."
+    },
+    {
+      "id": "03",
+      "title": "MOTION GRAPHICS",
+      "desc": "Breathing life into static designs. Kinetic typography, 3D product visualizations, and dynamic UI animations that capture and hold audience attention."
+    }
+  ],
+  "portfolioItems": [
+    {
+      "id": 1,
+      "title": "Brand Identity El Fahd",
+      "type": "Design",
+      "img": "/Work1.png",
+      "desc": "A comprehensive brand identity overhaul focusing on modern minimalism and bold typography."
+    },
+    {
+      "id": 2,
+      "title": "Cinematic Reel Mr. Yasser",
+      "type": "Video",
+      "img": "/Work2.jpg",
+      "desc": "High-octane cinematic promotional reel showcasing dynamic transitions."
+    },
+    {
+      "id": 3,
+      "title": "Diya Al-Mustaqbal Promo",
+      "type": "Corporate",
+      "img": "/Work3.jpg",
+      "desc": "Corporate storytelling at its finest. A promotional script brought to life."
+    },
+    {
+      "id": 4,
+      "title": "Physics Education Reel",
+      "type": "Motion",
+      "img": "/Work4.jpg",
+      "desc": "Simplifying complex physics concepts through engaging 3D animations."
+    },
+    {
+      "id": 5,
+      "title": "Next-Gen Visual Concept",
+      "type": "Design",
+      "img": "/Work5.png",
+      "desc": "Experimental UI/UX visual concepts exploring spatial interfaces."
+    },
+    {
+      "id": 6,
+      "title": "Social Media Analytics",
+      "type": "Report",
+      "img": "/Work6.png",
+      "desc": "Transforming dry analytical data into highly engaging infographic layouts."
+    }
+  ],
+  "portfolioLayout": {
+    "textPaddingLeft": 58,
+    "textPaddingBottom": 71,
+    "textAlign": "center"
+  },
+  "moreWorks": [
+    {
+      "id": 13,
+      "title": "Logo Explorations",
+      "type": "Design",
+      "img": "/Work1.png"
+    },
+    {
+      "id": 14,
+      "title": "Event Promo 2026",
+      "type": "Video",
+      "img": "/Work2.jpg"
+    },
+    {
+      "id": 15,
+      "title": "UI Animation Study",
+      "type": "Motion",
+      "img": "/Work5.png"
+    },
+    {
+      "id": 16,
+      "title": "Minimal Poster Series",
+      "type": "Design",
+      "img": "/Work6.png"
+    },
+    {
+      "id": 17,
+      "title": "Dynamic Brand Assets",
+      "type": "Design",
+      "img": "/Work3.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Abstract Data Vis",
+      "type": "Motion",
+      "img": "/Work4.jpg"
+    }
+  ],
+  "moreWorksLayout": {
+    "textPaddingLeft": 35,
+    "textPaddingBottom": 38,
+    "textAlign": "left"
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Jenkins",
+      "role": "Marketing Director",
+      "quote": "Ahmed completely transformed our brand's visual identity. The attention to detail and cinematic quality in his video edits doubled our social engagement within a month."
+    },
+    {
+      "id": 2,
+      "name": "Omar Tariq",
+      "role": "Startup Founder",
+      "quote": "Working with Ahmed was a game-changer. He understands the intersection of modern design and conversion-focused marketing better than any agency we've hired."
+    },
+    {
+      "id": 3,
+      "name": "Elena Rostova",
+      "role": "Creative Lead",
+      "quote": "A true master of his craft. The motion graphics he delivered were buttery smooth, perfectly paced, and exceeded our wildest expectations."
+    }
+  ],
+  "header": {
+    "logo": "AHMED .",
+    "links": [
+      {
+        "label": "WORK",
+        "href": "#work"
+      },
+      {
+        "label": "ABOUT",
+        "href": "#about"
+      },
+      {
+        "label": "CONTACT",
+        "href": "#contact"
+      }
+    ]
+  },
+  "footer": {
+    "name": "SHALABY.",
+    "description": "Pushing boundaries in graphic design and cinematic video editing. Based worldwide.",
+    "socials": [
+      {
+        "name": "Instagram",
+        "link": "#instagram"
+      },
+      {
+        "name": "Behance",
+        "link": "#behance"
+      },
+      {
+        "name": "Vimeo",
+        "link": "#vimeo"
+      }
+    ],
+    "copyright": "© 2026 AHMED SHALABY. ALL RIGHTS RESERVED."
+  },
+  "contact": {
+    "title": "GET IN TOUCH.",
+    "subtitle": "Start a project",
+    "email": "a7medboy154@gmail.com",
+    "buttonText": "SEND MESSAGE",
+    "textAlign": "center",
+    "buttonFullWidth": true
+  },
+  "theme": {
+    "primaryColor": "#004741",
+    "bgColor": "#F4F1E6",
+    "headingScale": 1
+  },
+  "seo": {
+    "title": "Ahmed — Graphic Designer & Video Editor",
+    "description": "Portfolio of Ahmed — a creative graphic designer and video editor crafting visual stories that captivate and inspire.",
+    "ogImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+  },
+  "skills": [
+    {
+      "id": "ps",
+      "name": "PHOTOSHOP",
+      "desc": "Create and edit stunning images, retouch photos, and design graphics.",
+      "iconText": "Ps",
+      "iconColor": "#31A8FF",
+      "iconBg": "#001833"
+    },
+    {
+      "id": "ai",
+      "name": "ILLUSTRATOR",
+      "desc": "Design scalable vector art, logos, icons, and detailed illustrations.",
+      "iconText": "Ai",
+      "iconColor": "#FF9A00",
+      "iconBg": "#330000"
+    },
+    {
+      "id": "ae",
+      "name": "AFTER EFFECTS",
+      "desc": "Create cinematic visual effects, complex motion graphics, and animations.",
+      "iconText": "Ae",
+      "iconColor": "#9999FF",
+      "iconBg": "#00005B"
+    },
+    {
+      "id": "pr",
+      "name": "PREMIERE PRO",
+      "desc": "Edit professional videos, craft stories, and compile engaging cinematic reels.",
+      "iconText": "Pr",
+      "iconColor": "#EA77FF",
+      "iconBg": "#2A004D"
+    }
+  ],
+  "industryCampaigns": {
+    "title": "INDUSTRY CAMPAIGNS.",
+    "subtitle": "Tailored Solutions",
+    "categories": [
+      {
+        "id": "cat_realestate",
+        "name": "Real Estate",
+        "designs": [
+          {
+            "id": "re1",
+            "title": "Luxury Villa Promo",
+            "type": "Video",
+            "img": "/Work1.png"
+          },
+          {
+            "id": "re2",
+            "title": "Skyline Apartments",
+            "type": "Branding",
+            "img": "/Work2.jpg"
+          }
+        ]
+      },
+      {
+        "id": "cat_fnb",
+        "name": "Food & Beverage",
+        "designs": [
+          {
+            "id": "fb1",
+            "title": "Burger Joint Socials",
+            "type": "Design",
+            "img": "/Work3.jpg"
+          },
+          {
+            "id": "fb2",
+            "title": "Cafe Menu Animation",
+            "type": "Motion",
+            "img": "/Work4.jpg"
+          }
+        ]
+      },
+      {
+        "id": "cat_tech",
+        "name": "Tech & Software",
+        "designs": [
+          {
+            "id": "tech1",
+            "title": "App Launch Reel",
+            "type": "Video",
+            "img": "/Work5.png"
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "textPaddingLeft": 36,
+      "textPaddingBottom": 40,
+      "titleSize": 18,
+      "textColor": "#E6E3D5",
+      "textAlign": "left"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero Section",
+      "visible": true
+    },
+    {
+      "id": "about",
+      "name": "About Section",
+      "visible": true
+    },
+    {
+      "id": "services",
+      "name": "Services Section",
+      "visible": true
+    },
+    {
+      "id": "skills",
+      "name": "Skills Section",
+      "visible": true
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio Section",
+      "visible": true
+    },
+    {
+      "id": "industryCampaigns",
+      "name": "Campaigns Section",
+      "visible": true
+    },
+    {
+      "id": "testimonials",
+      "name": "Reviews Section",
+      "visible": true
+    },
+    {
+      "id": "contact",
+      "name": "Contact Section",
+      "visible": true
+    }
+  ],
+  "whatsapp": {
+    "number": "201012556309"
+  }
+}
