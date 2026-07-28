@@ -21,6 +21,18 @@ function ParticleShape({ type }) {
 }
 
 export default function CursorEffects() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if it's a touch device or small screen
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const isDarkRef = useRef(false);
   const animRef = useRef(null);
@@ -55,14 +67,16 @@ export default function CursorEffects() {
   const themeColor = useMotionValue("#004741");
   const glowColor = useMotionValue("rgba(0, 71, 65, 0.05)"); 
   const particleColor = useMotionValue("rgba(0, 71, 65, 0.15)");
-
-  const springConfig = { damping: 25, stiffness: 600 }; 
+  // Tighter spring for a faster, smoother, less bouncy cursor
+  const springConfig = { mass: 0.1, stiffness: 1000, damping: 40 }; 
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   const glowBackground = useMotionTemplate`radial-gradient(500px circle at ${rawCursorX}px ${rawCursorY}px, ${glowColor}, transparent 70%)`;
 
   useEffect(() => {
+    if (isMobile) return; // Completely disable physics loop on mobile!
+
     const onMove = (e) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
       rawCursorX.set(e.clientX);
@@ -143,9 +157,9 @@ export default function CursorEffects() {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
-      cancelAnimationFrame(animRef.current);
+      if (animRef.current) cancelAnimationFrame(animRef.current);
     };
-  }, [cursorX, cursorY, rawCursorX, rawCursorY, themeColor, glowColor, particleColor]);
+  }, [cursorX, cursorY, rawCursorX, rawCursorY, themeColor, glowColor, particleColor, isMobile]);
 
   // Initial render (particles mount invisibly until JS positions them)
   const renderParticles = Array.from({ length: 35 }).map((_, i) => (
@@ -160,6 +174,8 @@ export default function CursorEffects() {
       </svg>
     </div>
   ));
+
+  if (isMobile) return null;
 
   return (
     <>
