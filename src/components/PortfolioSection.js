@@ -115,7 +115,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
                   flex: isHovered ? 12 : 1,
                   opacity: hoveredIndex !== null && !isHovered ? 0.6 : 1
                 }}
-                transition={{ type: "spring", stiffness: 150, damping: 20 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 data-cursor="light"
                 className="relative h-full w-full min-w-[50px] sm:min-w-[70px] bg-[#004741] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden cursor-pointer group shadow-xl origin-center"
               >
@@ -285,7 +285,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
         {selectedProject && (
           <motion.div data-cursor="light" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedProject(null)} className="fixed inset-0 bg-[#004741]/90 backdrop-blur-lg z-50 flex items-center justify-center p-4 lg:p-12 cursor-zoom-out">
             <button className="absolute top-8 right-8 text-[#E6E3D5]/80 hover:text-[#E6E3D5] text-sm font-black uppercase tracking-widest bg-[#004741] border border-[#E6E3D5]/20 px-6 py-3 rounded-full transition-all hover:scale-[1.05] z-10">✕ Close</button>
-            <motion.div initial={{ scale: 0.9, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 30 }} transition={{ type: "spring", stiffness: 200, damping: 25 }} onClick={(e) => e.stopPropagation()} className="max-w-7xl w-full max-h-[90vh] bg-[#E6E3D5] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col relative">
+            <motion.div initial={{ scale: 0.9, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 30 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} onClick={(e) => e.stopPropagation()} className="max-w-7xl w-full max-h-[90vh] bg-[#E6E3D5] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col relative">
               <div className="w-full flex-1 min-h-[50vh] relative bg-black/5 flex items-center justify-center p-4">
                 <div className="relative w-full h-full min-h-[300px]">
                   <Image src={selectedProject.img} alt={selectedProject.title} fill sizes="100vw" className="object-contain rounded-xl shadow-lg" />
