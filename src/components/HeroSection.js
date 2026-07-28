@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useSpring, useTransform, useMotionValue } from "framer-motion";
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: "WORK", href: "#work" },
@@ -467,10 +468,13 @@ export default function HeroSection({ data, theme }) {
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
             {/* Base face layer */}
-            <img
+            <Image
               src="/my-face.png"
               alt="Ahmed Shalaby"
-              className="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none"
+              fill
+              sizes="(max-width: 768px) 80vw, 30vw"
+              priority
+              className="object-contain z-20 pointer-events-none"
             />
 
             {/* Pupils layer — perfect 1:1 stack */}
@@ -478,10 +482,13 @@ export default function HeroSection({ data, theme }) {
               className="absolute inset-0 z-10 pointer-events-none w-full h-full"
               style={{ x: pupilX, y: pupilY }}
             >
-              <img
+              <Image
                 src="/my-pupils.png"
                 alt="Eyes Tracking"
-                className="w-full h-full object-contain pointer-events-none"
+                fill
+                sizes="(max-width: 768px) 80vw, 30vw"
+                priority
+                className="object-contain pointer-events-none"
               />
             </motion.div>
           </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function AboutSection({ data }) {
   const title = data?.title || "CREATIVE VISION.";
@@ -28,10 +29,12 @@ export default function AboutSection({ data }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full lg:w-[45%] relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#004741] shadow-2xl flex-shrink-0"
         >
-          <img 
+          <Image 
             src={image}
             alt="Ahmed Shalaby"
-            className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
           />
           <div className="absolute inset-0 bg-[#004741]/20 mix-blend-overlay pointer-events-none" />
         </motion.div>

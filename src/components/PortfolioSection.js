@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function PortfolioSection({ portfolioItems: propPortfolioItems, moreWorks: propMoreWorks, portfolioLayout, moreWorksLayout }) {
   const topRibbonRef = useRef(null);
@@ -52,7 +53,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
                 className="w-[290px] sm:w-[410px] aspect-[15/10] bg-[#E6E3D5] rounded-[2.2rem] border border-[#004741]/10 overflow-hidden relative shadow-md cursor-pointer group flex-shrink-0 inline-block will-change-transform"
               >
                 <div className="w-full h-full relative overflow-hidden">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]" />
+                  <Image src={item.img} alt={item.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.08]" />
                 </div>
               </motion.div>
             ))}
@@ -118,10 +119,12 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
                 data-cursor="light"
                 className="relative h-full w-full min-w-[50px] sm:min-w-[70px] bg-[#004741] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden cursor-pointer group shadow-xl origin-center"
               >
-                <img 
+                <Image 
                   src={item.img} 
                   alt={item.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.05]" 
                 />
                 
                 {/* Collapsed State Title (Vertical Text on Desktop) */}
@@ -215,9 +218,9 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
               whileHover={{ y: -10, rotate: Math.random() * 2 - 1 }}
               onClick={() => setSelectedProject(item)}
               data-cursor="light"
-              className="break-inside-avoid mb-6 rounded-[2rem] overflow-hidden cursor-pointer shadow-xl group relative"
+              className="break-inside-avoid mb-6 rounded-[2rem] overflow-hidden cursor-pointer shadow-xl group relative aspect-[4/5]"
             >
-              <img src={item.img} className="w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <Image src={item.img} alt={item.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-[#004741]/20 group-hover:bg-[#004741]/40 transition-colors duration-500" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#004741]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0"
                 style={{ padding: `${moreWorksLayout?.textPaddingBottom || 12}px ${moreWorksLayout?.textPaddingLeft || 12}px` }}
@@ -284,7 +287,9 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
             <button className="absolute top-8 right-8 text-[#E6E3D5]/80 hover:text-[#E6E3D5] text-sm font-black uppercase tracking-widest bg-[#004741] border border-[#E6E3D5]/20 px-6 py-3 rounded-full transition-all hover:scale-[1.05] z-10">✕ Close</button>
             <motion.div initial={{ scale: 0.9, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 30 }} transition={{ type: "spring", stiffness: 200, damping: 25 }} onClick={(e) => e.stopPropagation()} className="max-w-7xl w-full max-h-[90vh] bg-[#E6E3D5] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col relative">
               <div className="w-full flex-1 min-h-[50vh] relative bg-black/5 flex items-center justify-center p-4">
-                <img src={selectedProject.img} alt={selectedProject.title} className="max-w-full max-h-[60vh] object-contain rounded-xl shadow-lg" />
+                <div className="relative w-full h-full min-h-[300px]">
+                  <Image src={selectedProject.img} alt={selectedProject.title} fill sizes="100vw" className="object-contain rounded-xl shadow-lg" />
+                </div>
               </div>
               <div className="p-8 lg:p-10 flex flex-col items-center text-center bg-[#E6E3D5] flex-shrink-0">
                 <span className="text-[0.65rem] font-bold tracking-[0.2em] text-[#004741]/60 uppercase mb-2">{selectedProject.type}</span>

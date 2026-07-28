@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function IndustryCampaigns({ data }) {
   const defaultData = {
@@ -99,7 +100,7 @@ export default function IndustryCampaigns({ data }) {
                   whileHover={{ y: -10 }}
                   className="relative rounded-[2rem] overflow-hidden group shadow-xl bg-[var(--theme-primary)] aspect-[4/5] cursor-pointer"
                 >
-                  <img src={design.img} alt={design.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+                  <Image src={design.img} alt={design.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   
                   <div 
