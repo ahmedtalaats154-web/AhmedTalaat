@@ -139,7 +139,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
                     </span>
                   </div>
                   {/* Mobile Horizontal Text */}
-                  <div className="md:hidden w-full text-center bg-[#004741]/60 backdrop-blur-md py-2 rounded-xl border border-[#E6E3D5]/10">
+                  <div className="md:hidden w-full text-center bg-[#004741]/90 py-2 rounded-xl border border-[#E6E3D5]/10 shadow-md">
                     <span className="text-[#E6E3D5] font-black uppercase tracking-widest text-[0.65rem] drop-shadow-md">
                       {item.title}
                     </span>
@@ -159,7 +159,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
                     >
                       <motion.span 
                         initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}
-                        className="text-[0.65rem] font-black text-[#E6E3D5]/70 tracking-[0.2em] uppercase mb-3 border border-[#E6E3D5]/20 px-4 py-1.5 rounded-full backdrop-blur-md"
+                        className="text-[0.65rem] font-black text-[#E6E3D5]/70 tracking-[0.2em] uppercase mb-3 border border-[#E6E3D5]/20 px-4 py-1.5 rounded-full bg-[#004741]/80"
                       >
                         {item.type}
                       </motion.span>
@@ -283,7 +283,7 @@ export default function PortfolioSection({ portfolioItems: propPortfolioItems, m
       ========================================= */}
       <AnimatePresence>
         {selectedProject && (
-          <motion.div data-cursor="light" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedProject(null)} className="fixed inset-0 bg-[#004741]/90 backdrop-blur-lg z-50 flex items-center justify-center p-4 lg:p-12 cursor-zoom-out">
+          <motion.div data-cursor="light" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedProject(null)} className="fixed inset-0 bg-[#004741]/95 z-50 flex items-center justify-center p-4 lg:p-12 cursor-zoom-out">
             <button className="absolute top-8 right-8 text-[#E6E3D5]/80 hover:text-[#E6E3D5] text-sm font-black uppercase tracking-widest bg-[#004741] border border-[#E6E3D5]/20 px-6 py-3 rounded-full transition-all hover:scale-[1.05] z-10">✕ Close</button>
             <motion.div initial={{ scale: 0.9, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 30 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} onClick={(e) => e.stopPropagation()} className="max-w-7xl w-full max-h-[90vh] bg-[#E6E3D5] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col relative">
               <div className="w-full flex-1 min-h-[50vh] relative bg-black/5 flex items-center justify-center p-4">
