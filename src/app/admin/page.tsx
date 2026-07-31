@@ -1,5 +1,6 @@
-import AdminDashboard from "./AdminDashboard";
+import AdminGate from "./AdminGate";
 import "./admin.css";
+import "./legacy-login.css";
 
 export const metadata = {
   title: "PLAY/EDIT — Site Control",
@@ -7,6 +8,5 @@ export const metadata = {
 };
 
 export default function AdminPage() {
-  return <AdminDashboard />;
+  return <AdminGate />;
 }
-
