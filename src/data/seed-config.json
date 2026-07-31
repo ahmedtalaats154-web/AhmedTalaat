@@ -1,0 +1,1406 @@
+{
+  "version": 2,
+  "identity": {
+    "browserTitle": "PLAY / EDIT — Graphic Design × Video",
+    "brand": "PLAY/EDIT",
+    "status": "OPEN FOR ODD IDEAS",
+    "email": "hello@playedit.studio"
+  },
+  "theme": {
+    "cream": "#f4efe3",
+    "paper": "#fffdf7",
+    "ink": "#101113",
+    "blue": "#2454ff",
+    "yellow": "#f6d83b",
+    "orange": "#ff6a22",
+    "pink": "#ff508e",
+    "mint": "#8ee8c1",
+    "lilac": "#e6bdf4",
+    "pagePaddingPx": 32,
+    "cornerRadiusPx": 35
+  },
+  "scroll": {
+    "enabled": true,
+    "smooth": true,
+    "duration": 0.86,
+    "wheelMultiplier": 0.92,
+    "touchMultiplier": 1.2,
+    "revealDuration": 0.6,
+    "revealDistancePx": 72
+  },
+  "navigation": {
+    "visible": true,
+    "links": [
+      {
+        "id": "work",
+        "visible": true,
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "id": "reel",
+        "visible": true,
+        "label": "Reel",
+        "href": "#reel"
+      },
+      {
+        "id": "hello",
+        "visible": true,
+        "label": "Hello",
+        "href": "#hello"
+      }
+    ]
+  },
+  "hero": {
+    "visible": true,
+    "order": 10,
+    "kicker": "GRAPHIC DESIGNER — VIDEO EDITOR",
+    "words": [
+      "MAKE",
+      "MOVE",
+      "MEAN IT."
+    ],
+    "deck": "Static never has the last word. I build visual systems, then give them timing, cuts and a pulse.",
+    "location": "CAIRO / EVERYWHERE",
+    "scrollPrompt": "SCROLL TO BREAK THE GRID ↓",
+    "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/playground-master.webp",
+    "imageAlt": "A tactile creative playground made from paper, foam, film, grids and editing controls",
+    "imageLabel": "PLAYGROUND No. 01",
+    "imageStatement": "DESIGN THAT REFUSES TO SIT STILL.",
+    "cutoutImage": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/cutout-loop.png",
+    "stickers": [
+      "NEW",
+      "LOUD",
+      "ALIVE"
+    ],
+    "minHeightVh": 100,
+    "visualWidthVw": 43,
+    "pointerTypeStrength": 16,
+    "pointerImageStrength": 22,
+    "parallaxEnabled": true,
+    "backgroundParallaxPercent": 11,
+    "foregroundParallaxPercent": -13
+  },
+  "figures": {
+    "visible": true,
+    "order": 20,
+    "leftLabel": "FIGURES / 00—04",
+    "rightLabel": "THE USEFUL KIND",
+    "cardMinHeightPx": 352,
+    "cards": [
+      {
+        "id": "01",
+        "visible": true,
+        "value": 134,
+        "label": "SOURCE VISUALS",
+        "description": "Every supplied design. Indexed, kept and pulled into the world.",
+        "color": "blue"
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "value": 6,
+        "label": "CREATIVE FIELDS",
+        "description": "One system stretching from identity to the final edit.",
+        "color": "yellow"
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "value": 24,
+        "label": "FRAMES / SECOND",
+        "description": "Rhythm lives in the distance between two cuts.",
+        "color": "pink"
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "value": 1,
+        "label": "LIVING SYSTEM",
+        "description": "Flexible enough to stay recognisable while it misbehaves.",
+        "color": "mint"
+      }
+    ]
+  },
+  "playground": {
+    "visible": true,
+    "order": 30,
+    "eyebrow": "THE CREATIVE",
+    "title": "PLAYGROUND",
+    "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/playground-master.webp",
+    "imageAlt": "The master creative playground visual",
+    "cutoutImage": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/cutout-paper.png",
+    "pinDistancePercent": 420,
+    "cardWidthVw": 26,
+    "cardHold": 0.34,
+    "notes": [
+      {
+        "id": "01",
+        "visible": true,
+        "title": "BUILD THE RULE.",
+        "text": "A grid gives the idea somewhere solid to misbehave."
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "title": "BEND THE RULE.",
+        "text": "Color controls the first glance. Timing earns the second."
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "title": "MAKE IT MOVE.",
+        "text": "Twelve offset layers turn one poster into a small experience."
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "title": "CUT THE FAT.",
+        "text": "Every frame either sharpens the rhythm or leaves the timeline."
+      }
+    ]
+  },
+  "showreel": {
+    "visible": true,
+    "order": 40,
+    "video": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/reel-final.mp4",
+    "topEyebrow": "THE",
+    "topTitle": "WORK",
+    "bottomTitle": "IN MOTION",
+    "durationLabel": "16 SEC / LOOP",
+    "backdropText": "NATURAL SPEED — NATURAL SPEED — NATURAL SPEED",
+    "liveLabel": "PLAYING AT NATURAL SPEED",
+    "pinDistancePercent": 235,
+    "frameHeightVh": 78,
+    "cuts": [
+      {
+        "id": "01",
+        "visible": true,
+        "label": "BRAND PLAYGROUND",
+        "figure": "12 MOTION LAYERS",
+        "line": "Posters, ribbons and film loops move in offset rhythms.",
+        "start": 0
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "label": "DESIGN LAB",
+        "figure": "06 VISUAL SYSTEMS",
+        "line": "Packaging unfolds while grids snap into place.",
+        "start": 4
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "label": "EDITING TRACK",
+        "figure": "24 FPS",
+        "line": "Every cut, waveform and keyframe stays in motion.",
+        "start": 8
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "label": "PORTFOLIO FINALE",
+        "figure": "01 CREATIVE WORLD",
+        "line": "Design and video resolve into one living identity.",
+        "start": 12
+      }
+    ]
+  },
+  "timelapse": {
+    "visible": true,
+    "order": 50,
+    "leftLabel": "PHOTOSHOP BUILD / 01—06",
+    "rightLabel": "TIMED / AUTO REPLAY",
+    "headline": "NOT MAGIC.",
+    "accentHeadline": "LAYERS.",
+    "description": "One poster grows through 18 adjustments and four color passes. Each stage holds long enough to read and auto-replays—never tied to scroll progress.",
+    "frameHoldSeconds": 1.45,
+    "repeatDelaySeconds": 0.8,
+    "autoReplay": true,
+    "pinDistancePercent": 360,
+    "frameAspectRatio": 1.7778,
+    "frames": [
+      {
+        "id": "01",
+        "visible": true,
+        "stage": "SKETCH",
+        "figure": "02 ROUGH LAYERS",
+        "detail": "The grid starts in pencil. Every future collision already has an address.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-01.webp",
+        "alt": "A Photoshop-style workspace showing the first rough poster sketch"
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "stage": "BLOCK",
+        "figure": "06 SHAPE LAYERS",
+        "detail": "Cobalt sets the anchor. Orange cuts the first route through the page.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-02.webp",
+        "alt": "The poster sketch blocked into simple colored shapes"
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "stage": "COMPOSITE",
+        "figure": "11 MASKS",
+        "detail": "The subject drops in. Type becomes structure before it becomes a message.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-03.webp",
+        "alt": "A subject photograph and bold typography added to the poster"
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "stage": "ART DIRECT",
+        "figure": "14 ACTIVE LAYERS",
+        "detail": "Ribbons cross depth planes. One overlap decides what the eye reads first.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-04.webp",
+        "alt": "The poster refined with layered ribbons, texture and art direction"
+      },
+      {
+        "id": "05",
+        "visible": true,
+        "stage": "RETOUCH",
+        "figure": "18 ADJUSTMENTS",
+        "detail": "A cobalt edge lift and three shadow passes make flat pieces feel touchable.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-05.webp",
+        "alt": "The poster in its detailed color and edge retouch stage"
+      },
+      {
+        "id": "06",
+        "visible": true,
+        "stage": "FINAL",
+        "figure": "01 LIVING SYSTEM",
+        "detail": "The guides disappear. The rhythm stays—ready for posters, crops and motion.",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/timelapse-photoshop/frame-06.webp",
+        "alt": "The completed and fully retouched PLAY EDIT poster"
+      }
+    ]
+  },
+  "work": {
+    "visible": false,
+    "order": 70,
+    "leftLabel": "SELECTED WORK / 01—06",
+    "rightLabel": "ONE WORLD. SIX WAYS IN.",
+    "headline": "GOOD IDEAS",
+    "accentHeadline": "NEED GOOD TIMING.",
+    "description": "Branding sets the rules. Motion tests them. Editing keeps only the frames that earn their place.",
+    "gapPx": 128,
+    "projects": [
+      {
+        "id": "01",
+        "visible": true,
+        "title": "Identity, with elbows.",
+        "field": "BRANDING",
+        "figure": "06 VISUAL SYSTEMS",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-branding.webp",
+        "alt": "A tactile cobalt, lilac, mint and orange brand identity system",
+        "detail": "The grid stays fixed. The pieces do not. One rounded module turns into packaging, tags and a campaign stamp.",
+        "color": "#2454ff",
+        "columnStart": 1,
+        "columnSpan": 7,
+        "aspectRatio": 1.08,
+        "marginTopRem": 0
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "title": "Repair gets a pulse.",
+        "field": "CAMPAIGN DESIGN",
+        "figure": "12 MOTION LAYERS",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-campaign.webp",
+        "alt": "A vivid blue multi-format mobile repair campaign",
+        "detail": "Electric blue owns the category. Orange interruption points make the fix feel fast before anyone reads a line.",
+        "color": "#ff6a22",
+        "columnStart": 9,
+        "columnSpan": 4,
+        "aspectRatio": 0.79,
+        "marginTopRem": 12
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "title": "A spread that thinks.",
+        "field": "EDITORIAL",
+        "figure": "08 GRID STATES",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-editorial.webp",
+        "alt": "A playful editorial spread about artificial intelligence and learning",
+        "detail": "A twelve-column system holds diagrams, notes and big ideas. The yellow beat tells the eye where to land next.",
+        "color": "#f6d83b",
+        "columnStart": 2,
+        "columnSpan": 4,
+        "aspectRatio": 0.79,
+        "marginTopRem": 0
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "title": "Stop the thumb.",
+        "field": "SOCIAL MEDIA",
+        "figure": "09 CROP RULES",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-social.webp",
+        "alt": "A warm food social media system built from pasta ribbons and crops",
+        "detail": "The fork is the hero. Tomato red creates appetite; cobalt rails keep nine unruly crops recognisably related.",
+        "color": "#ff508e",
+        "columnStart": 7,
+        "columnSpan": 6,
+        "aspectRatio": 1.08,
+        "marginTopRem": -3
+      },
+      {
+        "id": "05",
+        "visible": true,
+        "title": "Frames find momentum.",
+        "field": "MOTION GRAPHICS",
+        "figure": "18 FRAME OFFSET",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-motion.webp",
+        "alt": "An automotive motion design storyboard with paths and keyframes",
+        "detail": "Three static car frames become one move when the mask lands four frames late and the path cuts the corner.",
+        "color": "#8ee8c1",
+        "columnStart": 1,
+        "columnSpan": 5,
+        "aspectRatio": 0.79,
+        "marginTopRem": 4
+      },
+      {
+        "id": "06",
+        "visible": true,
+        "title": "Cut on intent.",
+        "field": "VIDEO EDITING",
+        "figure": "24 FPS",
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/scene-editing.webp",
+        "alt": "A physical video editing timeline made from acrylic and film",
+        "detail": "The cut lands two frames before the beat. That tiny decision makes the next shot feel faster than it is.",
+        "color": "#e6bdf4",
+        "columnStart": 7,
+        "columnSpan": 6,
+        "aspectRatio": 1.08,
+        "marginTopRem": 0
+      }
+    ]
+  },
+  "archive": {
+    "visible": true,
+    "order": 60,
+    "eyebrow": "THE FULL NOISY ARCHIVE",
+    "title": "131 VISUALS. NO FILLER.",
+    "description": "Food. Cars. Tech. Repair. AI. Identity. Travel. Beauty. Homes. Retail. Every supplied image stays in the mix.",
+    "visibleItems": 133,
+    "tileWidthVw": 13,
+    "trackHeightVh": 56,
+    "scrollDistanceFactor": 0.76,
+    "items": [
+      {
+        "id": "gd-0001",
+        "visible": true,
+        "label": "gd-0001",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0001.webp"
+      },
+      {
+        "id": "gd-0002",
+        "visible": true,
+        "label": "gd-0002",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0002.webp"
+      },
+      {
+        "id": "gd-0003",
+        "visible": true,
+        "label": "gd-0003",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0003.webp"
+      },
+      {
+        "id": "gd-0004",
+        "visible": true,
+        "label": "gd-0004",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0004.webp"
+      },
+      {
+        "id": "gd-0005",
+        "visible": true,
+        "label": "gd-0005",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0005.webp"
+      },
+      {
+        "id": "gd-0006",
+        "visible": true,
+        "label": "gd-0006",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0006.webp"
+      },
+      {
+        "id": "gd-0007",
+        "visible": true,
+        "label": "gd-0007",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0007.webp"
+      },
+      {
+        "id": "gd-0008",
+        "visible": true,
+        "label": "gd-0008",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0008.webp"
+      },
+      {
+        "id": "gd-0009",
+        "visible": true,
+        "label": "gd-0009",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0009.webp"
+      },
+      {
+        "id": "gd-0010",
+        "visible": true,
+        "label": "gd-0010",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0010.webp"
+      },
+      {
+        "id": "gd-0011",
+        "visible": true,
+        "label": "gd-0011",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0011.webp"
+      },
+      {
+        "id": "gd-0012",
+        "visible": true,
+        "label": "gd-0012",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0012.webp"
+      },
+      {
+        "id": "gd-0013",
+        "visible": true,
+        "label": "gd-0013",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0013.webp"
+      },
+      {
+        "id": "gd-0014",
+        "visible": true,
+        "label": "gd-0014",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0014.webp"
+      },
+      {
+        "id": "gd-0015",
+        "visible": true,
+        "label": "gd-0015",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0015.webp"
+      },
+      {
+        "id": "gd-0016",
+        "visible": true,
+        "label": "gd-0016",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0016.webp"
+      },
+      {
+        "id": "gd-0017",
+        "visible": true,
+        "label": "gd-0017",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0017.webp"
+      },
+      {
+        "id": "gd-0018",
+        "visible": true,
+        "label": "gd-0018",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0018.webp"
+      },
+      {
+        "id": "gd-0019",
+        "visible": true,
+        "label": "gd-0019",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0019.webp"
+      },
+      {
+        "id": "gd-0020",
+        "visible": true,
+        "label": "gd-0020",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0020.webp"
+      },
+      {
+        "id": "gd-0021",
+        "visible": true,
+        "label": "gd-0021",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0021.webp"
+      },
+      {
+        "id": "gd-0022",
+        "visible": true,
+        "label": "gd-0022",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0022.webp"
+      },
+      {
+        "id": "gd-0023",
+        "visible": true,
+        "label": "gd-0023",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0023.webp"
+      },
+      {
+        "id": "gd-0024",
+        "visible": true,
+        "label": "gd-0024",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0024.webp"
+      },
+      {
+        "id": "gd-0025",
+        "visible": true,
+        "label": "gd-0025",
+        "category": "00 - BEST OF THE BEST",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0025.webp"
+      },
+      {
+        "id": "gd-0027",
+        "visible": true,
+        "label": "gd-0027",
+        "category": "00 - Portfolio Preview",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0027.webp"
+      },
+      {
+        "id": "gd-0028",
+        "visible": true,
+        "label": "gd-0028",
+        "category": "00 - Portfolio Preview",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0028.webp"
+      },
+      {
+        "id": "gd-0029",
+        "visible": true,
+        "label": "gd-0029",
+        "category": "00 - Portfolio Preview",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0029.webp"
+      },
+      {
+        "id": "gd-0030",
+        "visible": true,
+        "label": "gd-0030",
+        "category": "00 - Portfolio Preview",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0030.webp"
+      },
+      {
+        "id": "gd-0031",
+        "visible": true,
+        "label": "gd-0031",
+        "category": "00 - Portfolio Preview",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0031.webp"
+      },
+      {
+        "id": "gd-0032",
+        "visible": true,
+        "label": "gd-0032",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0032.webp"
+      },
+      {
+        "id": "gd-0033",
+        "visible": true,
+        "label": "gd-0033",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0033.webp"
+      },
+      {
+        "id": "gd-0034",
+        "visible": true,
+        "label": "gd-0034",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0034.webp"
+      },
+      {
+        "id": "gd-0035",
+        "visible": true,
+        "label": "gd-0035",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0035.webp"
+      },
+      {
+        "id": "gd-0036",
+        "visible": true,
+        "label": "gd-0036",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0036.webp"
+      },
+      {
+        "id": "gd-0037",
+        "visible": true,
+        "label": "gd-0037",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0037.webp"
+      },
+      {
+        "id": "gd-0038",
+        "visible": true,
+        "label": "gd-0038",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0038.webp"
+      },
+      {
+        "id": "gd-0039",
+        "visible": true,
+        "label": "gd-0039",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0039.webp"
+      },
+      {
+        "id": "gd-0040",
+        "visible": true,
+        "label": "gd-0040",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0040.webp"
+      },
+      {
+        "id": "gd-0041",
+        "visible": true,
+        "label": "gd-0041",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0041.webp"
+      },
+      {
+        "id": "gd-0042",
+        "visible": true,
+        "label": "gd-0042",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0042.webp"
+      },
+      {
+        "id": "gd-0043",
+        "visible": true,
+        "label": "gd-0043",
+        "category": "01 - Food & Beverage",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0043.webp"
+      },
+      {
+        "id": "gd-0044",
+        "visible": true,
+        "label": "gd-0044",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0044.webp"
+      },
+      {
+        "id": "gd-0045",
+        "visible": true,
+        "label": "gd-0045",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0045.webp"
+      },
+      {
+        "id": "gd-0046",
+        "visible": true,
+        "label": "gd-0046",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0046.webp"
+      },
+      {
+        "id": "gd-0047",
+        "visible": true,
+        "label": "gd-0047",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0047.webp"
+      },
+      {
+        "id": "gd-0048",
+        "visible": true,
+        "label": "gd-0048",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0048.webp"
+      },
+      {
+        "id": "gd-0049",
+        "visible": true,
+        "label": "gd-0049",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0049.webp"
+      },
+      {
+        "id": "gd-0050",
+        "visible": true,
+        "label": "gd-0050",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0050.webp"
+      },
+      {
+        "id": "gd-0051",
+        "visible": true,
+        "label": "gd-0051",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0051.webp"
+      },
+      {
+        "id": "gd-0052",
+        "visible": true,
+        "label": "gd-0052",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0052.webp"
+      },
+      {
+        "id": "gd-0053",
+        "visible": true,
+        "label": "gd-0053",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0053.webp"
+      },
+      {
+        "id": "gd-0054",
+        "visible": true,
+        "label": "gd-0054",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0054.webp"
+      },
+      {
+        "id": "gd-0055",
+        "visible": true,
+        "label": "gd-0055",
+        "category": "02 - Automotive",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0055.webp"
+      },
+      {
+        "id": "gd-0056",
+        "visible": true,
+        "label": "gd-0056",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0056.webp"
+      },
+      {
+        "id": "gd-0057",
+        "visible": true,
+        "label": "gd-0057",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0057.webp"
+      },
+      {
+        "id": "gd-0058",
+        "visible": true,
+        "label": "gd-0058",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0058.webp"
+      },
+      {
+        "id": "gd-0059",
+        "visible": true,
+        "label": "gd-0059",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0059.webp"
+      },
+      {
+        "id": "gd-0060",
+        "visible": true,
+        "label": "gd-0060",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0060.webp"
+      },
+      {
+        "id": "gd-0061",
+        "visible": true,
+        "label": "gd-0061",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0061.webp"
+      },
+      {
+        "id": "gd-0062",
+        "visible": true,
+        "label": "gd-0062",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0062.webp"
+      },
+      {
+        "id": "gd-0063",
+        "visible": true,
+        "label": "gd-0063",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0063.webp"
+      },
+      {
+        "id": "gd-0064",
+        "visible": true,
+        "label": "gd-0064",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0064.webp"
+      },
+      {
+        "id": "gd-0065",
+        "visible": true,
+        "label": "gd-0065",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0065.webp"
+      },
+      {
+        "id": "gd-0066",
+        "visible": true,
+        "label": "gd-0066",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0066.webp"
+      },
+      {
+        "id": "gd-0067",
+        "visible": true,
+        "label": "gd-0067",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0067.webp"
+      },
+      {
+        "id": "gd-0068",
+        "visible": true,
+        "label": "gd-0068",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0068.webp"
+      },
+      {
+        "id": "gd-0069",
+        "visible": true,
+        "label": "gd-0069",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0069.webp"
+      },
+      {
+        "id": "gd-0070",
+        "visible": true,
+        "label": "gd-0070",
+        "category": "03 - Tech & Electronics",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0070.webp"
+      },
+      {
+        "id": "gd-0071",
+        "visible": true,
+        "label": "gd-0071",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0071.webp"
+      },
+      {
+        "id": "gd-0072",
+        "visible": true,
+        "label": "gd-0072",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0072.webp"
+      },
+      {
+        "id": "gd-0073",
+        "visible": true,
+        "label": "gd-0073",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0073.webp"
+      },
+      {
+        "id": "gd-0074",
+        "visible": true,
+        "label": "gd-0074",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0074.webp"
+      },
+      {
+        "id": "gd-0075",
+        "visible": true,
+        "label": "gd-0075",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0075.webp"
+      },
+      {
+        "id": "gd-0076",
+        "visible": true,
+        "label": "gd-0076",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0076.webp"
+      },
+      {
+        "id": "gd-0077",
+        "visible": true,
+        "label": "gd-0077",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0077.webp"
+      },
+      {
+        "id": "gd-0078",
+        "visible": true,
+        "label": "gd-0078",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0078.webp"
+      },
+      {
+        "id": "gd-0079",
+        "visible": true,
+        "label": "gd-0079",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0079.webp"
+      },
+      {
+        "id": "gd-0080",
+        "visible": true,
+        "label": "gd-0080",
+        "category": "04 - Mobile Repair Campaigns",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0080.webp"
+      },
+      {
+        "id": "gd-0081",
+        "visible": true,
+        "label": "gd-0081",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0081.webp"
+      },
+      {
+        "id": "gd-0082",
+        "visible": true,
+        "label": "gd-0082",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0082.webp"
+      },
+      {
+        "id": "gd-0083",
+        "visible": true,
+        "label": "gd-0083",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0083.webp"
+      },
+      {
+        "id": "gd-0084",
+        "visible": true,
+        "label": "gd-0084",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0084.webp"
+      },
+      {
+        "id": "gd-0085",
+        "visible": true,
+        "label": "gd-0085",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0085.webp"
+      },
+      {
+        "id": "gd-0086",
+        "visible": true,
+        "label": "gd-0086",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0086.webp"
+      },
+      {
+        "id": "gd-0087",
+        "visible": true,
+        "label": "gd-0087",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0087.webp"
+      },
+      {
+        "id": "gd-0088",
+        "visible": true,
+        "label": "gd-0088",
+        "category": "05 - Education & AI",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0088.webp"
+      },
+      {
+        "id": "gd-0089",
+        "visible": true,
+        "label": "gd-0089",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0089.webp"
+      },
+      {
+        "id": "gd-0090",
+        "visible": true,
+        "label": "gd-0090",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0090.webp"
+      },
+      {
+        "id": "gd-0091",
+        "visible": true,
+        "label": "gd-0091",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0091.webp"
+      },
+      {
+        "id": "gd-0092",
+        "visible": true,
+        "label": "gd-0092",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0092.webp"
+      },
+      {
+        "id": "gd-0093",
+        "visible": true,
+        "label": "gd-0093",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0093.webp"
+      },
+      {
+        "id": "gd-0094",
+        "visible": true,
+        "label": "gd-0094",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0094.webp"
+      },
+      {
+        "id": "gd-0095",
+        "visible": true,
+        "label": "gd-0095",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0095.webp"
+      },
+      {
+        "id": "gd-0096",
+        "visible": true,
+        "label": "gd-0096",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0096.webp"
+      },
+      {
+        "id": "gd-0097",
+        "visible": true,
+        "label": "gd-0097",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0097.webp"
+      },
+      {
+        "id": "gd-0098",
+        "visible": true,
+        "label": "gd-0098",
+        "category": "06 - Branding & Identity",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0098.webp"
+      },
+      {
+        "id": "gd-0099",
+        "visible": true,
+        "label": "gd-0099",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0099.webp"
+      },
+      {
+        "id": "gd-0100",
+        "visible": true,
+        "label": "gd-0100",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0100.webp"
+      },
+      {
+        "id": "gd-0101",
+        "visible": true,
+        "label": "gd-0101",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0101.webp"
+      },
+      {
+        "id": "gd-0102",
+        "visible": true,
+        "label": "gd-0102",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0102.webp"
+      },
+      {
+        "id": "gd-0103",
+        "visible": true,
+        "label": "gd-0103",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0103.webp"
+      },
+      {
+        "id": "gd-0104",
+        "visible": true,
+        "label": "gd-0104",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0104.webp"
+      },
+      {
+        "id": "gd-0105",
+        "visible": true,
+        "label": "gd-0105",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0105.webp"
+      },
+      {
+        "id": "gd-0106",
+        "visible": true,
+        "label": "gd-0106",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0106.webp"
+      },
+      {
+        "id": "gd-0107",
+        "visible": true,
+        "label": "gd-0107",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0107.webp"
+      },
+      {
+        "id": "gd-0108",
+        "visible": true,
+        "label": "gd-0108",
+        "category": "07 - Travel & Hospitality",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0108.webp"
+      },
+      {
+        "id": "gd-0109",
+        "visible": true,
+        "label": "gd-0109",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0109.webp"
+      },
+      {
+        "id": "gd-0110",
+        "visible": true,
+        "label": "gd-0110",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0110.webp"
+      },
+      {
+        "id": "gd-0111",
+        "visible": true,
+        "label": "gd-0111",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0111.webp"
+      },
+      {
+        "id": "gd-0112",
+        "visible": true,
+        "label": "gd-0112",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0112.webp"
+      },
+      {
+        "id": "gd-0113",
+        "visible": true,
+        "label": "gd-0113",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0113.webp"
+      },
+      {
+        "id": "gd-0114",
+        "visible": true,
+        "label": "gd-0114",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0114.webp"
+      },
+      {
+        "id": "gd-0115",
+        "visible": true,
+        "label": "gd-0115",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0115.webp"
+      },
+      {
+        "id": "gd-0116",
+        "visible": true,
+        "label": "gd-0116",
+        "category": "08 - Beauty & Healthcare",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0116.webp"
+      },
+      {
+        "id": "gd-0117",
+        "visible": true,
+        "label": "gd-0117",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0117.webp"
+      },
+      {
+        "id": "gd-0118",
+        "visible": true,
+        "label": "gd-0118",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0118.webp"
+      },
+      {
+        "id": "gd-0119",
+        "visible": true,
+        "label": "gd-0119",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0119.webp"
+      },
+      {
+        "id": "gd-0120",
+        "visible": true,
+        "label": "gd-0120",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0120.webp"
+      },
+      {
+        "id": "gd-0121",
+        "visible": true,
+        "label": "gd-0121",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0121.webp"
+      },
+      {
+        "id": "gd-0122",
+        "visible": true,
+        "label": "gd-0122",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0122.webp"
+      },
+      {
+        "id": "gd-0123",
+        "visible": true,
+        "label": "gd-0123",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0123.webp"
+      },
+      {
+        "id": "gd-0124",
+        "visible": true,
+        "label": "gd-0124",
+        "category": "09 - Home & AC Services",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0124.webp"
+      },
+      {
+        "id": "gd-0125",
+        "visible": true,
+        "label": "gd-0125",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0125.webp"
+      },
+      {
+        "id": "gd-0126",
+        "visible": true,
+        "label": "gd-0126",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0126.webp"
+      },
+      {
+        "id": "gd-0127",
+        "visible": true,
+        "label": "gd-0127",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0127.webp"
+      },
+      {
+        "id": "gd-0128",
+        "visible": true,
+        "label": "gd-0128",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0128.webp"
+      },
+      {
+        "id": "gd-0129",
+        "visible": true,
+        "label": "gd-0129",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0129.webp"
+      },
+      {
+        "id": "gd-0130",
+        "visible": true,
+        "label": "gd-0130",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0130.webp"
+      },
+      {
+        "id": "gd-0131",
+        "visible": true,
+        "label": "gd-0131",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0131.webp"
+      },
+      {
+        "id": "gd-0132",
+        "visible": true,
+        "label": "gd-0132",
+        "category": "10 - Retail & E-commerce",
+        "src": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/designs/gd-0132.webp"
+      },
+      {
+        "id": "gd-0132-copy",
+        "visible": true,
+        "label": "gd-0133",
+        "category": "10 - Retail & E-commerce",
+        "src": "/api/media/4846b43a-35e4-4052-9b6e-69762abfe144"
+      },
+      {
+        "id": "upload-73b1ecbc-affe-4e97-b01c-a34323ff29ae",
+        "visible": true,
+        "label": "WhatsApp Image 2026 07 28 at 3.29.18 PM",
+        "category": "NEW DESIGN",
+        "src": "/api/media/73b1ecbc-affe-4e97-b01c-a34323ff29ae"
+      }
+    ]
+  },
+  "system": {
+    "visible": true,
+    "order": 80,
+    "leftLabel": "PROCESS / VISUAL SYSTEM",
+    "rightLabel": "PLAY HAS STRUCTURE",
+    "headline": "CHAOS, WITH A BASELINE.",
+    "description": "The work feels loose because the system underneath it is doing the heavy lifting.",
+    "closeups": [
+      {
+        "id": "type",
+        "visible": true,
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/closeup-type.webp",
+        "alt": "Macro detail of tactile typography and color hierarchy",
+        "label": "TYPE / ATTENTION",
+        "caption": "Black holds the field. Orange makes the decision.",
+        "marginTopRem": 0
+      },
+      {
+        "id": "motion",
+        "visible": true,
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/closeup-motion.webp",
+        "alt": "Macro detail of a motion path and colorful keyframes",
+        "label": "PATH / KEYFRAMES",
+        "caption": "The curve is soft. The timing points are not.",
+        "marginTopRem": 8
+      },
+      {
+        "id": "edit",
+        "visible": true,
+        "image": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/closeup-edit.webp",
+        "alt": "Macro filmstrip and edit waveform detail",
+        "label": "CUT / RHYTHM",
+        "caption": "Three shots. One splice. Zero wasted frames.",
+        "marginTopRem": 3
+      }
+    ],
+    "process": [
+      {
+        "id": "01",
+        "visible": true,
+        "title": "Find the odd bit.",
+        "text": "The strongest idea is usually the detail everyone else tried to tidy away.",
+        "color": "#2454ff"
+      },
+      {
+        "id": "02",
+        "visible": true,
+        "title": "Give it rules.",
+        "text": "A flexible system survives a square post, a 9:16 reel and packaging without losing its accent.",
+        "color": "#ff6a22"
+      },
+      {
+        "id": "03",
+        "visible": true,
+        "title": "Add timing.",
+        "text": "Motion starts with hierarchy: what arrives first, what interrupts, what gets the last frame.",
+        "color": "#8ee8c1"
+      },
+      {
+        "id": "04",
+        "visible": true,
+        "title": "Edit until it clicks.",
+        "text": "A cut two frames early can sell more energy than another hour of decoration.",
+        "color": "#e6bdf4"
+      }
+    ]
+  },
+  "footer": {
+    "visible": true,
+    "order": 90,
+    "availability": "AVAILABLE FOR SELECT PROJECTS",
+    "location": "CAIRO / REMOTE",
+    "headline": "GOT A GOOD",
+    "accentHeadline": "PROBLEM?",
+    "cutoutImage": "https://hdksxvqbuezsfgmv.public.blob.vercel-storage.com/media/generated/cutout-loop.png",
+    "cta": "START A PROJECT",
+    "subject": "Let's make something move",
+    "copyright": "© 2026 PLAY / EDIT",
+    "signoff": "DESIGNED TO MOVE. EDITED TO LAND."
+  }
+}

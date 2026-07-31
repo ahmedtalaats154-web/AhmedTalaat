@@ -1,23 +1,39 @@
-import {
-  DEFAULT_SITE_CONFIG,
-  withMediaOrigin,
-} from "../../../lib/site-config";
+import { isAdminRequest } from "../../../lib/admin-auth";
+import { getStoredConfig, saveStoredConfig } from "../../../lib/config-store";
 
-const MEDIA_ORIGIN = "https://play-edit-creator-2026.marklix-eg.chatgpt.site";
-
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  return Response.json(
-    {
-      config: withMediaOrigin(DEFAULT_SITE_CONFIG, MEDIA_ORIGIN),
-      mode: "published",
-      preview: true,
-    },
-    {
-      headers: {
-        "cache-control": "public, max-age=60, stale-while-revalidate=300",
-      },
-    },
-  );
+  try {
+    return Response.json(
+      { config: await getStoredConfig(), mode: "published" },
+      { headers: { "cache-control": "no-store" } },
+    );
+  } catch (error) {
+    return Response.json(
+      { error: error instanceof Error ? error.message : "Could not load site controls" },
+      { status: 500 },
+    );
+  }
+}
+
+export async function POST(request: Request) {
+  if (!isAdminRequest(request)) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  try {
+    const body = (await request.json()) as { config?: unknown };
+    const config = await saveStoredConfig(body.config);
+    return Response.json({
+      ok: true,
+      config,
+      updatedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    return Response.json(
+      { error: error instanceof Error ? error.message : "Could not save site controls" },
+      { status: 500 },
+    );
+  }
 }

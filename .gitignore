@@ -35,3 +35,7 @@ yarn-error.log*
 .vscode/
 .idea/
 .env*
+
+# one-time migration material
+/migration-media/
+/migration-snapshots/
