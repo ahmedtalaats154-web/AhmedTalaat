@@ -1122,18 +1122,30 @@ main {
 }
 
 .timelapse-console {
+  position: relative;
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: auto minmax(12rem, 1fr) auto auto;
   gap: 1rem;
   align-items: center;
-  min-height: 5.4rem;
-  padding: 1rem 1.2rem;
+  min-height: clamp(9rem, 18vh, 13rem);
+  padding: 1.2rem clamp(13rem, 28vw, 28rem) 1.2rem 1.35rem;
+  overflow: hidden;
   border: 2px solid var(--ink);
   border-radius: 1.2rem;
-  background: var(--mint);
+  background:
+    linear-gradient(rgba(16, 17, 19, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 17, 19, 0.08) 1px, transparent 1px),
+    var(--mint);
+  background-size: 1.4rem 1.4rem;
   color: var(--ink);
   box-shadow: 0.55rem 0.55rem 0 var(--orange);
+  isolation: isolate;
+}
+
+.timelapse-console > :not(.timelapse-console__art) {
+  position: relative;
+  z-index: 2;
 }
 
 .timelapse-console__lead {
@@ -1190,6 +1202,18 @@ main {
 .timelapse-console__count {
   min-width: 3.7rem;
   text-align: right;
+}
+
+.timelapse-console__art {
+  position: absolute;
+  z-index: 1;
+  right: -3.5rem;
+  bottom: -8.5rem;
+  width: clamp(23rem, 34vw, 38rem);
+  max-width: none;
+  pointer-events: none;
+  filter: drop-shadow(0.65rem 0.8rem 0 rgba(16, 17, 19, 0.18));
+  transform-origin: center;
 }
 
 .work {
@@ -2032,6 +2056,15 @@ main {
   .work-intro > p,
   .system-title p {
     margin-top: 1.5rem;
+  }
+
+  .timelapse-console {
+    grid-template-columns: auto minmax(8rem, 1fr) auto;
+    padding-right: clamp(11rem, 28vw, 16rem);
+  }
+
+  .timelapse-console__chips {
+    display: none;
   }
 
   .timelapse-stage {

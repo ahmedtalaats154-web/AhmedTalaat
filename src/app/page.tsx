@@ -1523,6 +1523,19 @@ export default function Home() {
               <strong className="timelapse-console__count">
                 {activeFrame.id} / {timelapseFrames.length.toString().padStart(2, "0")}
               </strong>
+              <motion.img
+                className="timelapse-console__art"
+                src="/media/generated/timelapse-desktop-elements.png"
+                alt=""
+                key={`timelapse-art-${activeFrame.id}`}
+                initial={{ opacity: 0, scale: 0.86, rotate: -4 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: activeTimelapseFrame % 2 === 0 ? 2 : -2,
+                }}
+                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              />
             </div>
           )}
         </div>
