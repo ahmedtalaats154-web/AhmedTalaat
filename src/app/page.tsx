@@ -22,11 +22,13 @@ import * as THREE from "three";
 import {
   DEFAULT_SITE_CONFIG,
   mergeSiteConfig,
+  withMediaOrigin,
   type SectionSettings,
   type SiteConfig,
 } from "../lib/site-config";
 
 const GENERATED = "/media/generated";
+const PREVIEW_MEDIA_ORIGIN = "https://play-edit-creator-2026.marklix-eg.chatgpt.site";
 
 const PROJECTS = [
   {
@@ -500,7 +502,9 @@ export default function Home() {
   const timelapseTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const archiveRef = useRef<HTMLElement>(null);
   const archiveTrackRef = useRef<HTMLDivElement>(null);
-  const [siteConfig, setSiteConfig] = useState<SiteConfig>(DEFAULT_SITE_CONFIG);
+  const [siteConfig, setSiteConfig] = useState<SiteConfig>(() =>
+    withMediaOrigin(DEFAULT_SITE_CONFIG, PREVIEW_MEDIA_ORIGIN),
+  );
   const [activeCut, setActiveCut] = useState(0);
   const [activeTimelapseFrame, setActiveTimelapseFrame] = useState(0);
   const [archive, setArchive] = useState<ArchiveAsset[]>([]);
@@ -590,13 +594,26 @@ export default function Home() {
         if (!cancelled) setSiteConfig(mergeSiteConfig(data.config));
       })
       .catch(() => {
-        if (!cancelled) setSiteConfig(DEFAULT_SITE_CONFIG);
+        if (!cancelled) {
+          setSiteConfig(
+            withMediaOrigin(DEFAULT_SITE_CONFIG, PREVIEW_MEDIA_ORIGIN),
+          );
+        }
       });
 
     fetch("/media/designs/manifest.json")
       .then((response) => response.json())
       .then((data: ArchiveAsset[]) => {
-        if (!cancelled) setArchive(data);
+        if (!cancelled) {
+          setArchive(
+            data.map((asset) => ({
+              ...asset,
+              src: asset.src.startsWith("/media/")
+                ? `${PREVIEW_MEDIA_ORIGIN}${asset.src}`
+                : asset.src,
+            })),
+          );
+        }
       })
       .catch(() => {
         if (!cancelled) setArchive([]);

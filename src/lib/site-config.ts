@@ -1,3 +1,21 @@
+export function withMediaOrigin<T>(value: T, origin: string): T {
+  if (typeof value === "string") {
+    return (value.startsWith("/media/") ? `${origin}${value}` : value) as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => withMediaOrigin(item, origin)) as T;
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, child]) => [
+        key,
+        withMediaOrigin(child, origin),
+      ]),
+    ) as T;
+  }
+  return value;
+}
+
 export type SectionSettings = {
   visible: boolean;
   order: number;
