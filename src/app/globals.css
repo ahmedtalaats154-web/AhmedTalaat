@@ -2168,42 +2168,51 @@ main {
   }
 
   .timelapse {
-    padding-block: 7rem;
+    padding-block: 6rem 8rem;
   }
 
   .timelapse-intro h2 {
-    font-size: 14vw;
+    max-width: 9ch;
+    font-size: clamp(3.8rem, 17vw, 5.4rem);
   }
 
   .timelapse-intro > p {
-    font-size: 0.86rem;
+    max-width: 31rem;
+    font-size: 1rem;
+    line-height: 1.45;
   }
 
   .timelapse-stage {
+    top: 4.75rem;
     display: block;
-    margin-top: 3.5rem;
+    margin-top: 3rem;
   }
 
   .timelapse-frame {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
     border-radius: 1.25rem;
     box-shadow: 0.5rem 0.5rem 0 var(--pink);
   }
 
+  .timelapse-frame__image {
+    object-position: center;
+  }
+
   .timelapse-data {
-    right: 0.7rem;
-    bottom: 0.7rem;
-    left: 0.7rem;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
     width: auto;
-    padding: 0.72rem;
+    padding: 0.9rem;
   }
 
   .timelapse-data__figure {
-    font-size: 1.55rem;
+    font-size: clamp(2rem, 10vw, 2.8rem);
   }
 
   .timelapse-data p {
-    font-size: 0.6rem;
+    max-width: 34ch;
+    font-size: 0.72rem;
   }
 
   .timelapse-replay {
@@ -2212,18 +2221,38 @@ main {
   }
 
   .timelapse-rail {
-    grid-template-rows: none;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 1.2rem;
+    display: flex;
+    gap: 0.75rem;
+    margin: 1.35rem calc(var(--page-pad) * -1) 0;
+    padding: 0.4rem var(--page-pad) 0.8rem;
+    overflow-x: auto;
+    scroll-padding-inline: var(--page-pad);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .timelapse-rail::-webkit-scrollbar {
+    display: none;
   }
 
   .timelapse-rail li {
-    min-height: 4.6rem;
-    padding: 0.65rem;
+    flex: 0 0 min(72vw, 18rem);
+    min-height: 6.5rem;
+    padding: 1rem;
+    scroll-snap-align: start;
+  }
+
+  .timelapse-rail span {
+    font-size: 0.65rem;
+  }
+
+  .timelapse-rail strong {
+    font-size: 0.72rem;
   }
 
   .timelapse-rail li.is-active {
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.2rem);
   }
 
   .work {
