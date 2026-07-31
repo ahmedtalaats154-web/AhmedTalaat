@@ -499,6 +499,7 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timelapseRef = useRef<HTMLElement>(null);
   const timelapseStageRef = useRef<HTMLDivElement>(null);
+  const timelapseRailRef = useRef<HTMLOListElement>(null);
   const timelapseTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const archiveRef = useRef<HTMLElement>(null);
   const archiveTrackRef = useRef<HTMLDivElement>(null);
@@ -510,6 +511,27 @@ export default function Home() {
   const [archive, setArchive] = useState<ArchiveAsset[]>([]);
   const [selectedArchiveId, setSelectedArchiveId] = useState<string | null>(null);
   const archiveCloseRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const rail = timelapseRailRef.current;
+    if (!rail || !window.matchMedia("(max-width: 720px)").matches) return;
+
+    const activeCard = rail.querySelector<HTMLElement>(
+      `[data-timelapse-index="${activeTimelapseFrame}"]`,
+    );
+    if (!activeCard) return;
+
+    const left =
+      activeCard.offsetLeft - (rail.clientWidth - activeCard.clientWidth) / 2;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    rail.scrollTo({
+      left: Math.max(0, left),
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
+  }, [activeTimelapseFrame]);
 
   const imageArchive = useMemo(
     () => {
@@ -1456,12 +1478,17 @@ export default function Home() {
             </button>
           </div>
 
-          <ol className="timelapse-rail" aria-label="Photoshop build stages">
+          <ol
+            className="timelapse-rail"
+            ref={timelapseRailRef}
+            aria-label="Photoshop build stages"
+          >
             {timelapseFrames.map((frame, index) => (
               <li
                 className={
                   index === activeTimelapseFrame ? "is-active" : undefined
                 }
+                data-timelapse-index={index}
                 key={frame.id}
                 aria-current={
                   index === activeTimelapseFrame ? "step" : undefined
@@ -1473,6 +1500,31 @@ export default function Home() {
               </li>
             ))}
           </ol>
+
+          {activeFrame && (
+            <div className="timelapse-console" aria-hidden="true">
+              <div className="timelapse-console__lead">
+                <span>BUILD SIGNAL</span>
+                <strong>{activeFrame.stage}</strong>
+              </div>
+              <div className="timelapse-console__track">
+                <span
+                  style={{
+                    width: `${((activeTimelapseFrame + 1) / timelapseFrames.length) * 100}%`,
+                  }}
+                />
+              </div>
+              <div className="timelapse-console__chips">
+                <span>GRID</span>
+                <span>TYPE</span>
+                <span>COLOR</span>
+                <span>RETOUCH</span>
+              </div>
+              <strong className="timelapse-console__count">
+                {activeFrame.id} / {timelapseFrames.length.toString().padStart(2, "0")}
+              </strong>
+            </div>
+          )}
         </div>
         </div>
       </section>
