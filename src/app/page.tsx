@@ -1847,6 +1847,25 @@ export default function Home() {
         </div>
       </footer>
       )}
+      {siteConfig.footer.socials.whatsapp.visible &&
+        siteConfig.footer.socials.whatsapp.url && (
+          <motion.a
+            className="floating-whatsapp"
+            href={siteConfig.footer.socials.whatsapp.url}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, scale: 0.6, rotate: -12 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 0.9, type: "spring", stiffness: 520, damping: 24 }}
+            whileHover={{ scale: 1.08, rotate: -3 }}
+            whileTap={{ scale: 0.92 }}
+            data-cursor="CHAT"
+            aria-label="Start a WhatsApp conversation"
+          >
+            <span aria-hidden="true">wa</span>
+            <strong>LET&apos;S TALK</strong>
+          </motion.a>
+        )}
     </main>
   );
 }
