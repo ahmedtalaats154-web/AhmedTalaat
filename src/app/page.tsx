@@ -1130,6 +1130,9 @@ export default function Home() {
   }, [selectedArchiveId, selectedArchive, imageArchive]);
 
   const brandParts = siteConfig.identity.brand.split("/");
+  const footerSocials = Object.entries(siteConfig.footer.socials)
+    .map(([platform, social], index) => ({ platform, ...social, index }))
+    .filter((social) => social.visible);
   const activeReelCut = reelCuts[activeCut] ?? reelCuts[0];
   const activeFrame =
     timelapseFrames[activeTimelapseFrame] ?? timelapseFrames[0];
@@ -1774,6 +1777,69 @@ export default function Home() {
           <span>{siteConfig.footer.cta}</span>
           <strong>↗</strong>
         </motion.a>
+        {footerSocials.length > 0 && (
+          <div className="footer-social-block">
+            <div className="footer-social-heading">
+              <span>{siteConfig.footer.socialHeading}</span>
+              <i aria-hidden="true" />
+              <span>03 LINKS / ZERO NOISE</span>
+            </div>
+            <div className="footer-socials">
+              {footerSocials.map((social) => {
+                const content = (
+                  <>
+                    <span className="footer-socials__counter">
+                      {String(social.index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="footer-socials__mark" aria-hidden="true">
+                      {social.platform === "facebook"
+                        ? "f"
+                        : social.platform === "instagram"
+                          ? "ig"
+                          : "wa"}
+                    </span>
+                    <span className="footer-socials__copy">
+                      <strong>{social.label}</strong>
+                      <small>{social.detail}</small>
+                    </span>
+                    <b aria-hidden="true">↗</b>
+                  </>
+                );
+                const socialStyle = {
+                  "--social-color": social.color,
+                } as CSSProperties;
+
+                return social.url ? (
+                  <motion.a
+                    className="footer-social-card"
+                    href={social.url}
+                    key={social.platform}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={socialStyle}
+                    whileHover={{ y: -6, rotate: social.index % 2 === 0 ? -0.8 : 0.8 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 520, damping: 28 }}
+                    data-cursor="OPEN"
+                    aria-label={`Open ${social.label}`}
+                  >
+                    {content}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    className="footer-social-card is-unlinked"
+                    key={social.platform}
+                    style={socialStyle}
+                    whileHover={{ y: -4 }}
+                    aria-label={`${social.label} link can be added from the dashboard`}
+                  >
+                    {content}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        )}
         <div className="footer-bottom">
           <span>{siteConfig.footer.copyright}</span>
           <span>{siteConfig.footer.signoff}</span>

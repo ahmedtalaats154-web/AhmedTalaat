@@ -218,6 +218,30 @@ export type SiteConfig = {
     cutoutImage: string;
     cta: string;
     subject: string;
+    socialHeading: string;
+    socials: {
+      facebook: {
+        visible: boolean;
+        label: string;
+        detail: string;
+        url: string;
+        color: string;
+      };
+      instagram: {
+        visible: boolean;
+        label: string;
+        detail: string;
+        url: string;
+        color: string;
+      };
+      whatsapp: {
+        visible: boolean;
+        label: string;
+        detail: string;
+        url: string;
+        color: string;
+      };
+    };
     copyright: string;
     signoff: string;
   };
@@ -414,6 +438,30 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
     cutoutImage: "/media/generated/cutout-loop.png",
     cta: "START A PROJECT",
     subject: "Let's make something move",
+    socialHeading: "PICK A CHANNEL.",
+    socials: {
+      facebook: {
+        visible: true,
+        label: "FACEBOOK",
+        detail: "PROJECTS / UPDATES",
+        url: "",
+        color: "#2454ff",
+      },
+      instagram: {
+        visible: true,
+        label: "INSTAGRAM",
+        detail: "DAILY CUTS / WIP",
+        url: "",
+        color: "#ff508e",
+      },
+      whatsapp: {
+        visible: true,
+        label: "WHATSAPP",
+        detail: "START A CONVERSATION",
+        url: "https://wa.me/201012556309",
+        color: "#8ee8c1",
+      },
+    },
     copyright: "© 2026 PLAY / EDIT",
     signoff: "DESIGNED TO MOVE. EDITED TO LAND.",
   },
