@@ -1,3 +1,5 @@
+import archiveCatalog from "../data/archive-catalog.json";
+
 export function withMediaOrigin<T>(value: T, origin: string): T {
   if (typeof value === "string") {
     return (value.startsWith("/media/") ? `${origin}${value}` : value) as T;
@@ -490,6 +492,26 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     merged.archive.visible = true;
     merged.archive.order = 60;
     merged.work.order = 70;
+  }
+
+  const hasLegacyArchiveMetadata =
+    merged.archive.items.length === archiveCatalog.length &&
+    merged.archive.items.some(
+      (item) => /^gd-\d+$/i.test(item.label) || /^\d+\s*-\s*/.test(item.category),
+    );
+
+  if (hasLegacyArchiveMetadata) {
+    merged.archive.items = merged.archive.items.map((item, index) => {
+      const curated = archiveCatalog[index];
+      return {
+        ...item,
+        id: curated.id,
+        label: /^gd-\d+$/i.test(item.label) ? curated.label : item.label,
+        category: /^\d+\s*-\s*/.test(item.category)
+          ? curated.category
+          : item.category,
+      };
+    });
   }
 
   return merged;
