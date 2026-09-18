@@ -1,3 +1,8 @@
+.eu-admin-toolbar { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:20px 0; }
+.eu-admin-toolbar label { display:grid; gap:8px; flex:1; min-width:180px; font-size:11px; font-weight:800; }
+.eu-admin-toolbar select { padding:12px; max-width:100%; background:#fffdf7; color:#101113; border:1px solid #101113; }
+.eu-admin-notice { padding:14px; font-size:12px; line-height:1.6; background:#fffdf7; border-left:3px solid #2454ff; }
+.eu-admin .control-row select { padding:10px; max-width:100%; }
 :root {
   --admin-ink: #101113;
   --admin-paper: #f4efe3;

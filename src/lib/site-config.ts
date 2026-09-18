@@ -1,4 +1,6 @@
 import archiveCatalog from "../data/archive-catalog.json";
+import euVisualSeed from "../data/eu-visual.json";
+import type { EuVisualConfig } from "./eu-visual";
 
 export function withMediaOrigin<T>(value: T, origin: string): T {
   if (typeof value === "string") {
@@ -24,6 +26,7 @@ export type SectionSettings = {
 };
 
 export type SiteConfig = {
+  euVisual: EuVisualConfig;
   version: number;
   identity: {
     browserTitle: string;
@@ -250,6 +253,7 @@ export type SiteConfig = {
 };
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
+  euVisual: euVisualSeed as EuVisualConfig,
   version: 2,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",

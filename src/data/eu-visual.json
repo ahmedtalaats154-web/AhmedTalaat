@@ -1,0 +1,388 @@
+{
+  "title": "EU VISUAL",
+  "headline": "Visual systems for European hospitality and retail.",
+  "description": "Selected concept projects built across social design, campaign thinking and art direction.",
+  "projects": [
+    {
+      "id": "north-pier",
+      "title": "North Pier Coffee & Bakehouse",
+      "slug": "north-pier",
+      "subtitle": "Coffee & Bakehouse",
+      "city": "Rotterdam",
+      "country": "Netherlands",
+      "category": "Hospitality / Social Art Direction / Visual System",
+      "projectType": "Fictional Hospitality Concept",
+      "year": 2026,
+      "concept": true,
+      "published": true,
+      "sortOrder": 10,
+      "cover": {
+        "src": "/media/eu-visual/north-pier/post-01.jpg",
+        "alt": "North Pier coffee and croissant beside a Rotterdam waterfront window",
+        "width": 1080,
+        "height": 1350
+      },
+      "overview": {
+        "summary": "North Pier Coffee & Bakehouse is a fictional Rotterdam waterfront café concept developed to explore how a hospitality brand can stay visually consistent while moving across product, lifestyle, seasonal and service-led social content.",
+        "objective": "The system combines a defined brand world, repeatable visual rules and varied social layouts without relying on one repeated template.",
+        "positioning": "A design-conscious neighbourhood destination, built around two daily rituals: fresh baking and really good coffee.",
+        "roles": [
+          "Art Direction",
+          "Social Media Design",
+          "Campaign Concepts",
+          "Visual Direction",
+          "Hospitality Content System"
+        ],
+        "brandIdea": "Made for slow mornings and busy days.",
+        "functionalLine": "Coffee. Bread. By the water.",
+        "challenge": "",
+        "personality": [
+          "Modern",
+          "Warm",
+          "Crafted",
+          "Urban",
+          "Quietly Premium"
+        ]
+      },
+      "brand": {
+        "colors": [
+          {
+            "id": "color-0",
+            "name": "Pier Blue",
+            "hex": "#183344"
+          },
+          {
+            "id": "color-1",
+            "name": "Oat Cream",
+            "hex": "#F1EBDD"
+          },
+          {
+            "id": "color-2",
+            "name": "Bakery Sand",
+            "hex": "#D9C8AA"
+          },
+          {
+            "id": "color-3",
+            "name": "Signal Red",
+            "hex": "#B84B3C"
+          },
+          {
+            "id": "color-4",
+            "name": "Ink",
+            "hex": "#20211F"
+          }
+        ],
+        "typography": [
+          {
+            "id": "instrument",
+            "name": "Instrument Sans",
+            "description": "Architectural clarity and utility. Clean contemporary structure for headlines and functional information.",
+            "sample": "Coffee. Bread. By the water."
+          },
+          {
+            "id": "newsreader",
+            "name": "Newsreader",
+            "description": "Warmth and an editorial food-and-hospitality character. Product titles and selected quiet moments.",
+            "sample": "Made for slow mornings."
+          }
+        ],
+        "visualTerritory": "Rotterdam industrial clarity × bakery warmth × waterfront calm.",
+        "materials": [
+          "Warm oak",
+          "Brushed stainless steel",
+          "Off-white plaster",
+          "Deep navy seating",
+          "Large waterfront windows"
+        ],
+        "photographyDirection": "Soft Northern-European daylight. Warm food against cooler surroundings. Calm architecture, natural depth and a 35–50mm editorial lens feeling.",
+        "background": "#F1EBDD",
+        "textColor": "#183344",
+        "accentColor": "#B84B3C"
+      },
+      "assets": {
+        "placeSheet": {
+          "src": "",
+          "alt": "North Pier approved place reference sheet",
+          "width": 0,
+          "height": 0
+        },
+        "productsSheet": {
+          "src": "",
+          "alt": "North Pier approved product reference sheet",
+          "width": 0,
+          "height": 0
+        },
+        "productHighlights": ["Butter Croissant", "Cinnamon Bun", "Seasonal Danish", "Coffee system", "Ceramic / tableware language"],
+        "details": []
+      },
+      "socialDesigns": [
+        {
+          "id": "north-pier-post-1",
+          "postNumber": 1,
+          "image": "/media/eu-visual/north-pier/post-01.jpg",
+          "alt": "North Pier — Brand Introduction",
+          "title": "Brand Introduction",
+          "category": "Brand",
+          "purpose": "Introduce North Pier and establish the core visual identity immediately.",
+          "visualApproach": "A calm waterfront product scene combines bakery warmth with Rotterdam’s cooler architectural character, using large brand typography and controlled negative space.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 10,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-2",
+          "postNumber": 2,
+          "image": "/media/eu-visual/north-pier/post-02.jpg",
+          "alt": "North Pier — Bakery Spotlight",
+          "title": "Bakery Spotlight",
+          "category": "Bakery",
+          "purpose": "Introduce a repeatable bakery storytelling format and make the Cinnamon Bun a clear product hero.",
+          "visualApproach": "A structured editorial panel separates product storytelling from photography and begins a numbered Bakery content series.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 20,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-3",
+          "postNumber": 3,
+          "image": "/media/eu-visual/north-pier/post-03.jpg",
+          "alt": "North Pier — Coffee Ritual",
+          "title": "Coffee Ritual",
+          "category": "Coffee",
+          "purpose": "Shift from static product imagery into craft, motion and preparation.",
+          "visualApproach": "The coffee pour becomes the hero action, supported by open typography and a more dynamic composition while remaining inside the same North Pier world.",
+          "supportingCopy": "",
+          "chapter": 2,
+          "sortOrder": 30,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-4",
+          "postNumber": 4,
+          "image": "/media/eu-visual/north-pier/post-04.jpg",
+          "alt": "North Pier — People / Lifestyle",
+          "title": "People / Lifestyle",
+          "category": "Lifestyle",
+          "purpose": "Position North Pier as a place to work, pause and spend time, rather than only a product destination.",
+          "visualApproach": "A quiet human moment by the window shifts attention from the menu to the experience of being inside the café.",
+          "supportingCopy": "",
+          "chapter": 2,
+          "sortOrder": 40,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-5",
+          "postNumber": 5,
+          "image": "/media/eu-visual/north-pier/post-05.jpg",
+          "alt": "North Pier — Seasonal Campaign",
+          "title": "Seasonal Campaign",
+          "category": "Seasonal",
+          "purpose": "Demonstrate how the visual system can support timely seasonal communication without abandoning the core identity.",
+          "visualApproach": "A close seasonal pastry hero and larger campaign-style typography create a stronger promotional moment while preserving the established palette and photography language.",
+          "supportingCopy": "",
+          "chapter": 3,
+          "sortOrder": 50,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-6",
+          "postNumber": 6,
+          "image": "/media/eu-visual/north-pier/post-06.jpg",
+          "alt": "North Pier — From the Counter",
+          "title": "From the Counter",
+          "category": "Menu",
+          "purpose": "Introduce clear menu-style communication and demonstrate commercial flexibility.",
+          "visualApproach": "A front-facing counter lineup breaks the previous hero-image rhythm. Products are aligned as a structured selection with labels and concise supporting information.",
+          "supportingCopy": "",
+          "chapter": 3,
+          "sortOrder": 60,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-7",
+          "postNumber": 7,
+          "image": "/media/eu-visual/north-pier/post-07.jpg",
+          "alt": "North Pier — Service Moment",
+          "title": "Service Moment",
+          "category": "Service",
+          "purpose": "Add hospitality, takeaway service and human interaction to the visual system.",
+          "visualApproach": "A behind-the-counter handoff focuses on the interaction between barista, customer and branded takeaway cup, expanding the brand beyond product photography.",
+          "supportingCopy": "",
+          "chapter": 4,
+          "sortOrder": 70,
+          "enabled": true
+        },
+        {
+          "id": "north-pier-post-8",
+          "postNumber": 8,
+          "image": "/media/eu-visual/north-pier/post-08.jpg",
+          "alt": "North Pier — By the Water",
+          "title": "By the Water",
+          "category": "Location",
+          "purpose": "Anchor the entire project in place and close the social sequence with North Pier as a physical destination.",
+          "visualApproach": "An exterior waterfront perspective shifts away from food and service to architecture, atmosphere and Rotterdam location.",
+          "supportingCopy": "",
+          "chapter": 4,
+          "sortOrder": 80,
+          "enabled": true
+        }
+      ],
+      "contentPillars": [
+        "Brand",
+        "Bakery",
+        "Coffee",
+        "Lifestyle",
+        "Seasonal",
+        "Menu",
+        "Service",
+        "Location"
+      ],
+      "show_ai_process": false,
+      "aiProcess": {
+        "title": "Visual Production System",
+        "copy": "The campaign scenes were developed through an AI-assisted visual production workflow built around locked place and product references. Rather than generating unrelated imagery for each post, the process used a consistent environment, product language and art-direction system to maintain continuity across the campaign.",
+        "points": [
+          "Consistent location references",
+          "Consistent product references",
+          "Controlled camera direction",
+          "Defined lighting system",
+          "Repeatable visual language"
+        ],
+        "visuals": []
+      },
+      "closing": {
+        "statement": "A social identity built around coffee, fresh baking and life by the water.",
+        "image": {
+          "src": "/media/eu-visual/north-pier/post-08.jpg",
+          "alt": "North Pier exterior overlooking the Rotterdam waterfront",
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "sections": [
+        {
+          "id": "hero",
+          "kind": "hero",
+          "title": "NORTH PIER",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "overview",
+          "kind": "overview",
+          "title": "A neighbourhood ritual. A complete visual world.",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "idea",
+          "kind": "idea",
+          "title": "Coffee, bread and life by the water.",
+          "copy": "A contemporary Rotterdam coffee & bakehouse designed around everyday rituals: fresh baking, considered coffee and a calm place to stay.",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "system",
+          "kind": "system",
+          "title": "Clarity meets warmth.",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "place",
+          "kind": "place",
+          "title": "One place. Every scene.",
+          "copy": "A fixed environment system was created before producing the social campaign, keeping architecture, materials, lighting and furniture consistent across scenes.",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "products",
+          "kind": "products",
+          "title": "A familiar cast.",
+          "copy": "A product reference system was developed to keep pastries, coffee, ceramics and tableware visually consistent across the campaign.",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "social-intro",
+          "kind": "social-intro",
+          "title": "One visual world. Multiple content roles.",
+          "copy": "The layout and perspective change. The identity stays recognisable.",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "chapter-1",
+          "kind": "chapter",
+          "title": "Identity + Bakery",
+          "copy": "",
+          "chapter": 1,
+          "enabled": true
+        },
+        {
+          "id": "chapter-2",
+          "kind": "chapter",
+          "title": "Ritual + Lifestyle",
+          "copy": "",
+          "chapter": 2,
+          "enabled": true
+        },
+        {
+          "id": "chapter-3",
+          "kind": "chapter",
+          "title": "Campaign + Commercial Communication",
+          "copy": "",
+          "chapter": 3,
+          "enabled": true
+        },
+        {
+          "id": "chapter-4",
+          "kind": "chapter",
+          "title": "Service + Place",
+          "copy": "",
+          "chapter": 4,
+          "enabled": true
+        },
+        {
+          "id": "grid",
+          "kind": "grid",
+          "title": "A system designed to stay consistent without repeating itself.",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "details",
+          "kind": "details",
+          "title": "A closer look.",
+          "copy": "",
+          "chapter": 0,
+          "enabled": false
+        },
+        {
+          "id": "ai",
+          "kind": "ai",
+          "title": "",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "closing",
+          "kind": "closing",
+          "title": "North Pier Coffee & Bakehouse",
+          "copy": "",
+          "chapter": 0,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

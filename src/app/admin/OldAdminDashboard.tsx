@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { upload as uploadToBlob } from "@vercel/blob/client";
+import EuVisualEditor from "./EuVisualEditor";
+import { validateEuVisual, type EuVisualConfig } from "../../lib/eu-visual";
 import {
   DEFAULT_SITE_CONFIG,
   mergeSiteConfig,
@@ -40,6 +42,7 @@ const GROUPS = [
   ["archive", "Archive"],
   ["system", "Process & system"],
   ["footer", "Footer"],
+  ["euVisual", "EU Visual"],
   ["media", "Media library"],
   ["advanced", "Advanced JSON"],
 ] as const;
@@ -52,6 +55,7 @@ const LONG_TEXT_KEYS = new Set([
   "deck",
   "signoff",
   "imageStatement",
+  "summary", "objective", "positioning", "purpose", "visualApproach", "supportingCopy", "copy", "statement", "photographyDirection",
 ]);
 
 const MEDIA_KEYS = new Set([
@@ -82,7 +86,7 @@ function isColorField(key: string, value: string) {
   return (
     /^#[0-9a-f]{6}$/i.test(value) &&
     (key === "color" ||
-      ["cream", "paper", "ink", "blue", "yellow", "orange", "pink", "mint", "lilac"].includes(key))
+      ["cream", "paper", "ink", "blue", "yellow", "orange", "pink", "mint", "lilac", "hex", "background", "textColor", "accentColor"].includes(key))
   );
 }
 
@@ -98,6 +102,10 @@ function FieldEditor({
   onChange: (path: Array<string | number>, value: JsonValue) => void;
 }) {
   const key = String(path[path.length - 1] ?? label);
+  if (path[0] === "euVisual" && key === "id") return null;
+  if (path[0] === "euVisual" && key === "kind") {
+    return <label className="control-row"><span>Section type</span><select value={String(value)} onChange={e=>onChange(path,e.target.value)}>{["hero","overview","idea","system","place","products","social-intro","chapter","grid","details","ai","closing"].map(kind=><option key={kind} value={kind}>{kind}</option>)}</select></label>;
+  }
 
   if (typeof value === "boolean") {
     return (
@@ -235,26 +243,41 @@ function ArrayEditor({
   path: Array<string | number>;
   onChange: (path: Array<string | number>, value: JsonValue) => void;
 }) {
+  const eu = path[0] === "euVisual";
+  const listKey = String(path[path.length - 1]);
+  const commit = (items: JsonValue[]) => onChange(path, eu && listKey === "socialDesigns" ? items.map((item,index)=>({...item as Record<string,JsonValue>,sortOrder:(index+1)*10})) : items);
+  const addEuItem = () => {
+    const id=crypto.randomUUID();
+    const asset={src:"",alt:"",width:1080,height:1350};
+    const templates: Record<string,JsonValue> = {
+      colors:{id,name:"New color",hex:"#183344"},
+      typography:{id,name:"",description:"",sample:""},
+      socialDesigns:{id,postNumber:value.length+1,image:"",alt:"",title:"New design",category:"",purpose:"",visualApproach:"",supportingCopy:"",chapter:1,sortOrder:(value.length+1)*10,enabled:true},
+      sections:{id,kind:"chapter",enabled:true,title:"New chapter",copy:"",chapter:5},
+      details:asset,visuals:asset,
+    };
+    commit([...value,templates[listKey] ?? ""]);
+  };
   const move = (from: number, to: number) => {
     if (to < 0 || to >= value.length) return;
     const next = structuredClone(value);
     const [item] = next.splice(from, 1);
     next.splice(to, 0, item);
-    onChange(path, next);
+    commit(next);
   };
 
   const duplicate = (index: number) => {
     const next = structuredClone(value);
     const item = structuredClone(next[index]);
     if (item && typeof item === "object" && !Array.isArray(item) && "id" in item) {
-      item.id = `${String(item.id)}-copy`;
+      item.id = eu ? crypto.randomUUID() : `${String(item.id)}-copy`;
     }
     next.splice(index + 1, 0, item);
-    onChange(path, next);
+    commit(next);
   };
 
   return (
-    <fieldset className="control-fieldset control-fieldset--array">
+    <fieldset className="control-fieldset control-fieldset--array" data-field={path.join(".")}>
       <legend>{label}</legend>
       <div className="array-list">
         {value.map((item, index) => (
@@ -275,7 +298,7 @@ function ArrayEditor({
                 <button
                   type="button"
                   className="danger-button"
-                  onClick={() => onChange(path, value.filter((_, itemIndex) => itemIndex !== index))}
+                  onClick={() => commit(value.filter((_, itemIndex) => itemIndex !== index))}
                 >
                   REMOVE
                 </button>
@@ -300,7 +323,7 @@ function ArrayEditor({
           </details>
         ))}
       </div>
-      {value.length > 0 && (
+      {eu ? <button className="secondary-button" type="button" onClick={addEuItem}>+ ADD ITEM</button> : value.length > 0 && (
         <button className="secondary-button" type="button" onClick={() => duplicate(value.length - 1)}>
           + ADD ITEM
         </button>
@@ -373,6 +396,8 @@ export default function OldAdminDashboard({
   };
 
   const save = async (mode: "draft" | "published") => {
+    const validationError = validateEuVisual(config.euVisual);
+    if (validationError) { setStatus(validationError); return; }
     if (mode === "published" && !window.confirm("Publish these controls to the live site now?")) {
       return;
     }
@@ -464,6 +489,8 @@ export default function OldAdminDashboard({
     if (activeGroup === "all" || activeGroup === "media" || activeGroup === "advanced") return null;
     return config[activeGroup as keyof SiteConfig] as unknown as JsonValue;
   }, [activeGroup, config]);
+  const previewRoute = activeGroup === "euVisual" ? "/eu-visual" : "/";
+  const euEditor = <EuVisualEditor value={config.euVisual} onChange={(value: EuVisualConfig)=>update(["euVisual"],value as unknown as JsonValue)} renderFields={(value,path)=><ObjectEditor value={value as Record<string,JsonValue>} path={path} onChange={update}/>}/>;
 
   return (
     <main className="admin-shell">
@@ -520,7 +547,7 @@ export default function OldAdminDashboard({
             <span className={`save-state ${dirty ? "is-dirty" : ""}`}>
               {dirty ? "UNSAVED CHANGES" : "ALL CHANGES SAVED"}
             </span>
-            <a className="live-button" href={`/?live=${liveKey}`} target="_blank" rel="noreferrer">
+            <a className="live-button" href={`${previewRoute}?live=${liveKey}`} target="_blank" rel="noreferrer">
               VIEW LIVE
             </a>
             <button className="secondary-button" type="button" disabled={busy} onClick={() => void save("draft")}>
@@ -548,6 +575,7 @@ export default function OldAdminDashboard({
                 {GROUPS.filter(
                   ([id]) => id !== "all" && id !== "media" && id !== "advanced",
                 ).map(([id, label]) => {
+                  if (id === "euVisual") return <details className="all-control-group" key={id}><summary>EU Visual</summary>{euEditor}</details>;
                   const groupValue = config[id as keyof SiteConfig] as unknown as JsonValue;
                   return (
                     <details className="all-control-group" key={id} open>
@@ -568,7 +596,7 @@ export default function OldAdminDashboard({
                   );
                 })}
               </div>
-            ) : activeGroup === "media" ? (
+            ) : activeGroup === "euVisual" ? euEditor : activeGroup === "media" ? (
               <div className="media-library">
                 <label className="upload-drop">
                   <input
@@ -678,11 +706,11 @@ export default function OldAdminDashboard({
           <aside className="admin-preview">
             <div>
               <span>LIVE DRAFT PREVIEW</span>
-              <a href="/?site_preview=draft" target="_blank" rel="noreferrer">OPEN FULL SIZE ↗</a>
+              <a href={`${previewRoute}?site_preview=draft`} target="_blank" rel="noreferrer">OPEN FULL SIZE ↗</a>
             </div>
             <iframe
               key={previewKey}
-              src={`/?site_preview=draft&refresh=${previewKey}`}
+              src={`${previewRoute}?site_preview=draft&refresh=${previewKey}`}
               title="Draft site preview"
             />
           </aside>
@@ -694,7 +722,7 @@ export default function OldAdminDashboard({
             <span>{dirty ? "You have unsaved changes" : status}</span>
           </div>
           <div>
-            <a className="live-button" href={`/?live=${liveKey}`} target="_blank" rel="noreferrer">
+            <a className="live-button" href={`${previewRoute}?live=${liveKey}`} target="_blank" rel="noreferrer">
               VIEW LIVE
             </a>
             <button className="secondary-button" type="button" disabled={busy} onClick={() => void save("draft")}>
