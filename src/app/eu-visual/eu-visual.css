@@ -22,9 +22,20 @@
 .eu-intro-copy p { font-size:15px; max-width:330px; padding-top:4px; color:color-mix(in srgb,var(--eu-ink) 80%,transparent); }
 .eu-collection-label { border-top:1px solid color-mix(in srgb,var(--eu-ink) 25%,transparent); display:flex; justify-content:space-between; padding:20px 0; font-size:10px; letter-spacing:.12em; }
 .eu-project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:56px 36px; }
-.eu-cover { position:relative; background:var(--eu-paper); border-radius:16px; overflow:hidden; }
-.eu-cover img { width:100%; height:auto; aspect-ratio:4/5; object-fit:contain; transition:filter 180ms ease; }
-.eu-project-card a:hover .eu-cover img { filter:brightness(1.045); }
+.eu-project-card>a { display:block; border-radius:16px; transform-origin:50% 65%; transition:transform 240ms cubic-bezier(.2,.8,.2,1.15); }
+.eu-cover { position:relative; background:var(--eu-paper); border-radius:16px; overflow:hidden; transition:box-shadow 240ms ease; }
+.eu-cover img { width:100%; height:auto; aspect-ratio:4/5; object-fit:contain; }
+.eu-view-arrow { display:inline-block; transition:transform 200ms cubic-bezier(.2,.8,.2,1.15); }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+ .eu-project-card>a:hover { transform:translateY(-7px) rotate(-.45deg); }
+ .eu-project-card>a:hover .eu-cover { box-shadow:0 18px 34px -20px color-mix(in srgb,var(--eu-ink) 35%,transparent),0 0 0 1px color-mix(in srgb,var(--eu-accent) 18%,transparent); }
+ .eu-project-card>a:hover .eu-view-arrow { transform:translate(3px,-3px); }
+ .eu-project-card>a:active { transform:translateY(-2px) rotate(0deg); transition-duration:90ms; }
+}
+@media(prefers-reduced-motion:no-preference) {
+ .eu-project-card>a:focus-visible { transform:translateY(-7px); }
+ .eu-project-card>a:focus-visible .eu-view-arrow { transform:translate(3px,-3px); }
+}
 .eu-card-index { position:absolute; left:14px; bottom:14px; background:var(--eu-highlight); color:var(--eu-ink); border-radius:24px; padding:8px 12px; font-size:10px; font-weight:700; }
 .eu-card-meta { display:flex; justify-content:space-between; gap:18px; padding-top:19px; align-items:flex-start; }
 .eu-card-meta h3 { font-size:20px; font-weight:500; letter-spacing:-.035em; }

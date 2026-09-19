@@ -90,7 +90,7 @@ export default function EuVisualClient({ initialData }: { initialData: EuLanding
               event.preventDefault(); openProject(p.slug);
             }} aria-label={`View ${p.title}`}>
               <div className="eu-cover"><img src={p.cover.src} alt={p.cover.alt} width={p.cover.width || 1080} height={p.cover.height || 1350} loading={i === 0 ? "eager" : "lazy"} /><span className="eu-card-index">{String(i+1).padStart(2,"0")}</span></div>
-              <div className="eu-card-meta"><div><h3>{p.title}</h3><p>{p.city}{p.country ? `, ${p.country}` : ""}</p></div><span className="eu-view-link">View Project ↗</span></div>
+              <div className="eu-card-meta"><div><h3>{p.title}</h3><p>{p.city}{p.country ? `, ${p.country}` : ""}</p></div><span className="eu-view-link">View Project <span className="eu-view-arrow" aria-hidden="true">↗</span></span></div>
               <p className="eu-card-type">{p.concept ? "CONCEPT PROJECT" : p.projectType} / {p.year}</p>
             </a>
           </article>)}
