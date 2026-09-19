@@ -23,7 +23,8 @@ export type EuProject = {
 };
 export type EuVisualConfig = { title: string; headline: string; description: string; projects: EuProject[] };
 export type EuProjectSummary = Pick<EuProject, "id" | "title" | "slug" | "city" | "country" | "category" | "projectType" | "concept" | "cover" | "year">;
-export type EuLandingData = Omit<EuVisualConfig, "projects"> & { brand: string; projects: EuProjectSummary[] };
+export type EuLandingTheme = { cream: string; paper: string; ink: string; blue: string; yellow: string; orange: string };
+export type EuLandingData = Omit<EuVisualConfig, "projects"> & { brand: string; theme: EuLandingTheme; projects: EuProjectSummary[] };
 
 export function summarizeProjects(config: EuVisualConfig, includeDrafts = false): EuProjectSummary[] {
   return config.projects.filter(p => includeDrafts || p.published).sort((a,b) => a.sortOrder - b.sortOrder).map(

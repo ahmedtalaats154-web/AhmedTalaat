@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import type { EuLandingData } from "../../lib/eu-visual";
 
@@ -58,7 +58,16 @@ export default function EuVisualClient({ initialData }: { initialData: EuLanding
     window.history.replaceState(window.history.state, "", url);
     setSlug(next);
   }
-  return <div className="eu-root">
+  const theme = data.theme ?? initialData.theme;
+  const landingStyle = {
+    "--eu-bg": theme.cream,
+    "--eu-ink": theme.ink,
+    "--eu-accent": theme.blue,
+    "--eu-paper": theme.paper,
+    "--eu-highlight": theme.yellow,
+    "--eu-secondary": theme.orange,
+  } as CSSProperties;
+  return <div className="eu-root" style={landingStyle}>
     <div ref={landing} inert={slug ? true : undefined} aria-hidden={slug ? true : undefined}>
       <nav className="eu-nav" aria-label="Portfolio navigation">
         <a className="eu-mark" href="/">{data.brand}</a>

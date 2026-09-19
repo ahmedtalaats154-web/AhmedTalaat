@@ -15,7 +15,6 @@ export default async function EuVisualPage() {
   const config = await getStoredConfig();
   const eu = config.euVisual;
   return <div className={`${instrument.variable} ${newsreader.variable}`}>
-    <EuVisualClient initialData={{ title: eu.title, headline: eu.headline, description: eu.description, brand: config.identity.brand, projects: summarizeProjects(eu) }} />
+    <EuVisualClient initialData={{ title: eu.title, headline: eu.headline, description: eu.description, brand: config.identity.brand, theme: config.theme, projects: summarizeProjects(eu) }} />
   </div>;
 }
-

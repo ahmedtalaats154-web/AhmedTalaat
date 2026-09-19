@@ -2,6 +2,8 @@
 
 Implemented on 18 September 2026 in the existing Next.js App Router application.
 
+19 September revision: the EU Visual landing inherits the main site's editable theme (cream, ink, cobalt, yellow and orange) and display typography, with restrained accents and the existing minimal layout. North Pier's colors and Instrument Sans / Newsreader remain scoped to its project viewer. Both server-rendered content and authenticated draft previews receive the site theme. Production build and nine desktop/tablet/mobile landing and viewer checks passed after this revision.
+
 ## Routes and viewer
 
 - Landing: `/eu-visual`
@@ -142,4 +144,3 @@ Published config downloaded before changes:
 
 Development branch: `feature/eu-visual`.
 Vercel CLI authentication was expired during implementation. GitHub push authentication is available; deployment status should be checked after pushing the feature branch. This document does not claim production publication.
-
