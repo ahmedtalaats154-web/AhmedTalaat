@@ -104,7 +104,11 @@ function FieldEditor({
   const key = String(path[path.length - 1] ?? label);
   if (path[0] === "euVisual" && key === "id") return null;
   if (path[0] === "euVisual" && key === "kind") {
-    return <label className="control-row"><span>Section type</span><select value={String(value)} onChange={e=>onChange(path,e.target.value)}>{["hero","overview","idea","system","place","products","social-intro","chapter","grid","details","ai","closing"].map(kind=><option key={kind} value={kind}>{kind}</option>)}</select></label>;
+    return <label className="control-row"><span>Section type</span><select value={String(value)} onChange={e=>onChange(path,e.target.value)}>{["hero","overview","idea","system","place","products","social-intro","chapter","grid","motion","details","ai","closing"].map(kind=><option key={kind} value={kind}>{kind}</option>)}</select></label>;
+  }
+  if (path[0] === "euVisual" && (key === "layout" || key === "family")) {
+    const options = key === "layout" ? ["default","compact","balanced","wide"] : ["default","bebas-neue","poppins"];
+    return <label className="control-row"><span>{label}</span><select value={String(value)} onChange={e=>onChange(path,e.target.value)}>{options.map(option=><option key={option} value={option}>{option}</option>)}</select></label>;
   }
 
   if (typeof value === "boolean") {
@@ -245,15 +249,16 @@ function ArrayEditor({
 }) {
   const eu = path[0] === "euVisual";
   const listKey = String(path[path.length - 1]);
-  const commit = (items: JsonValue[]) => onChange(path, eu && listKey === "socialDesigns" ? items.map((item,index)=>({...item as Record<string,JsonValue>,sortOrder:(index+1)*10})) : items);
+  const commit = (items: JsonValue[]) => onChange(path, eu && ["socialDesigns","motionStories"].includes(listKey) ? items.map((item,index)=>({...item as Record<string,JsonValue>,sortOrder:(index+1)*10})) : items);
   const addEuItem = () => {
     const id=crypto.randomUUID();
     const asset={src:"",alt:"",width:1080,height:1350};
     const templates: Record<string,JsonValue> = {
       colors:{id,name:"New color",hex:"#183344"},
-      typography:{id,name:"",description:"",sample:""},
-      socialDesigns:{id,postNumber:value.length+1,image:"",alt:"",title:"New design",category:"",purpose:"",visualApproach:"",supportingCopy:"",chapter:1,sortOrder:(value.length+1)*10,enabled:true},
-      sections:{id,kind:"chapter",enabled:true,title:"New chapter",copy:"",chapter:5},
+      typography:{id,name:"",description:"",sample:"",family:"default"},
+      socialDesigns:{id,postNumber:value.length+1,image:"",alt:"",title:"New design",category:"",purpose:"",visualApproach:"",supportingCopy:"",chapter:1,sortOrder:(value.length+1)*10,enabled:true,width:1080,height:1350},
+      motionStories:{id,title:"New story",subtitle:"",src:"",alt:"",width:1080,height:1920,sortOrder:(value.length+1)*10,enabled:false},
+      sections:{id,kind:"chapter",enabled:true,title:"New chapter",copy:"",chapter:5,layout:"default"},
       details:asset,visuals:asset,
     };
     commit([...value,templates[listKey] ?? ""]);

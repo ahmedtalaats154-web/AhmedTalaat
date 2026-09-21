@@ -43,9 +43,8 @@ export default function EuVisualEditor({ value, onChange, renderFields }: {
         <button type="button" className="danger-button" onClick={()=>{if(window.confirm(`Remove "${project.title}" from this draft? Uploaded media will remain in the library.`)){onChange({...value,projects:value.projects.filter(p=>p.id!==project.id)});setSelected("");}}}>REMOVE PROJECT</button>
       </div>
       {(!project.assets.placeSheet.src || !project.assets.productsSheet.src) && <p className="eu-admin-notice">Place / Products sheets without an image are hidden from the presentation. Add their approved image URLs below; use their original width and height.</p>}
-      <p className="eu-admin-notice">Sections follow their list order. Social designs use Sort order within each Chapter (1–4 by default). New items can be added even when a list is empty. AI process appears only when Show ai process is ON and its section is enabled.</p>
-      {renderFields(project,["euVisual","projects",index])}
+      <p className="eu-admin-notice">Sections follow their list order. Social designs use Sort order within each Chapter. Motion stories are a separate video list; enable a Motion section to show them. Keep original image dimensions. New items can be added even when a list is empty. AI process appears only when Show ai process is ON and its section is enabled.</p>
+      {renderFields({...project,motionStories:project.motionStories ?? []},["euVisual","projects",index])}
     </>}
   </div>;
 }
-

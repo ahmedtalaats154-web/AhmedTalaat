@@ -15,6 +15,8 @@ export default function EuVisualClient({ initialData }: { initialData: EuLanding
   const pushed = useRef(false);
 
   useEffect(() => {
+    const previousRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
     const params = new URLSearchParams(window.location.search);
     const isDraft = params.get("site_preview") === "draft";
     setDraft(isDraft);
@@ -30,7 +32,7 @@ export default function EuVisualClient({ initialData }: { initialData: EuLanding
         .then(async r => { if (!r.ok) throw new Error("Sign in to the dashboard to preview drafts."); return r.json(); })
         .then(setData).catch(e => { if (e.name !== "AbortError") setError(e.message); });
     }
-    return () => { window.removeEventListener("popstate", onPop); abort.abort(); };
+    return () => { window.removeEventListener("popstate", onPop); window.history.scrollRestoration = previousRestoration; abort.abort(); };
   }, []);
 
   function openProject(next: string) {

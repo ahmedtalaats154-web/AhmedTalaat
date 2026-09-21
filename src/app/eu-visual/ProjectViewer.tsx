@@ -2,14 +2,15 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type RefObject } from "react";
 import type { EuAsset, EuProject, EuProjectSummary, EuSection, EuSocial } from "../../lib/eu-visual";
+import MotionStory from "./MotionStory";
 
 function Artwork({ asset, eager = false, social = false }: { asset: EuAsset; eager?: boolean; social?: boolean }) {
   if (!asset.src) return null;
-  return <img className={social ? "eu-artwork eu-social-art" : "eu-artwork eu-native-art"} src={asset.src} alt={asset.alt} width={asset.width || undefined} height={asset.height || undefined} loading={eager ? "eager" : "lazy"} decoding="async" />;
+  return <img className={social ? "eu-artwork eu-social-art" : "eu-artwork eu-native-art"} style={asset.width > 0 && asset.height > 0 ? { aspectRatio: `${asset.width} / ${asset.height}` } : undefined} src={asset.src} alt={asset.alt} width={asset.width || undefined} height={asset.height || undefined} loading={eager ? "eager" : "lazy"} decoding="async" />;
 }
 function SocialDesign({ post }: { post: EuSocial }) {
   return <figure className="eu-social-figure">
-    <Artwork social asset={{ src: post.image, alt: post.alt || post.title, width: 1080, height: 1350 }} />
+    <Artwork social asset={{ src: post.image, alt: post.alt || post.title, width: post.width || 1080, height: post.height || 1350 }} />
     <figcaption><p className="eu-eyebrow">POST {String(post.postNumber).padStart(2,"0")} / {post.category}</p><h3>{post.title}</h3>
       <dl><dt>Purpose</dt><dd>{post.purpose}</dd><dt>Visual Approach</dt><dd>{post.visualApproach}</dd></dl>
       {post.supportingCopy && <p>{post.supportingCopy}</p>}
@@ -32,18 +33,21 @@ function CaseSection({ section: s, project: p, index }: { section: EuSection; pr
   }
   if (s.kind === "ai" && !p.show_ai_process) return null;
   if (s.kind === "details" && !p.assets.details.some(a=>a.src)) return null;
-  return <section className={`eu-case-section eu-section-${s.kind} ${s.kind === "chapter" ? `eu-chapter-${s.chapter % 4}` : ""}`} data-section={s.id}>
+  const stories = (p.motionStories ?? []).filter(story=>story.enabled && story.src).sort((a,b)=>a.sortOrder-b.sortOrder);
+  if (s.kind === "motion" && !stories.length) return null;
+  return <section className={`eu-case-section eu-section-${s.kind} eu-layout-${s.layout || "default"} ${s.kind === "chapter" ? `eu-chapter-${s.chapter % 4}` : ""}`} data-section={s.id}>
     {heading}
     {s.kind === "overview" && <div className="eu-overview"><div><p className="eu-lead">{p.overview.summary}</p><p>{p.overview.objective}</p>{p.overview.challenge && <p>{p.overview.challenge}</p>}</div><div className="eu-role-list"><p className="eu-eyebrow">ROLE / CAPABILITIES</p>{p.overview.roles.map((r,i)=><span key={i}>{r}</span>)}{p.concept && <p className="eu-concept-note">Independent fictional concept. Not commissioned client work.</p>}</div></div>}
     {s.kind === "idea" && <><p className="eu-brand-idea">{p.overview.brandIdea}</p><div className="eu-personality">{p.overview.personality.map((item,i)=><span key={i}>{item}</span>)}</div><p className="eu-idea-position">{p.overview.positioning}</p></>}
     {s.kind === "system" && <>
       <div className="eu-palette">{p.brand.colors.map(c=><div key={c.id}><div className="eu-swatch" style={{background:c.hex}} /><strong>{c.name}</strong><span>{c.hex}</span></div>)}</div>
-      <div className="eu-type-grid">{p.brand.typography.map((font,i)=><div key={font.id} className={i%2 ? "eu-editorial-type" : ""}><p className="eu-eyebrow">{font.name}</p><p className="eu-type-sample">{font.sample}</p><p className="eu-type-description">{font.description}</p></div>)}</div>
+      <div className="eu-type-grid">{p.brand.typography.map((font,i)=><div key={font.id} className={font.family && font.family !== "default" ? `eu-font-${font.family}` : i%2 ? "eu-editorial-type" : ""}><p className="eu-eyebrow">{font.name}</p><p className="eu-type-sample">{font.sample}</p><p className="eu-type-description">{font.description}</p></div>)}</div>
       <div className="eu-direction"><h3>{p.brand.visualTerritory}</h3><div><p>{p.brand.photographyDirection}</p><p className="eu-small">{p.brand.materials.join(" / ")}</p></div></div>
     </>}
     {s.kind === "social-intro" && <div className="eu-pillars">{p.contentPillars.map((pillar,i)=><span key={i}><small>{String(i+1).padStart(2,"0")}</small>{pillar}</span>)}</div>}
     {s.kind === "chapter" && <div className="eu-pair">{posts.filter(post=>post.chapter === s.chapter).map(post=><SocialDesign post={post} key={post.id}/>)}</div>}
-    {s.kind === "grid" && <div className="eu-full-grid">{posts.map(post=><figure key={post.id}><Artwork social asset={{src:post.image,alt:post.alt || post.title,width:1080,height:1350}}/><figcaption>{String(post.postNumber).padStart(2,"0")} / {post.title}</figcaption></figure>)}</div>}
+    {s.kind === "grid" && <div className="eu-full-grid">{posts.map(post=><figure key={post.id}><Artwork social asset={{src:post.image,alt:post.alt || post.title,width:post.width || 1080,height:post.height || 1350}}/><figcaption>{String(post.postNumber).padStart(2,"0")} / {post.title}</figcaption></figure>)}</div>}
+    {s.kind === "motion" && <div className="eu-motion-grid">{stories.map(story=><MotionStory key={story.id} story={story}/>)}</div>}
     {s.kind === "details" && <div className="eu-detail-grid">{p.assets.details.filter(a=>a.src).map((asset,i)=><Artwork key={i} asset={asset}/>)}</div>}
     {s.kind === "ai" && <><h3>{p.aiProcess.title}</h3><p className="eu-lead">{p.aiProcess.copy}</p><div className="eu-personality">{p.aiProcess.points.map((point,i)=><span key={i}>{point}</span>)}</div><div className="eu-detail-grid">{p.aiProcess.visuals.map((asset,i)=><Artwork key={i} asset={asset}/>)}</div></>}
     {s.kind === "closing" && <div className="eu-closing"><div><p className="eu-brand-idea">{p.closing.statement}</p><p>{p.city}, {p.country}</p>{p.concept && <p className="eu-eyebrow">{p.projectType}</p>}</div><Artwork asset={p.closing.image} social /></div>}
@@ -97,7 +101,7 @@ export default function ProjectViewer({ slug, draft, projects, onClose, onNaviga
   },[slug,draft,retry]);
   const index=projects.findIndex(p=>p.slug===slug);
   const navigate=(direction:number)=>{const next=projects[(index+direction+projects.length)%projects.length];if(next){closeButton.current?.focus();onNavigate(next.slug);}};
-  const styles = project ? { "--eu-bg":project.brand.background, "--eu-ink":project.brand.textColor, "--eu-accent":project.brand.accentColor } as CSSProperties : undefined;
+  const styles = project ? { "--eu-bg":project.brand.background, "--eu-ink":project.brand.textColor, "--eu-accent":project.brand.accentColor, "--eu-grid-bg":project.brand.gridBackground || "#e7dfcf" } as CSSProperties : undefined;
   return <div ref={dialog} className="eu-viewer" role="dialog" aria-modal="true" aria-label={project?.title || "Project viewer"} style={styles}>
     <header className="eu-viewer-bar"><span>EU VISUAL <i>/</i> {project?.city || "PROJECT"}</span><div>{projects.length>1 && <><button onClick={()=>navigate(-1)} aria-label="Previous project">← Previous</button><button onClick={()=>navigate(1)} aria-label="Next project">Next →</button></>}<button ref={closeButton} className="eu-close" onClick={onClose}>Close <span aria-hidden="true">×</span></button></div></header>
     <div ref={scrollArea} className="eu-viewer-scroll" data-lenis-prevent tabIndex={-1}>

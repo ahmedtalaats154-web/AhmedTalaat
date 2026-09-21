@@ -383,6 +383,382 @@
           "enabled": true
         }
       ]
+    },
+    {
+      "id": "trama",
+      "title": "TRAMA",
+      "slug": "trama",
+      "subtitle": "Fresh Pasta Bar",
+      "city": "Berlin",
+      "country": "Germany",
+      "category": "Hospitality / Restaurant",
+      "projectType": "Concept Project",
+      "year": 2026,
+      "concept": true,
+      "published": true,
+      "sortOrder": 20,
+      "cover": {
+        "src": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/01-Rigatoni-Burrata-Tomato.jpg",
+        "alt": "TRAMA Rigatoni Burrata and Tomato social design — Sauce Does the Talking",
+        "width": 1080,
+        "height": 1350
+      },
+      "overview": {
+        "summary": "TRAMA is a fictional fresh pasta bar concept created for Berlin's younger food audience. The project explores a bold social-first visual system built around fresh pasta, appetite-led imagery, playful typography and fast-moving campaign content.",
+        "objective": "",
+        "positioning": "",
+        "roles": [
+          "Social Media Design",
+          "Art Direction",
+          "Campaign Concepts",
+          "AI Visuals",
+          "Short-form Content"
+        ],
+        "brandIdea": "",
+        "functionalLine": "Fresh pasta. Fast content. Strong appetite.",
+        "challenge": "",
+        "personality": [
+          "Youthful",
+          "Food-first",
+          "Playful",
+          "Editorial"
+        ]
+      },
+      "brand": {
+        "colors": [
+          {
+            "id": "warm-cream",
+            "name": "Warm Cream",
+            "hex": "#F2E7CF"
+          },
+          {
+            "id": "burgundy",
+            "name": "Burgundy",
+            "hex": "#7C1820"
+          },
+          {
+            "id": "ink",
+            "name": "Ink",
+            "hex": "#171713"
+          }
+        ],
+        "typography": [
+          {
+            "id": "bebas-neue",
+            "name": "Bebas Neue",
+            "description": "Condensed display type gives the food-led headlines a direct, graphic voice.",
+            "sample": "SAUCE DOES THE TALKING",
+            "family": "bebas-neue"
+          },
+          {
+            "id": "poppins",
+            "name": "Poppins",
+            "description": "Rounded geometric type handles dish names and the smaller lines inside the approved artwork.",
+            "sample": "Fresh pasta. Strong appetite.",
+            "family": "poppins"
+          }
+        ],
+        "visualTerritory": "",
+        "materials": [],
+        "photographyDirection": "",
+        "background": "#F2E7CF",
+        "textColor": "#171713",
+        "accentColor": "#7C1820",
+        "gridBackground": "#E9DDC5"
+      },
+      "assets": {
+        "placeSheet": {
+          "src": "",
+          "alt": "",
+          "width": 1080,
+          "height": 1350
+        },
+        "productsSheet": {
+          "src": "",
+          "alt": "",
+          "width": 1080,
+          "height": 1350
+        },
+        "productHighlights": [],
+        "details": []
+      },
+      "socialDesigns": [
+        {
+          "id": "trama-mood-1",
+          "postNumber": 1,
+          "image": "/media/eu-visual/trama/01-FOUR-MOODS/01-TWIRL-Spaghetti-Pomodoro.jpg",
+          "alt": "TRAMA Four Moods TWIRL — Spaghetti Pomodoro social media design",
+          "title": "TWIRL — Spaghetti Pomodoro",
+          "category": "FOUR MOODS",
+          "purpose": "A burgundy field and a tightly wound forkful introduce the campaign's bold Italian mood.",
+          "visualApproach": "Repeated Pomodoro type sits behind the fork; the headline stays clear above it.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 10,
+          "enabled": true,
+          "width": 1792,
+          "height": 2400
+        },
+        {
+          "id": "trama-mood-2",
+          "postNumber": 2,
+          "image": "/media/eu-visual/trama/01-FOUR-MOODS/02-ZESTY-Lemon-Butter.jpg",
+          "alt": "TRAMA Four Moods ZESTY — Lemon Butter Pasta social media design",
+          "title": "ZESTY — Lemon Butter Pasta",
+          "category": "FOUR MOODS",
+          "purpose": "Express a brighter, buttery personality inside the same campaign structure.",
+          "visualApproach": "Warm cream replaces burgundy while lemon zest and pale pasta hold the centre.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 20,
+          "enabled": true,
+          "width": 1792,
+          "height": 2400
+        },
+        {
+          "id": "trama-mood-3",
+          "postNumber": 3,
+          "image": "/media/eu-visual/trama/01-FOUR-MOODS/03-FRESH-Pesto.jpg",
+          "alt": "TRAMA Four Moods FRESH — Pesto Pasta social media design",
+          "title": "FRESH — Pesto Pasta",
+          "category": "FOUR MOODS",
+          "purpose": "Give pesto its own green personality without changing the campaign's visual grammar.",
+          "visualApproach": "Basil, pesto and a green field share the same vertical fork composition.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 30,
+          "enabled": true,
+          "width": 1792,
+          "height": 2400
+        },
+        {
+          "id": "trama-mood-4",
+          "postNumber": 4,
+          "image": "/media/eu-visual/trama/01-FOUR-MOODS/04-FEISTY-Arrabbiata.jpg",
+          "alt": "TRAMA Four Moods FEISTY — Spicy Arrabbiata social media design",
+          "title": "FEISTY — Spicy Arrabbiata",
+          "category": "FOUR MOODS",
+          "purpose": "Close the four-part sequence with a hotter, more assertive mood.",
+          "visualApproach": "Orange surrounds stacked rigatoni; chilli and sauce reinforce the headline's attitude.",
+          "supportingCopy": "",
+          "chapter": 1,
+          "sortOrder": 40,
+          "enabled": true,
+          "width": 1792,
+          "height": 2400
+        },
+        {
+          "id": "trama-campaign-1",
+          "postNumber": 5,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/01-Rigatoni-Burrata-Tomato.jpg",
+          "alt": "TRAMA Rigatoni Burrata & Tomato — SAUCE DOES THE TALKING social campaign design",
+          "title": "Rigatoni Burrata & Tomato",
+          "category": "Graphic food hero",
+          "purpose": "Let the sauce and burrata lead the campaign opening.",
+          "visualApproach": "Burgundy curves frame a large plate; the cream area gives the headline its own space.",
+          "supportingCopy": "SAUCE DOES THE TALKING",
+          "chapter": 2,
+          "sortOrder": 50,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "trama-campaign-2",
+          "postNumber": 6,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/02-Cacio-e-Pepe.jpg",
+          "alt": "TRAMA Cacio e Pepe — PEPPER IN MOTION social campaign design",
+          "title": "Cacio e Pepe",
+          "category": "Hand interaction / action",
+          "purpose": "Turn seasoning into the focal moment of a food post.",
+          "visualApproach": "Falling pepper connects the hand above to the pasta below, between two clear text areas.",
+          "supportingCopy": "PEPPER IN MOTION",
+          "chapter": 2,
+          "sortOrder": 60,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "trama-campaign-3",
+          "postNumber": 7,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/03-Beef-Ragu.jpg",
+          "alt": "TRAMA Beef Ragù — SLOW COOKED BIG MOOD social campaign design",
+          "title": "Beef Ragù",
+          "category": "Food action / graphic composition",
+          "purpose": "Make the fork lift carry the dish's rich, slow-cooked character.",
+          "visualApproach": "Lifted ribbons sit opposite three stacked headline lines on a burgundy panel.",
+          "supportingCopy": "SLOW COOKED BIG MOOD",
+          "chapter": 2,
+          "sortOrder": 70,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "trama-campaign-4",
+          "postNumber": 8,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/04-From-Kitchen-To-Table.jpg",
+          "alt": "TRAMA From Kitchen to Table — FROM KITCHEN TO TABLE social campaign design",
+          "title": "From Kitchen to Table",
+          "category": "Restaurant / place experience",
+          "purpose": "Expand the story from a plate to the experience of being served.",
+          "visualApproach": "A foreground handoff leads back to the open kitchen, with type placed in the lighter window area.",
+          "supportingCopy": "FROM KITCHEN TO TABLE",
+          "chapter": 2,
+          "sortOrder": 80,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "trama-campaign-5",
+          "postNumber": 9,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/05-Penne-Pomodoro.jpg",
+          "alt": "TRAMA Penne Pomodoro social campaign design",
+          "title": "Penne Pomodoro",
+          "category": "Editorial typography-led",
+          "purpose": "Give the feed a clear graphic pause between action-led scenes.",
+          "visualApproach": "Oversized Penne Pasta lettering crosses behind the plate; outlined letters keep the overlap readable.",
+          "supportingCopy": "",
+          "chapter": 2,
+          "sortOrder": 90,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "trama-campaign-6",
+          "postNumber": 10,
+          "image": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/06-Tear-It-Up-Focaccia.jpg",
+          "alt": "TRAMA Fresh Focaccia — TEAR IT UP — FRESH FOCACCIA social campaign design",
+          "title": "Fresh Focaccia",
+          "category": "Texture / action hero",
+          "purpose": "Make the bread's crust and soft interior the subject.",
+          "visualApproach": "Two hands pull the focaccia apart diagonally, exposing the crumb below the headline.",
+          "supportingCopy": "TEAR IT UP — FRESH FOCACCIA",
+          "chapter": 2,
+          "sortOrder": 100,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "motionStories": [
+        {
+          "id": "trama-pepper-motion",
+          "title": "PEPPER IN MOTION",
+          "subtitle": "Cacio e Pepe",
+          "src": "/media/eu-visual/trama/03-MOTION-STORIES/01-Pepper-In-Motion.mp4",
+          "alt": "TRAMA Pepper in Motion vertical story video",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 10,
+          "enabled": true
+        },
+        {
+          "id": "trama-focaccia-motion",
+          "title": "TEAR IT UP",
+          "subtitle": "Fresh Focaccia",
+          "src": "/media/eu-visual/trama/03-MOTION-STORIES/02-Tear-It-Up-Focaccia.mp4",
+          "alt": "TRAMA Tear It Up Fresh Focaccia vertical story video",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 20,
+          "enabled": true
+        }
+      ],
+      "contentPillars": [],
+      "show_ai_process": false,
+      "aiProcess": {
+        "title": "",
+        "copy": "",
+        "points": [],
+        "visuals": []
+      },
+      "closing": {
+        "statement": "Fresh pasta. Fast content. Strong appetite.",
+        "image": {
+          "src": "/media/eu-visual/trama/02-MAIN-CAMPAIGN/06-Tear-It-Up-Focaccia.jpg",
+          "alt": "TRAMA Fresh Focaccia Tear It Up social media design",
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "sections": [
+        {
+          "id": "hero",
+          "kind": "hero",
+          "title": "TRAMA",
+          "copy": "",
+          "layout": "default",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "overview",
+          "kind": "overview",
+          "title": "Fresh pasta. Social first.",
+          "copy": "",
+          "layout": "default",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "system",
+          "kind": "system",
+          "title": "Three colours. Room for ten personalities.",
+          "copy": "A compact visual system designed to keep the feed energetic and recognisable while allowing each dish to carry its own mood.",
+          "layout": "compact",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "four-moods",
+          "kind": "chapter",
+          "title": "FOUR MOODS",
+          "copy": "FOUR MOODS turns four pasta dishes into four distinct visual personalities — using colour, typography and food form as the campaign language.",
+          "layout": "balanced",
+          "chapter": 1,
+          "enabled": true
+        },
+        {
+          "id": "main-campaign",
+          "kind": "chapter",
+          "title": "MAIN SOCIAL CAMPAIGN",
+          "copy": "A second content system expands TRAMA beyond one visual formula — mixing graphic food posters, editorial layouts, human interaction and restaurant moments while keeping the same visual identity.",
+          "layout": "default",
+          "chapter": 2,
+          "enabled": true
+        },
+        {
+          "id": "grid",
+          "kind": "grid",
+          "title": "Ten posts. One appetite.",
+          "copy": "Four moods and six campaign posts, brought together as one static feed. Colour, scale and viewpoint change; the visual identity stays recognisable.",
+          "layout": "wide",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "motion",
+          "kind": "motion",
+          "title": "MOTION STORIES",
+          "copy": "Short-form adaptations extend the static campaign into subtle food motion designed for Stories and vertical social placements.",
+          "layout": "default",
+          "chapter": 0,
+          "enabled": true
+        },
+        {
+          "id": "closing",
+          "kind": "closing",
+          "title": "TRAMA",
+          "copy": "Social Media Design / Art Direction / Campaign Concepts / AI Visuals / Short-form Content",
+          "layout": "default",
+          "chapter": 0,
+          "enabled": true
+        }
+      ]
     }
   ]
 }

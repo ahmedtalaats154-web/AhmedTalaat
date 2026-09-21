@@ -1,7 +1,8 @@
 export type EuAsset = { src: string; alt: string; width: number; height: number };
-export type EuSectionKind = "hero" | "overview" | "idea" | "system" | "place" | "products" | "social-intro" | "chapter" | "grid" | "details" | "ai" | "closing";
-export type EuSection = { id: string; kind: EuSectionKind; enabled: boolean; title: string; copy: string; chapter: number };
-export type EuSocial = { id: string; postNumber: number; image: string; alt: string; title: string; category: string; purpose: string; visualApproach: string; supportingCopy: string; chapter: number; sortOrder: number; enabled: boolean };
+export type EuSectionKind = "hero" | "overview" | "idea" | "system" | "place" | "products" | "social-intro" | "chapter" | "grid" | "motion" | "details" | "ai" | "closing";
+export type EuSection = { id: string; kind: EuSectionKind; enabled: boolean; title: string; copy: string; chapter: number; layout?: "default" | "compact" | "balanced" | "wide" };
+export type EuSocial = { id: string; postNumber: number; image: string; alt: string; title: string; category: string; purpose: string; visualApproach: string; supportingCopy: string; chapter: number; sortOrder: number; enabled: boolean; width?: number; height?: number };
+export type EuMotionStory = { id: string; title: string; subtitle: string; src: string; alt: string; width: number; height: number; sortOrder: number; enabled: boolean };
 export type EuProject = {
   id: string; title: string; slug: string; subtitle: string; city: string; country: string;
   category: string; projectType: string; year: number; concept: boolean; published: boolean; sortOrder: number;
@@ -9,12 +10,13 @@ export type EuProject = {
   overview: { summary: string; objective: string; positioning: string; roles: string[]; brandIdea: string; functionalLine: string; challenge: string; personality: string[] };
   brand: {
     colors: { id: string; name: string; hex: string }[];
-    typography: { id: string; name: string; description: string; sample: string }[];
+    typography: { id: string; name: string; description: string; sample: string; family?: "default" | "bebas-neue" | "poppins" }[];
     visualTerritory: string; materials: string[]; photographyDirection: string;
-    background: string; textColor: string; accentColor: string;
+    background: string; textColor: string; accentColor: string; gridBackground?: string;
   };
   assets: { placeSheet: EuAsset; productsSheet: EuAsset; productHighlights: string[]; details: EuAsset[] };
   socialDesigns: EuSocial[];
+  motionStories?: EuMotionStory[];
   contentPillars: string[];
   show_ai_process: boolean;
   aiProcess: { title: string; copy: string; points: string[]; visuals: EuAsset[] };
@@ -44,7 +46,7 @@ export function createEuProject(): EuProject {
     overview: { summary: "", objective: "", positioning: "", roles: [], brandIdea: "", functionalLine: "", challenge: "", personality: [] },
     brand: { colors: [], typography: [], visualTerritory: "", materials: [], photographyDirection: "", background: "#F1EBDD", textColor: "#183344", accentColor: "#B84B3C" },
     assets: { placeSheet: emptyAsset(), productsSheet: emptyAsset(), productHighlights: [], details: [] },
-    socialDesigns: [], contentPillars: [], show_ai_process: false,
+    socialDesigns: [], motionStories: [], contentPillars: [], show_ai_process: false,
     aiProcess: { title: "Visual Production System", copy: "", points: [], visuals: [] },
     closing: { statement: "", image: emptyAsset() },
     sections: [
@@ -57,6 +59,7 @@ export function createEuProject(): EuProject {
       { id: "social-intro", kind: "social-intro", enabled: true, title: "One visual world. Multiple content roles.", copy: "", chapter: 0 },
       ...[1,2,3,4].map(chapter => ({ id: `chapter-${chapter}`, kind: "chapter" as const, enabled: true, title: `Chapter ${chapter}`, copy: "", chapter })),
       { id: "grid", kind: "grid", enabled: true, title: "The complete system", copy: "", chapter: 0 },
+      { id: "motion", kind: "motion", enabled: false, title: "Motion stories", copy: "", chapter: 0 },
       { id: "details", kind: "details", enabled: false, title: "A closer look", copy: "", chapter: 0 },
       { id: "ai", kind: "ai", enabled: true, title: "", copy: "", chapter: 0 },
       { id: "closing", kind: "closing", enabled: true, title: "", copy: "", chapter: 0 },
@@ -76,8 +79,13 @@ export function validateEuVisual(value: EuVisualConfig): string | null {
     slugs.add(p.slug);
     if (p.published && (!p.title.trim() || !p.cover.src.trim())) return `Add a title and cover before publishing ${p.slug}.`;
     if (!Array.isArray(p.sections) || !Array.isArray(p.socialDesigns)) return "Project sections and social designs must be lists.";
-    for (const list of [p.sections, p.socialDesigns]) {
+    if (p.motionStories !== undefined && !Array.isArray(p.motionStories)) return "Motion stories must be a list.";
+    for (const list of [p.sections, p.socialDesigns, p.motionStories ?? []]) {
       if (new Set(list.map(item => item.id)).size !== list.length) return `Duplicate item IDs in ${p.slug}.`;
+    }
+    for (const story of p.motionStories ?? []) {
+      if (story.enabled && (!story.src.trim() || !story.alt.trim() || !story.title.trim())) return `Add a video URL, title and accessible description for each enabled motion story in ${p.slug}.`;
+      if (story.enabled && (story.width <= 0 || story.height <= 0 || !Number.isFinite(story.width) || !Number.isFinite(story.height))) return `Motion stories in ${p.slug} need positive dimensions.`;
     }
   }
   return null;
