@@ -87,6 +87,7 @@ North Pier's project data was compared with the pre-task HEAD and is identical. 
 - `npm run lint`: unavailable; no lint script/configuration in this repository. No lint success is claimed.
 - Full updated Playwright suite: 22 passed, 8 deliberately skipped (admin/API-only cases run on desktop, not duplicated on tablet/mobile).
 - Additional TRAMA rerun after screenshot capture correction: 7 passed, 2 deliberately skipped.
+- Final motion regression after repeated manual play/pause support under reduced motion: 3 passed (desktop/tablet/mobile); build passed again.
 - Desktop 1440 × 1000, tablet 820 × 1180, mobile 390 × 844 verified.
 - Checked: counts and order, native image ratios, no horizontal overflow, deferred video loads, natural playback and loop, play/pause, offscreen pause, reduced motion, next/previous, Escape, browser Back/Forward, selected-project refresh, focus restoration and landing scroll restoration.
 - Existing single-project test assumptions were updated for the two-project collection. Keyboard activation in the scroll-restoration test avoids Playwright's automatic card scrolling changing the starting position.
@@ -95,4 +96,3 @@ North Pier's project data was compared with the pre-task HEAD and is identical. 
 ## Assumptions
 
 The folder/filename map is authoritative. Extra PSDs and unrelated export directories are not additional delivery assets. Year is 2026. The brief's fallback-cover permission is used. Projects remain data-editable; initial order follows the supplied brief rather than permanently locking admin controls.
-

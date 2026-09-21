@@ -10,12 +10,13 @@ export default function MotionStory({ story }: { story: EuMotionStory }) {
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
   const [userPaused, setUserPaused] = useState(false);
+  const [manualPlay, setManualPlay] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const media = matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(media.matches);
+    const update = () => { setReduced(media.matches); setManualPlay(false); };
     update(); media.addEventListener("change", update);
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
@@ -30,7 +31,7 @@ export default function MotionStory({ story }: { story: EuMotionStory }) {
     if (!element || !loaded) return;
     let disposed = false;
     const update = () => {
-      if (visible && !document.hidden && !reduced && !userPaused) {
+      if (visible && !document.hidden && (!reduced || manualPlay) && !userPaused) {
         element.play().then(() => {
           if (disposed || document.hidden) element.pause();
         }).catch(() => { /* The play button remains available if autoplay is blocked. */ });
@@ -38,12 +39,12 @@ export default function MotionStory({ story }: { story: EuMotionStory }) {
     };
     update(); document.addEventListener("visibilitychange", update);
     return () => { disposed = true; document.removeEventListener("visibilitychange", update); element.pause(); };
-  }, [loaded, visible, reduced, userPaused]);
+  }, [loaded, visible, reduced, userPaused, manualPlay]);
 
   function togglePlayback() {
     if (!video.current) return;
     if (playing) { setUserPaused(true); video.current.pause(); }
-    else { setUserPaused(false); video.current.play().catch(() => setFailed(true)); }
+    else { setManualPlay(true); setUserPaused(false); video.current.play().catch(() => setFailed(true)); }
   }
 
   return <figure className="eu-motion-story">

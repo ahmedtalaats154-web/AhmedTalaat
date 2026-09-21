@@ -105,6 +105,10 @@ test("motion defers until visible, plays and loops naturally, pauses offscreen",
   await expect(first).toHaveJSProperty("paused",true);
   await page.getByRole("button",{name:"Play PEPPER IN MOTION",exact:true}).click();
   await expect(first).toHaveJSProperty("paused",false);
+  await page.getByRole("button",{name:"Pause PEPPER IN MOTION",exact:true}).click();
+  await expect(first).toHaveJSProperty("paused",true);
+  await page.getByRole("button",{name:"Play PEPPER IN MOTION",exact:true}).click();
+  await expect(first).toHaveJSProperty("paused",false);
 });
 
 test("TRAMA admin edits and reorders independent static and motion data", async ({page,request},info)=>{
