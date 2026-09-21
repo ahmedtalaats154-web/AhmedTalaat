@@ -17,6 +17,7 @@ test("TRAMA preserves locked groups, original dimensions and the shared viewer",
   await expect(page.getByRole("dialog",{name:"TRAMA",exact:true})).toBeVisible();
   await expect(page.locator("body")).toHaveCSS("position","fixed");
   await expect(page.locator(".eu-viewer")).toHaveCSS("background-color","rgb(242, 231, 207)");
+  await expect(page.locator(".eu-hero-meta").getByText("Restaurant / Social Media / Campaign System",{exact:true})).toBeVisible();
   await expect(page.locator("[data-section]")).toHaveCount(8);
   expect(await page.locator("[data-section]").evaluateAll(nodes=>nodes.map(n=>n.getAttribute("data-section")))).toEqual(["hero","overview","system","four-moods","main-campaign","grid","motion","closing"]);
   expect(videos).toEqual([]);
@@ -40,6 +41,10 @@ test("TRAMA preserves locked groups, original dimensions and the shared viewer",
   }
   expect(await page.locator(".eu-viewer-scroll").evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
   await expect(page.locator(".eu-close")).toBeInViewport();
+  await expect(page.locator("[data-section='closing'] + .eu-project-cta")).toHaveCount(1);
+  await expect(page.locator(".eu-project-cta")).toHaveCSS("color","rgb(23, 23, 19)");
+  await expect(page.locator(".eu-project-cta").getByRole("link",{name:"Start a project ↗"})).toHaveAttribute("href","mailto:ahmedtalaats154@gmail.com?subject=Hospitality%20Visual%20Project");
+  await expect(page.locator(".eu-project-cta + .eu-case-footer")).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(y);

@@ -254,7 +254,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 2,
+  version: 3,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -496,6 +496,14 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     merged.archive.visible = true;
     merged.archive.order = 60;
     merged.work.order = 70;
+  }
+
+  if (incomingVersion < 3) {
+    merged.version = 3;
+    const trama = merged.euVisual.projects.find((project) => project.id === "trama" || project.slug === "trama");
+    if (trama?.category === "Hospitality / Restaurant") {
+      trama.category = "Restaurant / Social Media / Campaign System";
+    }
   }
 
   const hasLegacyArchiveMetadata =

@@ -12,9 +12,14 @@ test("landing is light, responsive and only fetches the cover",async({page},info
   await expect(page.getByRole("link",{name:"View North Pier Coffee & Bakehouse"})).toBeVisible();
   await expect(page.locator(".eu-cover img").first()).toHaveJSProperty("naturalWidth",1080);
   await expect(page.getByRole("link",{name:"View TRAMA",exact:true})).toBeVisible();
+  await expect(page.getByRole("heading",{name:"Creative support built around your hospitality brand."})).toBeVisible();
+  await expect(page.locator(".eu-capabilities-grid article")).toHaveCount(4);
+  await expect(page.getByRole("link",{name:"Start a project ↗"})).toHaveAttribute("href","mailto:ahmedtalaats154@gmail.com?subject=Hospitality%20Visual%20Project");
+  await expect(page.getByText("ahmedtalaats154@gmail.com",{exact:true})).toBeVisible();
   expect(images.filter(u=>u.includes("/north-pier/")).every(u=>u.includes("post-01.jpg"))).toBe(true);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(await page.locator(".eu-project-grid").evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(" ").length)).toBe(info.project.name==="mobile" ? 1 : 2);
+  expect(await page.locator(".eu-capabilities-grid").evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(" ").length)).toBe(info.project.name==="mobile" ? 1 : 2);
   await page.screenshot({path:`test-results/eu-landing-${info.project.name}.png`,fullPage:true});
   expect(errors).toEqual([]);
 });
@@ -59,6 +64,9 @@ test("deep link refresh, artwork proportions, all chapters and responsive layout
   await expect(page.locator(".eu-full-grid figure")).toHaveCount(8);
   await expect(page.locator(".eu-section-chapter")).toHaveCount(4);
   await expect(page.getByText("Independent fictional concept. Not commissioned client work.")).toBeVisible();
+  await expect(page.locator("[data-section='closing'] + .eu-project-cta")).toHaveCount(1);
+  await expect(page.locator(".eu-project-cta").getByRole("link",{name:"Start a project ↗"})).toHaveAttribute("href","mailto:ahmedtalaats154@gmail.com?subject=Hospitality%20Visual%20Project");
+  await expect(page.locator(".eu-project-cta + .eu-case-footer")).toHaveCount(1);
   for(const img of await page.locator(".eu-social-figure img").all()){
     await img.scrollIntoViewIfNeeded();
     await expect(img).toHaveJSProperty("naturalWidth",1080);

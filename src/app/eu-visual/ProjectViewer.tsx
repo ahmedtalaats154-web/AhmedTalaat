@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, type CSSProperties, type RefObject } from 
 import type { EuAsset, EuProject, EuProjectSummary, EuSection, EuSocial } from "../../lib/eu-visual";
 import MotionStory from "./MotionStory";
 
+const projectEmail = "mailto:ahmedtalaats154@gmail.com?subject=Hospitality%20Visual%20Project";
+
 function Artwork({ asset, eager = false, social = false }: { asset: EuAsset; eager?: boolean; social?: boolean }) {
   if (!asset.src) return null;
   return <img className={social ? "eu-artwork eu-social-art" : "eu-artwork eu-native-art"} style={asset.width > 0 && asset.height > 0 ? { aspectRatio: `${asset.width} / ${asset.height}` } : undefined} src={asset.src} alt={asset.alt} width={asset.width || undefined} height={asset.height || undefined} loading={eager ? "eager" : "lazy"} decoding="async" />;
@@ -16,6 +18,16 @@ function SocialDesign({ post }: { post: EuSocial }) {
       {post.supportingCopy && <p>{post.supportingCopy}</p>}
     </figcaption>
   </figure>;
+}
+
+function ProjectCta() {
+  return <aside className="eu-project-cta" aria-labelledby="eu-project-cta-title">
+    <p className="eu-eyebrow">WORK TOGETHER</p>
+    <div>
+      <h2 id="eu-project-cta-title">Looking for a stronger visual presence for your restaurant or café?</h2>
+      <div><p>I create focused social content systems built around your brand, audience and monthly priorities.</p><a href={projectEmail}>Start a project ↗</a></div>
+    </div>
+  </aside>;
 }
 
 function CaseSection({ section: s, project: p, index }: { section: EuSection; project: EuProject; index: number }) {
@@ -108,6 +120,7 @@ export default function ProjectViewer({ slug, draft, projects, onClose, onNaviga
       {error ? <div className="eu-viewer-status" role="alert"><h2>Project unavailable</h2><p>{error}</p><button onClick={()=>setRetry(v=>v+1)}>Try again</button><button onClick={onClose}>Back to projects</button></div> : !project ? <div className="eu-viewer-status" role="status">Opening project…</div> : <article className="eu-case" key={project.id}>
         {draft && <p className="eu-preview-note">DRAFT PREVIEW</p>}
         {project.sections.filter(s=>s.enabled).map((section,i)=><CaseSection key={section.id} section={section} project={project} index={i}/>)}
+        <ProjectCta />
         <footer className="eu-case-footer"><button onClick={onClose}>Close Project ↗</button>{projects.length>1 && <div><button onClick={()=>navigate(-1)}>← Previous Project</button><button onClick={()=>navigate(1)}>Next Project →</button></div>}</footer>
       </article>}
     </div>

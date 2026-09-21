@@ -5,6 +5,13 @@ import dynamic from "next/dynamic";
 import type { EuLandingData } from "../../lib/eu-visual";
 
 const ProjectViewer = dynamic(() => import("./ProjectViewer"), { ssr: false });
+const projectEmail = "mailto:ahmedtalaats154@gmail.com?subject=Hospitality%20Visual%20Project";
+const capabilities = [
+  { number: "01", title: "Social Media Design", description: "Branded social posts designed around your menu, offers, launches and everyday customer moments." },
+  { number: "02", title: "Art Direction & Campaign Concepts", description: "Clear visual direction and campaign ideas that keep every piece of content connected and recognisable." },
+  { number: "03", title: "AI Visual Production", description: "Custom food, product and hospitality visuals created to match your brand world when traditional photography is limited." },
+  { number: "04", title: "Short-form Motion Content", description: "Motion posts, Stories and vertical campaign assets designed for fast, engaging social communication." },
+];
 export default function EuVisualClient({ initialData }: { initialData: EuLandingData }) {
   const [data, setData] = useState(initialData);
   const [slug, setSlug] = useState<string | null>(null);
@@ -98,7 +105,23 @@ export default function EuVisualClient({ initialData }: { initialData: EuLanding
           </article>)}
         </div>
         {!data.projects.length && <p className="eu-empty">The next collection is taking shape.</p>}
-        <footer className="eu-landing-footer"><span>VISUAL SYSTEMS. CONSIDERED DETAILS.</span><a href="/#hello">Let’s talk ↗</a></footer>
+        <section className="eu-capabilities" aria-labelledby="eu-capabilities-title">
+          <header className="eu-capabilities-intro">
+            <p className="eu-eyebrow">CAPABILITIES</p>
+            <h2 id="eu-capabilities-title">Creative support built around your hospitality brand.</h2>
+            <p>Focused visual services for restaurants, cafés and independent hospitality businesses — shaped around your brand, audience and monthly priorities.</p>
+          </header>
+          <div className="eu-capabilities-grid">
+            {capabilities.map(capability => <article key={capability.number}>
+              <span>{capability.number}</span>
+              <div><h3>{capability.title}</h3><p>{capability.description}</p></div>
+            </article>)}
+          </div>
+        </section>
+        <footer className="eu-landing-footer">
+          <span>VISUAL SYSTEMS. CONSIDERED DETAILS.</span>
+          <div><a href={projectEmail}>Start a project ↗</a><small>ahmedtalaats154@gmail.com</small></div>
+        </footer>
       </main>
     </div>
     {slug && <ProjectViewer slug={slug} draft={draft} projects={data.projects} onClose={closeProject} onNavigate={switchProject} returnFocus={returnFocus} />}
