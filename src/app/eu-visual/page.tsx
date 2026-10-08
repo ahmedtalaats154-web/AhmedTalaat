@@ -1,4 +1,4 @@
-import { Bebas_Neue, Instrument_Sans, Newsreader, Poppins } from "next/font/google";
+import { Bebas_Neue, Cormorant_Garamond, Instrument_Sans, Manrope, Newsreader, Poppins } from "next/font/google";
 import { getStoredConfig } from "../../lib/config-store";
 import { summarizeProjects } from "../../lib/eu-visual";
 import EuVisualClient from "./EuVisualClient";
@@ -8,6 +8,8 @@ const instrument = Instrument_Sans({ subsets: ["latin"], variable: "--eu-sans", 
 const newsreader = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--eu-serif", display: "swap" });
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400", variable: "--eu-bebas", display: "swap", preload: false });
 const poppins = Poppins({ subsets: ["latin"], weight: "400", variable: "--eu-poppins", display: "swap", preload: false });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--eu-cormorant", display: "swap", preload: false });
+const manrope = Manrope({ subsets: ["latin"], variable: "--eu-manrope", display: "swap", preload: false });
 export const dynamic = "force-dynamic";
 export const metadata = {
   title: "EU Visual — Ahmed Talaat",
@@ -16,7 +18,7 @@ export const metadata = {
 export default async function EuVisualPage() {
   const config = await getStoredConfig();
   const eu = config.euVisual;
-  return <div className={`${instrument.variable} ${newsreader.variable} ${bebas.variable} ${poppins.variable}`}>
+  return <div className={`${instrument.variable} ${newsreader.variable} ${bebas.variable} ${poppins.variable} ${cormorant.variable} ${manrope.variable}`}>
     <EuVisualClient initialData={{ title: eu.title, headline: eu.headline, description: eu.description, brand: config.identity.brand, theme: config.theme, projects: summarizeProjects(eu) }} />
   </div>;
 }

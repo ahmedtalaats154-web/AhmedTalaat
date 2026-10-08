@@ -254,7 +254,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 3,
+  version: 4,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -504,6 +504,13 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     if (trama?.category === "Hospitality / Restaurant") {
       trama.category = "Restaurant / Social Media / Campaign System";
     }
+  }
+
+  if (incomingVersion < 4) {
+    merged.version = 4;
+    const hasCasaLume = merged.euVisual.projects.some((project) => project.id === "casa-lume" || project.slug === "casa-lume");
+    const casaLumeSeed = DEFAULT_SITE_CONFIG.euVisual.projects.find((project) => project.id === "casa-lume");
+    if (!hasCasaLume && casaLumeSeed) merged.euVisual.projects.push(structuredClone(casaLumeSeed));
   }
 
   const hasLegacyArchiveMetadata =

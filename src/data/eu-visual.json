@@ -759,6 +759,278 @@
           "enabled": true
         }
       ]
+    },
+    {
+      "id": "casa-lume",
+      "title": "CASA LUME",
+      "slug": "casa-lume",
+      "subtitle": "Boutique Hotel — Porto",
+      "city": "Porto",
+      "country": "Portugal",
+      "category": "Boutique Hospitality / Social Content / Campaign System",
+      "projectType": "Concept Project",
+      "year": 2026,
+      "concept": true,
+      "published": true,
+      "sortOrder": 30,
+      "cover": {
+        "src": "/media/eu-visual/casa-lume/cover.png",
+        "alt": "CASA LUME Boutique Hotel Porto project cover at night",
+        "width": 1448,
+        "height": 1086
+      },
+      "overview": {
+        "summary": "CASA LUME is a fictional boutique hotel concept in Porto built around a quieter kind of city stay.",
+        "objective": "The project explores how art direction, campaign thinking, AI-generated hospitality imagery and short-form content can turn a beautiful property into a repeatable social content system.",
+        "positioning": "Campaign Content Direction and Monthly Content Systems for Boutique Hospitality Brands.",
+        "roles": [
+          "Art Direction",
+          "Social Media Design",
+          "Campaign Content Systems",
+          "AI Visual Direction",
+          "Short-form Content"
+        ],
+        "brandIdea": "BEYOND THE ROOM",
+        "functionalLine": "ART DIRECTION · SOCIAL CONTENT · AI VISUALS · SHORT-FORM",
+        "challenge": "Boutique hotel content often stops at room photography.\n\nCASA LUME explores how light, rituals, weather, neighbourhood and the rhythm of returning to the hotel can turn one property into a repeatable social content system.",
+        "personality": [
+          "Quiet European hospitality",
+          "Warm",
+          "Local",
+          "Tactile",
+          "Editorial",
+          "Seasonal",
+          "Quietly premium"
+        ]
+      },
+      "brand": {
+        "colors": [
+          { "id": "lume-ivory", "name": "Lume Ivory", "hex": "#F2EEE5" },
+          { "id": "porto-stone", "name": "Porto Stone", "hex": "#B5AA9A" },
+          { "id": "quiet-olive", "name": "Quiet Olive", "hex": "#6D715F" },
+          { "id": "dark-umber", "name": "Dark Umber", "hex": "#29241F" },
+          { "id": "aged-brass", "name": "Aged Brass", "hex": "#B69159" }
+        ],
+        "typography": [
+          {
+            "id": "cormorant-garamond",
+            "name": "Cormorant Garamond",
+            "description": "An editorial serif for campaign statements and the quieter, more expressive side of the hotel world.",
+            "sample": "A quieter kind of city stay.",
+            "family": "cormorant-garamond"
+          },
+          {
+            "id": "manrope",
+            "name": "Manrope",
+            "description": "A restrained sans serif for project information, campaign structure and practical communication.",
+            "sample": "PORTO · SEASONAL STAY · 2026",
+            "family": "manrope"
+          }
+        ],
+        "visualTerritory": "Quiet European hospitality shaped through architecture, local rituals and seasonal atmosphere.",
+        "materials": ["Warm stone", "Aged brass", "Natural linen", "Dark timber", "Rain-washed streets"],
+        "photographyDirection": "Warm natural light, tactile interiors, local Porto views and softer weather moments connect the property to the rhythm of the city.",
+        "background": "#F2EEE5",
+        "textColor": "#29241F",
+        "accentColor": "#B69159",
+        "gridBackground": "#B5AA9A"
+      },
+      "assets": {
+        "placeSheet": { "src": "", "alt": "", "width": 1080, "height": 1350 },
+        "productsSheet": { "src": "", "alt": "", "width": 1080, "height": 1350 },
+        "productHighlights": [],
+        "details": []
+      },
+      "socialDesigns": [
+        {
+          "id": "casa-weekend-escape",
+          "postNumber": 1,
+          "image": "/media/eu-visual/casa-lume/static/post-01.jpg",
+          "alt": "CASA LUME Weekend Escape social design — 48 Hours, Made to Feel Longer",
+          "title": "Weekend Escape",
+          "category": "Weekend Escape",
+          "purpose": "Open the short-stay campaign with a clear booking idea.",
+          "visualApproach": "A light editorial panel sits over the sunlit room while the property remains the visual lead.",
+          "supportingCopy": "48 HOURS, MADE TO FEEL LONGER.",
+          "chapter": 1,
+          "sortOrder": 10,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-porto-day-one",
+          "postNumber": 2,
+          "image": "/media/eu-visual/casa-lume/static/post-02.jpg",
+          "alt": "CASA LUME Porto Just Outside social design",
+          "title": "Porto, Just Outside",
+          "category": "Weekend Escape",
+          "purpose": "Connect the hotel stay to the surrounding Porto streets.",
+          "visualApproach": "A doorway frames the city before the editorial message closes the composition.",
+          "supportingCopy": "PORTO, JUST OUTSIDE.",
+          "chapter": 0,
+          "sortOrder": 20,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-arrival",
+          "postNumber": 3,
+          "image": "/media/eu-visual/casa-lume/static/post-03.jpg",
+          "alt": "CASA LUME Check In Slow Down social design",
+          "title": "Check In. Slow Down.",
+          "category": "Weekend Escape",
+          "purpose": "Turn the arrival ritual into a quiet hospitality moment.",
+          "visualApproach": "A brass room key and warm reception light make the handover the entire story.",
+          "supportingCopy": "CHECK IN. SLOW DOWN.",
+          "chapter": 0,
+          "sortOrder": 30,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-the-stay",
+          "postNumber": 4,
+          "image": "/media/eu-visual/casa-lume/static/post-04.jpg",
+          "alt": "CASA LUME The Stay social design — Made for Slower Hours",
+          "title": "The Stay",
+          "category": "The Stay",
+          "purpose": "Position the room as a slower, tactile retreat.",
+          "visualApproach": "Dark umber framing gives the soft room light and brass detail a quieter editorial weight.",
+          "supportingCopy": "MADE FOR SLOWER HOURS.",
+          "chapter": 1,
+          "sortOrder": 40,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-porto-outside",
+          "postNumber": 5,
+          "image": "/media/eu-visual/casa-lume/static/post-05.jpg",
+          "alt": "CASA LUME Porto Outside social design — A City Worth Wandering",
+          "title": "Porto Outside",
+          "category": "Porto Outside",
+          "purpose": "Extend the stay into neighbourhood detail and local exploration.",
+          "visualApproach": "Three Porto moments share one restrained editorial page rather than competing as separate travel images.",
+          "supportingCopy": "A CITY WORTH WANDERING.",
+          "chapter": 1,
+          "sortOrder": 50,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-seasonal-stay",
+          "postNumber": 6,
+          "image": "/media/eu-visual/casa-lume/static/post-06.jpg",
+          "alt": "CASA LUME Seasonal Stay social design — Porto in a Softer Season",
+          "title": "Seasonal Stay",
+          "category": "Seasonal Stay",
+          "purpose": "Make quieter travel periods feel intentional and desirable.",
+          "visualApproach": "The open balcony and soft room foreground hold the booking message inside the stay itself.",
+          "supportingCopy": "PORTO, IN A SOFTER SEASON.",
+          "chapter": 1,
+          "sortOrder": 60,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-small-rituals",
+          "postNumber": 7,
+          "image": "/media/eu-visual/casa-lume/static/post-07.jpg",
+          "alt": "CASA LUME Small Rituals social design — The Morning Starts Softer",
+          "title": "Small Rituals",
+          "category": "Small Rituals",
+          "purpose": "Show how small details make the property feel lived-in.",
+          "visualApproach": "Overlapping coffee, book and key details create a tactile morning sequence.",
+          "supportingCopy": "THE MORNING STARTS SOFTER.",
+          "chapter": 1,
+          "sortOrder": 70,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "casa-seasonal-booking",
+          "postNumber": 8,
+          "image": "/media/eu-visual/casa-lume/static/post-08.jpg",
+          "alt": "CASA LUME Seasonal Booking social design — Make Porto Your Next Weekend",
+          "title": "Seasonal Booking",
+          "category": "Seasonal Stay",
+          "purpose": "Close the sequence with a direct seasonal booking message.",
+          "visualApproach": "Dark umber, aged brass and the room view create a decisive final campaign frame.",
+          "supportingCopy": "MAKE PORTO YOUR NEXT WEEKEND.",
+          "chapter": 1,
+          "sortOrder": 80,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "motionStories": [
+        {
+          "id": "casa-weekend-reel",
+          "title": "WEEKEND ESCAPE",
+          "subtitle": "A short-form stay journey moving from arrival and morning rituals to Porto outside and a quiet return to CASA LUME.",
+          "src": "/media/eu-visual/casa-lume/reels/weekend-escape.mp4",
+          "alt": "CASA LUME Weekend Escape Journey vertical film",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 10,
+          "enabled": true
+        },
+        {
+          "id": "casa-season-reel",
+          "title": "PORTO, IN A SOFTER SEASON.",
+          "subtitle": "A seasonal booking film contrasting rainy Porto with the warmth, rituals and quiet refuge of the hotel.",
+          "src": "/media/eu-visual/casa-lume/reels/softer-season.mp4",
+          "alt": "CASA LUME Porto in a Softer Season vertical film",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 20,
+          "enabled": true
+        }
+      ],
+      "contentPillars": [
+        "WEEKEND ESCAPE|A short-stay narrative built around arrival, slow mornings, Porto and returning to the hotel.",
+        "SEASONAL STAY|A booking-led campaign showing the appeal of Porto during quieter, softer weather.",
+        "SMALL RITUALS|Coffee, reading, light, texture and intimate details that make the stay feel lived-in.",
+        "PORTO OUTSIDE|Local streets, neighbourhood details and cultural moments connected back to the hotel experience."
+      ],
+      "show_ai_process": true,
+      "aiProcess": {
+        "title": "BUILDING THE HOTEL WORLD",
+        "copy": "A consistent visual world was built across interiors, architecture, weather and guest touchpoints so each campaign could feel different without losing the identity of the property.",
+        "points": [],
+        "visuals": [
+          { "src": "/media/eu-visual/casa-lume/ai/arrival.png", "alt": "CASA LUME reception and guest arrival", "width": 1122, "height": 1402 },
+          { "src": "/media/eu-visual/casa-lume/ai/room.png", "alt": "CASA LUME sunlit guest room overlooking Porto", "width": 1122, "height": 1402 },
+          { "src": "/media/eu-visual/casa-lume/ai/rainy-room.png", "alt": "CASA LUME warm room during rainy Porto weather", "width": 1122, "height": 1402 },
+          { "src": "/media/eu-visual/casa-lume/ai/rainy-balcony.png", "alt": "CASA LUME balcony experience after rain", "width": 1122, "height": 1402 },
+          { "src": "/media/eu-visual/casa-lume/ai/exterior.png", "alt": "CASA LUME hotel entrance on a rainy Porto evening", "width": 1122, "height": 1402 }
+        ]
+      },
+      "closing": {
+        "statement": "CASA LUME shows how one boutique hospitality world can extend into seasonal campaigns, social storytelling and repeatable monthly content without relying on the same room image again and again.",
+        "image": { "src": "/media/eu-visual/casa-lume/ai/exterior.png", "alt": "CASA LUME hotel exterior in Porto", "width": 1122, "height": 1402 }
+      },
+      "sections": [
+        { "id": "hero", "kind": "hero", "title": "", "copy": "", "layout": "cover-led", "chapter": 0, "enabled": true },
+        { "id": "overview", "kind": "overview", "title": "A quieter kind of city stay.", "copy": "8 Social Designs · 2 Short-form Films · Seasonal Campaign Direction · AI Hospitality Visuals", "layout": "default", "chapter": 0, "enabled": true },
+        { "id": "challenge", "kind": "idea", "title": "BEYOND THE ROOM", "copy": "", "layout": "challenge", "chapter": 0, "enabled": true },
+        { "id": "system", "kind": "system", "title": "A compact visual language.", "copy": "Quiet European hospitality. Warm, local, tactile, editorial and seasonal.", "layout": "compact", "chapter": 0, "enabled": true },
+        { "id": "campaign-system", "kind": "social-intro", "title": "CAMPAIGN / CONTENT SYSTEM", "copy": "Four connected territories keep the monthly content varied without losing the identity of the property.", "layout": "territories", "chapter": 0, "enabled": true },
+        { "id": "selected-social", "kind": "chapter", "title": "SELECTED SOCIAL DESIGNS", "copy": "Six approved campaign designs move between booking messages, local discovery and the small rituals of the stay.", "layout": "editorial", "chapter": 1, "enabled": true },
+        { "id": "reel-weekend", "kind": "motion", "title": "WEEKEND ESCAPE", "copy": "A short-form stay journey moving from arrival and morning rituals to Porto outside and a quiet return to CASA LUME.", "layout": "reel-left", "storyId": "casa-weekend-reel", "chapter": 0, "enabled": true },
+        { "id": "reel-season", "kind": "motion", "title": "PORTO, IN A SOFTER SEASON.", "copy": "A seasonal booking film contrasting rainy Porto with the warmth, rituals and quiet refuge of the hotel.", "layout": "reel-right", "storyId": "casa-season-reel", "chapter": 0, "enabled": true },
+        { "id": "ai-direction", "kind": "ai", "title": "BUILDING THE HOTEL WORLD", "copy": "A consistent visual world was built across interiors, architecture, weather and guest touchpoints so each campaign could feel different without losing the identity of the property.", "layout": "gallery", "chapter": 0, "enabled": true },
+        { "id": "grid", "kind": "grid", "title": "ONE MONTH. ONE HOTEL WORLD.", "copy": "All eight approved posts coexist as one repeatable social content system.", "layout": "wide", "chapter": 0, "enabled": true },
+        { "id": "closing", "kind": "closing", "title": "CASA LUME", "copy": "Campaign Content Direction and Monthly Content Systems for Boutique Hospitality Brands.", "layout": "default", "chapter": 0, "enabled": true }
+      ]
     }
   ]
 }
