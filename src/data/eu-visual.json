@@ -1031,6 +1031,246 @@
         { "id": "grid", "kind": "grid", "title": "ONE MONTH. ONE HOTEL WORLD.", "copy": "All eight approved posts coexist as one repeatable social content system.", "layout": "wide", "chapter": 0, "enabled": true },
         { "id": "closing", "kind": "closing", "title": "CASA LUME", "copy": "Campaign Content Direction and Monthly Content Systems for Boutique Hospitality Brands.", "layout": "default", "chapter": 0, "enabled": true }
       ]
+    },
+    {
+      "id": "forma",
+      "title": "FORMA",
+      "slug": "forma",
+      "subtitle": "Gelato Bar — Vienna",
+      "city": "Vienna",
+      "country": "Austria",
+      "category": "Graphic-led Social Campaign Study",
+      "projectType": "Self-Initiated",
+      "year": 2026,
+      "concept": true,
+      "published": true,
+      "sortOrder": 40,
+      "cover": {
+        "src": "/media/eu-visual/forma/cover.png",
+        "alt": "FORMA Gelato Bar Vienna campaign cover — Flavour takes shape",
+        "width": 1086,
+        "height": 1448
+      },
+      "overview": {
+        "summary": "FORMA is a self-initiated social campaign study for a contemporary gelato bar in Vienna. Built around the idea “Flavour takes shape,” the visual system translates flavour into bold colour, modular form and playful motion.",
+        "objective": "A compact graphic-led campaign designed to show how one visual system can move consistently across static social design, typography and short-form motion.",
+        "positioning": "Self-Initiated Graphic-led Social Campaign Study",
+        "roles": [
+          "Campaign Concept",
+          "Art Direction",
+          "Social Media Design",
+          "Graphic Design",
+          "Typography System",
+          "Motion Direction"
+        ],
+        "brandIdea": "FLAVOUR TAKES SHAPE.",
+        "functionalLine": "GRAPHIC DESIGN · TYPOGRAPHY · SOCIAL CAMPAIGN · MOTION",
+        "challenge": "Each flavour becomes a distinct combination of colour, shape and movement, creating variety without losing campaign consistency.",
+        "personality": [
+          "Playful Swiss Design",
+          "Bold colour",
+          "Modular form",
+          "Expressive typography",
+          "Decisive motion"
+        ]
+      },
+      "brand": {
+        "colors": [
+          { "id": "forma-cream", "name": "Gelato Cream", "hex": "#FBF5E9" },
+          { "id": "forma-ink", "name": "Forma Ink", "hex": "#181816" },
+          { "id": "forma-red", "name": "Strawberry", "hex": "#F34A52" },
+          { "id": "forma-yellow", "name": "Lemon", "hex": "#F7D63F" },
+          { "id": "forma-green", "name": "Pistachio", "hex": "#B5CD7C" },
+          { "id": "forma-brown", "name": "Chocolate", "hex": "#6A3E31" }
+        ],
+        "typography": [
+          {
+            "id": "frogie",
+            "name": "FROGIE",
+            "description": "The expressive display face gives every flavour a distinct, playful graphic voice.",
+            "sample": "FLAVOUR TAKES SHAPE.",
+            "family": "default"
+          },
+          {
+            "id": "inter-tight",
+            "name": "Inter Tight",
+            "description": "A compact sans serif keeps campaign information direct and consistent across formats.",
+            "sample": "GELATO BAR — VIENNA",
+            "family": "inter-tight"
+          }
+        ],
+        "visualTerritory": "Flavour translated into colour, shape, type and movement.",
+        "materials": ["Bold colour fields", "Modular shapes", "Gelato textures", "Playful type", "Vertical motion"],
+        "photographyDirection": "Product imagery stays direct and tactile while colour and graphic form give each flavour its own recognisable campaign expression.",
+        "background": "#FBF5E9",
+        "textColor": "#181816",
+        "accentColor": "#F34A52",
+        "gridBackground": "#F7D63F"
+      },
+      "assets": {
+        "placeSheet": { "src": "", "alt": "", "width": 1080, "height": 1350 },
+        "productsSheet": { "src": "", "alt": "", "width": 1080, "height": 1350 },
+        "productHighlights": [],
+        "details": []
+      },
+      "socialDesigns": [
+        {
+          "id": "forma-flavour",
+          "postNumber": 1,
+          "image": "/media/eu-visual/forma/static/flavour.png",
+          "alt": "FORMA Flavour Takes Shape social campaign design",
+          "title": "Flavour Takes Shape",
+          "category": "Campaign Idea",
+          "purpose": "Introduce the campaign idea through the relationship between product, colour and shape.",
+          "visualApproach": "A pistachio cone cuts across modular red, green and yellow forms while display typography carries the campaign line.",
+          "supportingCopy": "FOUR FLAVOURS. FIND YOUR FAVOURITE.",
+          "chapter": 1,
+          "sortOrder": 10,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "forma-strawberry",
+          "postNumber": 2,
+          "image": "/media/eu-visual/forma/static/strawberry.png",
+          "alt": "FORMA Berry Bold strawberry gelato social design",
+          "title": "Berry Bold",
+          "category": "Flavour System",
+          "purpose": "Give strawberry a clear campaign personality using one dominant graphic form.",
+          "visualApproach": "The flavour becomes a bold typographic strawberry built from the campaign’s red and cream palette.",
+          "supportingCopy": "STRAWBERRY GELATO",
+          "chapter": 1,
+          "sortOrder": 20,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "forma-pistachio",
+          "postNumber": 3,
+          "image": "/media/eu-visual/forma/static/pistachio.png",
+          "alt": "FORMA Pistachio gelato social design",
+          "title": "Pistachio",
+          "category": "Flavour System",
+          "purpose": "Build recognition through a flavour-specific colour and typographic composition.",
+          "visualApproach": "Oversized display lettering, pistachio green and a direct product crop create a single decisive flavour world.",
+          "supportingCopy": "RICH. NUTTY. CREAMY.",
+          "chapter": 1,
+          "sortOrder": 30,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "forma-zest-mode",
+          "postNumber": 4,
+          "image": "/media/eu-visual/forma/static/zest-mode.png",
+          "alt": "FORMA Zest Mode lemon gelato social design",
+          "title": "Zest Mode",
+          "category": "Flavour System",
+          "purpose": "Turn lemon flavour into a bright, energetic campaign moment.",
+          "visualApproach": "A yellow field, angular burst and tilted label give the lemon cone a sharper graphic rhythm.",
+          "supportingCopy": "LEMON GELATO",
+          "chapter": 2,
+          "sortOrder": 40,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "forma-chocolate",
+          "postNumber": 5,
+          "image": "/media/eu-visual/forma/static/chocolate-gelato.png",
+          "alt": "FORMA Chocolate Please gelato social design",
+          "title": "Chocolate Please",
+          "category": "Flavour System",
+          "purpose": "Give the chocolate flavour a rich but direct typographic treatment.",
+          "visualApproach": "Chocolate brown fills the frame while a top-down gelato bowl interrupts a loose modular grid.",
+          "supportingCopy": "CHOCOLATE GELATO",
+          "chapter": 2,
+          "sortOrder": 50,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "forma-whats-your-flavour",
+          "postNumber": 6,
+          "image": "/media/eu-visual/forma/static/whats-your-flavour.png",
+          "alt": "FORMA What's Your Flavour social campaign design",
+          "title": "What’s Your Flavour?",
+          "category": "Campaign Range",
+          "purpose": "Bring the four flavour worlds together in one campaign question.",
+          "visualApproach": "Four product crops frame an oversized central question, turning the complete range into one graphic composition.",
+          "supportingCopy": "FOUR FLAVOURS. FIND YOUR FAVOURITE.",
+          "chapter": 2,
+          "sortOrder": 60,
+          "enabled": true,
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "motionStories": [
+        {
+          "id": "forma-motion-01",
+          "title": "MOTION 01",
+          "subtitle": "A supporting motion study extending the campaign’s typography, colour and modular shapes into vertical movement.",
+          "src": "/media/eu-visual/forma/motion/motion-01.mp4",
+          "alt": "FORMA Motion 01 vertical campaign film",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 20,
+          "enabled": true
+        },
+        {
+          "id": "forma-motion-02",
+          "title": "MOTION 02 — FEATURED",
+          "subtitle": "The primary motion piece turns flavour, colour and shape into a playful sequence with a clear typographic rhythm.",
+          "src": "/media/eu-visual/forma/motion/motion-02.mp4",
+          "alt": "FORMA featured Motion 02 vertical campaign film",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 10,
+          "enabled": true
+        },
+        {
+          "id": "forma-lifestyle",
+          "title": "LIFESTYLE FILM",
+          "subtitle": "A lifestyle-led film connects the graphic campaign language back to the everyday gelato experience.",
+          "src": "/media/eu-visual/forma/lifestyle/lifestyle.mp4",
+          "alt": "FORMA lifestyle vertical gelato campaign film",
+          "width": 1080,
+          "height": 1920,
+          "sortOrder": 30,
+          "enabled": true
+        }
+      ],
+      "contentPillars": [
+        "FLAVOUR|Each flavour receives its own colour and visual character.",
+        "SHAPE|Modular forms turn product qualities into a flexible graphic language.",
+        "TYPE|FROGIE creates the expressive voice while Inter Tight keeps information precise.",
+        "MOTION|Short-form movement carries the same system into vertical campaign content."
+      ],
+      "show_ai_process": false,
+      "aiProcess": { "title": "", "copy": "", "points": [], "visuals": [] },
+      "closing": {
+        "statement": "One campaign system. Six static designs. Three moving expressions. Flavour stays recognisable as it changes shape.",
+        "image": { "src": "/media/eu-visual/forma/cover.png", "alt": "FORMA campaign cover — Flavour takes shape", "width": 1086, "height": 1448 }
+      },
+      "sections": [
+        { "id": "hero", "kind": "hero", "title": "", "copy": "", "layout": "cover-led", "chapter": 0, "enabled": true },
+        { "id": "overview", "kind": "overview", "title": "Flavour takes shape.", "copy": "6 Static Social Designs · 2 Motion Graphics Films · 1 Lifestyle Film · Social Grid", "layout": "compact", "chapter": 0, "enabled": true },
+        { "id": "campaign-idea", "kind": "idea", "title": "A system built to move.", "copy": "", "layout": "default", "chapter": 0, "enabled": true },
+        { "id": "visual-system", "kind": "system", "title": "Playful Swiss design, organised by flavour.", "copy": "Each flavour becomes a distinct combination of colour, shape and movement, creating variety without losing campaign consistency.", "layout": "compact", "chapter": 0, "enabled": true },
+        { "id": "selected-static", "kind": "chapter", "title": "SELECTED STATIC DESIGNS", "copy": "Typography leads. Colour signals flavour. Modular form keeps every post connected.", "layout": "campaign", "chapter": 1, "enabled": true },
+        { "id": "featured-motion", "kind": "motion", "title": "FLAVOUR IN MOTION", "copy": "Motion02 is the primary moving expression of the campaign system.", "layout": "featured-reel", "storyId": "forma-motion-02", "chapter": 0, "enabled": true },
+        { "id": "remaining-static", "kind": "chapter", "title": "THE SYSTEM EXPANDS", "copy": "Three more compositions extend the same rules across lemon, chocolate and the complete flavour range.", "layout": "campaign", "chapter": 2, "enabled": true },
+        { "id": "social-grid", "kind": "grid", "title": "ONE SYSTEM. SIX SOCIAL DESIGNS.", "copy": "The six approved artworks form a coherent social grid without altering or cropping the original compositions.", "layout": "wide", "chapter": 0, "enabled": true },
+        { "id": "supporting-motion", "kind": "motion", "title": "SUPPORTING MOTION", "copy": "A second motion study carries the same typographic and modular logic into a new sequence.", "layout": "reel-left", "storyId": "forma-motion-01", "chapter": 0, "enabled": true },
+        { "id": "lifestyle-film", "kind": "motion", "title": "FROM SYSTEM TO EXPERIENCE", "copy": "The lifestyle film brings the campaign language into a more lived-in gelato moment.", "layout": "reel-right", "storyId": "forma-lifestyle", "chapter": 0, "enabled": true },
+        { "id": "closing", "kind": "closing", "title": "FORMA", "copy": "Self-Initiated Graphic-led Social Campaign Study", "layout": "default", "chapter": 0, "enabled": true }
+      ]
     }
   ]
 }

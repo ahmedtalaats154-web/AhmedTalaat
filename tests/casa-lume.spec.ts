@@ -6,7 +6,7 @@ test("CASA LUME is project 03 with approved assets and editorial sections", asyn
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/eu-visual");
   const cards = page.locator(".eu-project-card");
-  await expect(cards).toHaveCount(3);
+  await expect(cards).toHaveCount(4);
   await expect(cards.nth(2).getByRole("heading", {name:"CASA LUME"})).toBeVisible();
   await expect(cards.nth(2).locator("img")).toHaveAttribute("src", "/media/eu-visual/casa-lume/cover.png");
   await cards.nth(2).getByRole("link", {name:"View CASA LUME"}).click();

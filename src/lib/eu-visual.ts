@@ -1,6 +1,6 @@
 export type EuAsset = { src: string; alt: string; width: number; height: number };
 export type EuSectionKind = "hero" | "overview" | "idea" | "system" | "place" | "products" | "social-intro" | "chapter" | "grid" | "motion" | "details" | "ai" | "closing";
-export type EuSection = { id: string; kind: EuSectionKind; enabled: boolean; title: string; copy: string; chapter: number; storyId?: string; layout?: "default" | "compact" | "balanced" | "wide" | "cover-led" | "challenge" | "territories" | "editorial" | "reel-left" | "reel-right" | "gallery" };
+export type EuSection = { id: string; kind: EuSectionKind; enabled: boolean; title: string; copy: string; chapter: number; storyId?: string; layout?: "default" | "compact" | "balanced" | "wide" | "cover-led" | "challenge" | "territories" | "editorial" | "campaign" | "featured-reel" | "reel-left" | "reel-right" | "gallery" };
 export type EuSocial = { id: string; postNumber: number; image: string; alt: string; title: string; category: string; purpose: string; visualApproach: string; supportingCopy: string; chapter: number; sortOrder: number; enabled: boolean; width?: number; height?: number };
 export type EuMotionStory = { id: string; title: string; subtitle: string; src: string; alt: string; width: number; height: number; sortOrder: number; enabled: boolean };
 export type EuProject = {
@@ -10,7 +10,7 @@ export type EuProject = {
   overview: { summary: string; objective: string; positioning: string; roles: string[]; brandIdea: string; functionalLine: string; challenge: string; personality: string[] };
   brand: {
     colors: { id: string; name: string; hex: string }[];
-    typography: { id: string; name: string; description: string; sample: string; family?: "default" | "bebas-neue" | "poppins" | "cormorant-garamond" | "manrope" }[];
+    typography: { id: string; name: string; description: string; sample: string; family?: "default" | "bebas-neue" | "poppins" | "cormorant-garamond" | "manrope" | "inter-tight" }[];
     visualTerritory: string; materials: string[]; photographyDirection: string;
     background: string; textColor: string; accentColor: string; gridBackground?: string;
   };

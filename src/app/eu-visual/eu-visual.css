@@ -25,6 +25,8 @@
 .eu-project-card>a { display:block; border-radius:16px; transform-origin:50% 65%; transition:transform 240ms cubic-bezier(.2,.8,.2,1.15); }
 .eu-cover { position:relative; background:var(--eu-paper); border-radius:16px; overflow:hidden; transition:box-shadow 240ms ease; }
 .eu-cover img { width:100%; height:auto; aspect-ratio:4/5; object-fit:contain; }
+.eu-cover--portrait { display:grid; place-items:center; padding:4%; }
+.eu-cover--portrait img { aspect-ratio:3/4; max-height:100%; }
 .eu-view-arrow { display:inline-block; transition:transform 200ms cubic-bezier(.2,.8,.2,1.15); }
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
  .eu-project-card>a:hover { transform:translateY(-7px) rotate(-.45deg); }
@@ -83,6 +85,7 @@
 .eu-case-hero>.eu-artwork { max-height:760px; }
 .eu-case-hero-cover-led { display:block; padding:40px max(32px,5vw) 0; }
 .eu-case-hero-cover-led>.eu-artwork { width:100%; max-height:none; aspect-ratio:4/3; object-fit:contain; }
+.eu-case-hero-portrait>.eu-artwork { width:min(100%,720px); aspect-ratio:3/4; margin-inline:auto; }
 .eu-cover-led-meta { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; padding:30px 0; }
 .eu-cover-led-meta .eu-hero-meta { margin:0; justify-self:end; width:min(100%,360px); }
 .eu-cover-led-subtitle { margin-top:10px!important; font-family:var(--eu-cormorant),Georgia,serif; font-size:clamp(30px,3.2vw,48px); line-height:1.05!important; }
@@ -159,6 +162,7 @@
 .eu-case-footer>div { display:flex; gap:28px; }
 .eu-font-bebas-neue .eu-type-sample { font-family:var(--eu-bebas),sans-serif; font-style:normal; }
 .eu-font-poppins .eu-type-sample { font-family:var(--eu-poppins),sans-serif; font-style:normal; }
+.eu-font-inter-tight .eu-type-sample { font-family:var(--eu-inter-tight),sans-serif; font-style:normal; }
 .eu-layout-compact .eu-palette { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .eu-layout-compact .eu-type-grid { margin-block:36px; }
 .eu-layout-compact .eu-direction { display:none; }
@@ -170,6 +174,13 @@
 .eu-casa-large-right { justify-self:end; }
 .eu-casa-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; }
 .eu-casa-showcase .eu-social-figure figcaption { display:none; }
+.eu-campaign-showcase { display:grid; gap:64px; }
+.eu-campaign-lead { width:min(72%,760px); }
+.eu-campaign-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; margin-left:18%; }
+.eu-campaign-showcase .eu-social-figure figcaption { display:none; }
+.eu-layout-featured-reel { border-block:1px solid color-mix(in srgb,var(--eu-ink) 22%,transparent); }
+.eu-layout-featured-reel .eu-section-heading { margin-inline:auto; text-align:center; }
+.eu-layout-featured-reel .eu-motion-grid { display:block; width:min(100%,640px); margin-inline:auto; }
 .eu-layout-reel-left .eu-motion-grid,.eu-layout-reel-right .eu-motion-grid { display:block; max-width:440px; margin:0; }
 .eu-layout-reel-right .eu-motion-grid { margin-left:auto; }
 .eu-layout-reel-left,.eu-layout-reel-right { border-top:1px solid color-mix(in srgb,var(--eu-ink) 22%,transparent); }
@@ -183,6 +194,9 @@
 .eu-project-casa-lume .eu-brand-idea,.eu-project-casa-lume .eu-project-cta h2 { font-family:var(--eu-cormorant),Georgia,serif; }
 .eu-project-casa-lume .eu-layout-compact .eu-type-grid>div:first-child .eu-type-sample { font-family:var(--eu-cormorant),Georgia,serif; }
 .eu-project-casa-lume .eu-layout-compact .eu-type-grid>div:last-child .eu-type-sample { font-family:var(--eu-manrope),Arial,sans-serif; }
+.eu-project-forma { font-family:var(--eu-inter-tight),Arial,sans-serif; }
+.eu-project-forma .eu-brand-idea { font-style:normal; font-weight:800; letter-spacing:-.06em; }
+.eu-project-forma .eu-type-grid>div:first-child .eu-type-sample { font-family:var(--eu-sans),Arial,sans-serif; font-weight:900; letter-spacing:-.065em; }
 .eu-motion-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px; max-width:960px; margin:auto; }
 .eu-motion-frame { aspect-ratio:9/16; background:var(--eu-ink); }
 .eu-motion-frame video { display:block; width:100%; height:100%; object-fit:contain; }
@@ -203,6 +217,7 @@
  .eu-case-hero-cover-led { padding-top:32px; }
  .eu-case-hero h1 { margin-top:30px; } .eu-hero-meta { margin-top:30px; }
  .eu-overview { gap:45px; } .eu-pair,.eu-chapter-2 .eu-pair,.eu-chapter-0 .eu-pair { gap:32px; }
+ .eu-campaign-pair { margin-left:10%; }
  .eu-closing { gap:40px; } .eu-case-section { padding-block:72px; }
  .eu-layout-wide .eu-full-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
  .eu-motion-grid { gap:28px; }
@@ -254,6 +269,8 @@
  .eu-layout-balanced .eu-pair,.eu-layout-wide .eu-full-grid,.eu-motion-grid { grid-template-columns:1fr; }
  .eu-casa-showcase { gap:48px; } .eu-casa-large { width:100%; }
  .eu-casa-pair { grid-template-columns:1fr; gap:48px; }
+ .eu-campaign-showcase { gap:48px; } .eu-campaign-lead { width:100%; }
+ .eu-campaign-pair { grid-template-columns:1fr; gap:48px; margin-left:0; }
  .eu-layout-reel-left .eu-motion-grid,.eu-layout-reel-right .eu-motion-grid { max-width:100%; margin:0; }
  .eu-layout-reel-right .eu-section-heading { margin-left:0; text-align:left; }
  .eu-ai-gallery { grid-template-columns:1fr; gap:36px; }

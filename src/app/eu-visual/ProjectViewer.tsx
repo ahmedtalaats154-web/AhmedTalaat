@@ -35,7 +35,7 @@ function CaseSection({ section: s, project: p, index }: { section: EuSection; pr
   const chapterPosts = posts.filter(post=>post.chapter === s.chapter);
   const hasDedicatedChallenge = p.sections.some(section => section.enabled && section.kind === "idea" && section.layout === "challenge");
   const heading = <header className="eu-section-heading"><p className="eu-eyebrow">{String(index+1).padStart(2,"0")} / {s.kind === "chapter" ? `CHAPTER ${String(s.chapter).padStart(2,"0")}` : s.kind.replace("-"," ").toUpperCase()}</p>{s.title && <h2>{s.title}</h2>}{s.copy && <p>{s.copy}</p>}</header>;
-  if (s.kind === "hero" && s.layout === "cover-led") return <section className="eu-case-hero eu-case-hero-cover-led" data-section={s.id}>
+  if (s.kind === "hero" && s.layout === "cover-led") return <section className={`eu-case-hero eu-case-hero-cover-led ${p.cover.height > p.cover.width ? "eu-case-hero-portrait" : ""}`} data-section={s.id}>
     <Artwork asset={p.cover} eager />
     <div className="eu-cover-led-meta"><div><p className="eu-eyebrow">{p.projectType} / {p.year}</p><p className="eu-cover-led-subtitle">{p.subtitle}</p></div><div className="eu-hero-meta"><p>{p.city}, {p.country}</p><p>{p.category}</p></div></div>
     <div className="eu-hero-bottom"><span>{p.overview.functionalLine}</span><span>SCROLL TO EXPLORE ↓</span></div>
@@ -71,7 +71,11 @@ function CaseSection({ section: s, project: p, index }: { section: EuSection; pr
       <div className="eu-casa-large eu-casa-large-right">{chapterPosts[3] && <SocialDesign post={chapterPosts[3]} />}</div>
       <div className="eu-casa-pair">{chapterPosts.slice(4,6).map(post=><SocialDesign post={post} key={post.id}/>)}</div>
     </div>}
-    {s.kind === "chapter" && s.layout !== "editorial" && <div className="eu-pair">{chapterPosts.map(post=><SocialDesign post={post} key={post.id}/>)}</div>}
+    {s.kind === "chapter" && s.layout === "campaign" && <div className="eu-campaign-showcase">
+      {chapterPosts[0] && <div className="eu-campaign-lead"><SocialDesign post={chapterPosts[0]} /></div>}
+      <div className="eu-campaign-pair">{chapterPosts.slice(1).map(post=><SocialDesign post={post} key={post.id}/>)}</div>
+    </div>}
+    {s.kind === "chapter" && s.layout !== "editorial" && s.layout !== "campaign" && <div className="eu-pair">{chapterPosts.map(post=><SocialDesign post={post} key={post.id}/>)}</div>}
     {s.kind === "grid" && <div className="eu-full-grid">{posts.map(post=><figure key={post.id}><Artwork social asset={{src:post.image,alt:post.alt || post.title,width:post.width || 1080,height:post.height || 1350}}/><figcaption>{String(post.postNumber).padStart(2,"0")} / {post.title}</figcaption></figure>)}</div>}
     {s.kind === "motion" && <div className="eu-motion-grid">{stories.map(story=><MotionStory key={story.id} story={story}/>)}</div>}
     {s.kind === "details" && <div className="eu-detail-grid">{p.assets.details.filter(a=>a.src).map((asset,i)=><Artwork key={i} asset={asset}/>)}</div>}

@@ -90,7 +90,7 @@ test("project API protects drafts and all artwork files are present",async({requ
   const response=await request.get("/api/eu-visual");
   expect(response.ok()).toBe(true);
   const landing=await response.json();
-  expect(landing.projects.map((p: {slug:string})=>p.slug)).toEqual(["north-pier","trama","casa-lume"]);
+  expect(landing.projects.map((p: {slug:string})=>p.slug)).toEqual(["north-pier","trama","casa-lume","forma"]);
   expect(landing.projects[0].socialDesigns).toBeUndefined();
   expect((await request.get("/api/eu-visual?mode=draft")).status()).toBe(401);
   expect((await request.get("/api/eu-visual?project=unknown")).status()).toBe(404);
@@ -161,15 +161,15 @@ test("admin uses existing auth, edits, creates empty lists, reorders and saves w
   expect(saved.euVisual.projects[0].socialDesigns[0].postNumber).toBe(2);
   expect(saved.hero).toEqual(live.hero);expect(saved.archive).toEqual(live.archive);
   await page.getByRole("button",{name:"+ NEW PROJECT",exact:true}).click();
-  const fields=page.locator('[data-field="euVisual.projects.3.socialDesigns"]');
+  const fields=page.locator('[data-field="euVisual.projects.4.socialDesigns"]');
   await fields.getByRole("button",{name:"+ ADD ITEM",exact:true}).click();
   await expect(fields.locator(".array-item")).toHaveCount(1);
   await page.getByRole("button",{name:"SAVE DRAFT",exact:true}).first().click();
-  await expect.poll(()=>saved.euVisual.projects.length).toBe(4);
-  expect(saved.euVisual.projects[3].published).toBe(false);
+  await expect.poll(()=>saved.euVisual.projects.length).toBe(5);
+  expect(saved.euVisual.projects[4].published).toBe(false);
   await page.reload();
   await page.getByRole("button",{name:"EU Visual",exact:false}).first().click();
-  await expect(page.locator(".eu-admin-toolbar select option")).toHaveCount(4);
+  await expect(page.locator(".eu-admin-toolbar select option")).toHaveCount(5);
   page.once("dialog",dialog=>dialog.accept());
   await page.getByRole("button",{name:"PUBLISH LIVE",exact:true}).first().click();
   await expect(page.getByRole("status")).toContainText("Published");

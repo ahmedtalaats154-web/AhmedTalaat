@@ -254,7 +254,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 4,
+  version: 5,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -511,6 +511,13 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     const hasCasaLume = merged.euVisual.projects.some((project) => project.id === "casa-lume" || project.slug === "casa-lume");
     const casaLumeSeed = DEFAULT_SITE_CONFIG.euVisual.projects.find((project) => project.id === "casa-lume");
     if (!hasCasaLume && casaLumeSeed) merged.euVisual.projects.push(structuredClone(casaLumeSeed));
+  }
+
+  if (incomingVersion < 5) {
+    merged.version = 5;
+    const hasForma = merged.euVisual.projects.some((project) => project.id === "forma" || project.slug === "forma");
+    const formaSeed = DEFAULT_SITE_CONFIG.euVisual.projects.find((project) => project.id === "forma");
+    if (!hasForma && formaSeed) merged.euVisual.projects.push(structuredClone(formaSeed));
   }
 
   const hasLegacyArchiveMetadata =
