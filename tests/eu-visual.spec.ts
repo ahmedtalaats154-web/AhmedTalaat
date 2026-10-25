@@ -2,6 +2,26 @@ import { test, expect } from "@playwright/test";
 import seed from "../src/data/eu-visual.json";
 import { createEuProject, validateEuVisual, summarizeProjects } from "../src/lib/eu-visual";
 
+test("EU Visual exposes dedicated canonical, Open Graph and Twitter metadata", async ({page}) => {
+  const title = "Ahmed Talaat — Social Media Content & Art Direction";
+  const description = "Campaign concepts, social media design, AI visuals and short-form video for brands that want clearer, more consistent content.";
+  await page.goto("/eu-visual");
+  await expect(page).toHaveTitle(title);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", description);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://ahmed-talaat.com/eu-visual");
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", title);
+  await expect(page.locator('meta[property="og:description"]')).toHaveAttribute("content", description);
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://ahmed-talaat.com/eu-visual");
+  await expect(page.locator('meta[property="og:type"]')).toHaveAttribute("content", "website");
+  await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute("content", "Ahmed Talaat");
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", "https://ahmed-talaat.com/og.png");
+  await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute("content", title);
+  await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute("content", description);
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute("content", "https://ahmed-talaat.com/og.png");
+  expect(await page.locator("head").textContent()).not.toContain("PLAY / EDIT — Graphic Design × Video");
+});
+
 test("landing is light, responsive and only fetches the cover",async({page},info)=>{
   const images:string[]=[];
   const errors:string[]=[];
