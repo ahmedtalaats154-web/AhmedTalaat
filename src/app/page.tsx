@@ -1559,7 +1559,7 @@ export default function Home() {
       {siteConfig.work.visible && (
       <section
         className="work"
-        id="visuals"
+        id="selected-work"
         aria-labelledby="work-title"
         style={sectionStyle(siteConfig.work)}
       >
@@ -1686,7 +1686,7 @@ export default function Home() {
       {siteConfig.archive.visible && (
       <section
         className="archive"
-        id="archive"
+        id="visuals"
         ref={archiveRef}
         aria-labelledby="archive-title"
         style={{

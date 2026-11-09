@@ -273,7 +273,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 7,
+  version: 8,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -406,7 +406,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
     ],
   },
   work: {
-    visible: true,
+    visible: false,
     order: 70,
     leftLabel: "SELECTED WORK / 01—06",
     rightLabel: "ONE WORLD. SIX WAYS IN.",
@@ -445,8 +445,8 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
     ],
   },
   archive: {
-    visible: false,
-    order: 80,
+    visible: true,
+    order: 70,
     eyebrow: "THE FULL NOISY ARCHIVE",
     title: "131 VISUALS. NO FILLER.",
     description: "Food. Cars. Tech. Repair. AI. Identity. Travel. Beauty. Homes. Retail. Every supplied image stays in the mix.",
@@ -575,6 +575,16 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     merged.navigation.links = structuredClone(DEFAULT_SITE_CONFIG.navigation.links);
     merged.campaigns = structuredClone(DEFAULT_SITE_CONFIG.campaigns);
     merged.archive.visible = false;
+  }
+
+  if (incomingVersion < 8) {
+    merged.version = 8;
+    merged.navigation.links = structuredClone(DEFAULT_SITE_CONFIG.navigation.links);
+    merged.work.visible = false;
+    merged.archive.visible = true;
+    merged.archive.order = 70;
+    merged.campaigns.order = 72;
+    merged.reels.order = 75;
   }
 
   const hasLegacyArchiveMetadata =
