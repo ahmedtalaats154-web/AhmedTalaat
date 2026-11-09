@@ -273,7 +273,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 8,
+  version: 9,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -305,8 +305,8 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   navigation: {
     visible: true,
     links: [
-      { id: "visuals", visible: true, label: "Visuals", href: "#visuals" },
       { id: "campaigns", visible: true, label: "Campaigns", href: "#campaigns" },
+      { id: "visuals", visible: true, label: "Visuals", href: "#visuals" },
       { id: "reels", visible: true, label: "Reels", href: "#reels" },
       { id: "hello", visible: true, label: "Hello", href: "#hello" },
     ],
@@ -425,7 +425,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   },
   campaigns: {
     visible: true,
-    order: 72,
+    order: 70,
     eyebrow: "CAMPAIGN SYSTEMS / 01—04",
     headline: "IDEAS WITH MORE THAN ONE FRAME.",
     description: "Complete visual worlds built across social design, art direction and motion. Open any campaign for the full case study.",
@@ -446,7 +446,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   },
   archive: {
     visible: true,
-    order: 70,
+    order: 72,
     eyebrow: "THE FULL NOISY ARCHIVE",
     title: "131 VISUALS. NO FILLER.",
     description: "Food. Cars. Tech. Repair. AI. Identity. Travel. Beauty. Homes. Retail. Every supplied image stays in the mix.",
@@ -584,6 +584,14 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     merged.archive.visible = true;
     merged.archive.order = 70;
     merged.campaigns.order = 72;
+    merged.reels.order = 75;
+  }
+
+  if (incomingVersion < 9) {
+    merged.version = 9;
+    merged.navigation.links = structuredClone(DEFAULT_SITE_CONFIG.navigation.links);
+    merged.campaigns.order = 70;
+    merged.archive.order = 72;
     merged.reels.order = 75;
   }
 
