@@ -177,6 +177,19 @@ export type SiteConfig = {
       marginTopRem: number;
     }>;
   };
+  reels: SectionSettings & {
+    eyebrow: string;
+    headline: string;
+    description: string;
+    items: Array<{
+      id: string;
+      visible: boolean;
+      title: string;
+      category: string;
+      video: string;
+      accent: string;
+    }>;
+  };
   archive: SectionSettings & {
     eyebrow: string;
     title: string;
@@ -254,7 +267,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 5,
+  version: 6,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -287,7 +300,8 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
     visible: true,
     links: [
       { id: "work", visible: true, label: "Work", href: "#work" },
-      { id: "reel", visible: true, label: "Reel", href: "#reel" },
+      { id: "reels", visible: true, label: "Reels", href: "#reels" },
+      { id: "archive", visible: true, label: "Archive", href: "#archive" },
       { id: "hello", visible: true, label: "Hello", href: "#hello" },
     ],
   },
@@ -403,9 +417,22 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
       { id: "06", visible: true, title: "Cut on intent.", field: "VIDEO EDITING", figure: "24 FPS", image: "/media/generated/scene-editing.webp", alt: "A physical video editing timeline made from acrylic and film", detail: "The cut lands two frames before the beat. That tiny decision makes the next shot feel faster than it is.", color: "#e6bdf4", columnStart: 7, columnSpan: 6, aspectRatio: 1.08, marginTopRem: 0 },
     ],
   },
+  reels: {
+    visible: true,
+    order: 75,
+    eyebrow: "SHORT-FORM / MOTION",
+    headline: "REELS THAT EARN THE NEXT SECOND.",
+    description: "Campaign ideas, typography and edits built for the vertical frame. Pick a film and watch it with sound.",
+    items: [
+      { id: "01", visible: true, title: "Softer Season", category: "HOSPITALITY / LIFESTYLE", video: "/media/eu-visual/casa-lume/reels/softer-season.mp4", accent: "#2454ff" },
+      { id: "02", visible: true, title: "Weekend Escape", category: "HOSPITALITY / CAMPAIGN", video: "/media/eu-visual/casa-lume/reels/weekend-escape.mp4", accent: "#ff6a22" },
+      { id: "03", visible: true, title: "Pepper in Motion", category: "FOOD / MOTION STORY", video: "/media/eu-visual/trama/03-MOTION-STORIES/01-Pepper-In-Motion.mp4", accent: "#ff508e" },
+      { id: "04", visible: true, title: "Flavour Takes Shape", category: "GRAPHIC MOTION", video: "/media/eu-visual/forma/motion/motion-02.mp4", accent: "#8ee8c1" },
+    ],
+  },
   archive: {
     visible: true,
-    order: 60,
+    order: 80,
     eyebrow: "THE FULL NOISY ARCHIVE",
     title: "131 VISUALS. NO FILLER.",
     description: "Food. Cars. Tech. Repair. AI. Identity. Travel. Beauty. Homes. Retail. Every supplied image stays in the mix.",
@@ -417,7 +444,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   },
   system: {
     visible: true,
-    order: 80,
+    order: 90,
     leftLabel: "PROCESS / VISUAL SYSTEM",
     rightLabel: "PLAY HAS STRUCTURE",
     headline: "CHAOS, WITH A BASELINE.",
@@ -436,7 +463,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   },
   footer: {
     visible: true,
-    order: 90,
+    order: 100,
     availability: "AVAILABLE FOR SELECT PROJECTS",
     location: "CAIRO / REMOTE",
     headline: "GOT A GOOD",
@@ -518,6 +545,15 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     const hasForma = merged.euVisual.projects.some((project) => project.id === "forma" || project.slug === "forma");
     const formaSeed = DEFAULT_SITE_CONFIG.euVisual.projects.find((project) => project.id === "forma");
     if (!hasForma && formaSeed) merged.euVisual.projects.push(structuredClone(formaSeed));
+  }
+
+  if (incomingVersion < 6) {
+    merged.version = 6;
+    merged.navigation.links = structuredClone(DEFAULT_SITE_CONFIG.navigation.links);
+    merged.reels = structuredClone(DEFAULT_SITE_CONFIG.reels);
+    merged.archive.order = 80;
+    merged.system.order = 90;
+    merged.footer.order = 100;
   }
 
   const hasLegacyArchiveMetadata =

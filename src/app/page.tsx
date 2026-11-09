@@ -557,6 +557,10 @@ export default function Home() {
     () => siteConfig.work.projects.filter((project) => project.visible),
     [siteConfig.work.projects],
   );
+  const reels = useMemo(
+    () => siteConfig.reels.items.filter((reel) => reel.visible && reel.video),
+    [siteConfig.reels.items],
+  );
   const reelCuts = useMemo(
     () => siteConfig.showreel.cuts.filter((cut) => cut.visible),
     [siteConfig.showreel.cuts],
@@ -1159,6 +1163,13 @@ export default function Home() {
                 <motion.a
                   whileHover={{ y: -3 }}
                   href={link.href}
+                  onClick={(event) => {
+                    const target = document.querySelector<HTMLElement>(link.href);
+                    if (!target) return;
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    window.history.replaceState(null, "", link.href);
+                  }}
                   data-cursor={link.label.toUpperCase()}
                   key={link.id}
                 >
@@ -1318,7 +1329,7 @@ export default function Home() {
       {siteConfig.showreel.visible && (
       <section
         className="showreel"
-        id="reel"
+        id="showreel"
         ref={showreelRef}
         aria-labelledby="reel-title"
         style={sectionStyle(siteConfig.showreel)}
@@ -1550,9 +1561,52 @@ export default function Home() {
       </section>
       )}
 
+      {siteConfig.reels.visible && reels.length > 0 && (
+      <section
+        className="reels"
+        id="reels"
+        aria-labelledby="reels-title"
+        style={sectionStyle(siteConfig.reels)}
+      >
+        <div className="reels-intro reveal">
+          <span>{siteConfig.reels.eyebrow}</span>
+          <h2 id="reels-title">{siteConfig.reels.headline}</h2>
+          <p>{siteConfig.reels.description}</p>
+        </div>
+        <div className="reels-grid">
+          {reels.map((reel) => (
+            <article
+              className="reel-card reveal"
+              key={reel.id}
+              style={{ ["--reel-accent" as string]: reel.accent } as CSSProperties}
+            >
+              <div className="reel-card__media" data-cursor="PLAY">
+                <video
+                  src={reel.video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${reel.title}, ${reel.category}`}
+                />
+                <span aria-hidden="true">{reel.id}</span>
+              </div>
+              <div className="reel-card__copy">
+                <h3>{reel.title}</h3>
+                <p>{reel.category}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <a className="reels-next" href="#archive">
+          MORE STATIC WORK <span>↓</span>
+        </a>
+      </section>
+      )}
+
       {siteConfig.archive.visible && (
       <section
         className="archive"
+        id="archive"
         ref={archiveRef}
         aria-labelledby="archive-title"
         style={{

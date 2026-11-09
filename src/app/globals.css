@@ -132,7 +132,7 @@ main {
 }
 
 .site-nav {
-  position: absolute;
+  position: fixed;
   z-index: 50;
   top: 0;
   left: 0;
@@ -146,6 +146,7 @@ main {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  background: var(--cream);
 }
 
 .site-mark {
@@ -1387,6 +1388,140 @@ main {
   white-space: nowrap;
 }
 
+.reels {
+  padding: clamp(6rem, 10vw, 10rem) var(--page-pad);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.reels-intro {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr 0.75fr;
+  gap: clamp(1.5rem, 4vw, 5rem);
+  align-items: end;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 253, 247, 0.42);
+}
+
+.reels-intro > span,
+.reels-intro > p,
+.reel-card__copy p {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.reels-intro h2 {
+  margin: 0;
+  max-width: 13ch;
+  font-family: var(--display);
+  font-size: clamp(3.2rem, 6.4vw, 7rem);
+  letter-spacing: -0.075em;
+  line-height: 0.84;
+}
+
+.reels-intro p {
+  max-width: 34ch;
+  margin: 0;
+}
+
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.6vw, 1.5rem);
+  margin-top: 3rem;
+}
+
+.reel-card {
+  min-width: 0;
+}
+
+.reel-card__media {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border: 1px solid rgba(255, 253, 247, 0.55);
+  border-radius: calc(var(--radius) * 0.65);
+  background: #000;
+  box-shadow: 0.45rem 0.45rem 0 var(--reel-accent);
+  transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms ease;
+}
+
+.reel-card:hover .reel-card__media,
+.reel-card:focus-within .reel-card__media {
+  box-shadow: 0.75rem 0.75rem 0 var(--reel-accent);
+  transform: translateY(-0.45rem);
+}
+
+.reel-card__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.reel-card__media > span {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--reel-accent);
+  color: var(--ink);
+  font-size: 0.62rem;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.reel-card__copy {
+  padding-top: 1rem;
+}
+
+.reel-card__copy h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.reel-card__copy p {
+  margin: 0.5rem 0 0;
+  color: var(--reel-accent);
+  font-size: 0.56rem;
+}
+
+.reels-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 1rem 0;
+  border-block: 1px solid rgba(255, 253, 247, 0.42);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+}
+
+.reels-next span {
+  color: var(--yellow);
+  font-size: 1.4rem;
+}
+
+#work,
+#reels,
+#archive,
+#hello,
+#showreel {
+  scroll-margin-top: 5rem;
+}
+
 .archive {
   position: relative;
   height: calc(100vh + var(--archive-scroll-vw, 460vw));
@@ -2150,7 +2285,11 @@ main {
   }
 
   .site-nav__links {
-    display: none;
+    gap: clamp(0.85rem, 3vw, 1.8rem);
+  }
+
+  .reels-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -2256,7 +2395,20 @@ main {
   }
 
   .site-nav {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
     padding-block: 0.9rem;
+  }
+
+  .site-mark {
+    justify-self: center;
+  }
+
+  .site-nav__links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.65rem;
+    font-size: 0.58rem;
   }
 
   .hero {
@@ -2549,6 +2701,43 @@ main {
 
   .project-card__copy > strong {
     justify-self: start;
+  }
+
+  .reels {
+    padding-inline: 0;
+  }
+
+  .reels-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-inline: var(--page-pad);
+  }
+
+  .reels-intro h2 {
+    font-size: 13vw;
+  }
+
+  .reels-grid {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 var(--page-pad) 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .reels-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reel-card {
+    flex: 0 0 min(78vw, 21rem);
+    scroll-snap-align: center;
+  }
+
+  .reels-next {
+    margin-inline: var(--page-pad);
   }
 
   .archive-head {
