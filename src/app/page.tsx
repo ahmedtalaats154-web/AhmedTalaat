@@ -558,6 +558,13 @@ export default function Home() {
     () => siteConfig.work.projects.filter((project) => project.visible),
     [siteConfig.work.projects],
   );
+  const campaignProjects = useMemo(
+    () =>
+      siteConfig.euVisual.projects
+        .filter((project) => project.published && project.cover.src)
+        .sort((a, b) => a.sortOrder - b.sortOrder),
+    [siteConfig.euVisual.projects],
+  );
   const reels = useMemo(
     () => siteConfig.reels.items.filter((reel) => reel.visible && reel.video),
     [siteConfig.reels.items],
@@ -1552,7 +1559,7 @@ export default function Home() {
       {siteConfig.work.visible && (
       <section
         className="work"
-        id="work"
+        id="visuals"
         aria-labelledby="work-title"
         style={sectionStyle(siteConfig.work)}
       >
@@ -1571,6 +1578,64 @@ export default function Home() {
         <div className="projects-grid">
           {projects.map((project) => (
             <ProjectCard project={project} key={project.id} />
+          ))}
+        </div>
+      </section>
+      )}
+
+      {siteConfig.campaigns.visible && campaignProjects.length > 0 && (
+      <section
+        className="campaigns"
+        id="campaigns"
+        aria-labelledby="campaigns-title"
+        style={sectionStyle(siteConfig.campaigns)}
+      >
+        <header className="campaigns-intro reveal">
+          <span>{siteConfig.campaigns.eyebrow}</span>
+          <h2 id="campaigns-title">{siteConfig.campaigns.headline}</h2>
+          <p>{siteConfig.campaigns.description}</p>
+        </header>
+        <div className="campaigns-grid">
+          {campaignProjects.map((project, index) => (
+            <article className="campaign-card reveal" key={project.id}>
+              <a
+                href={`/eu-visual?project=${encodeURIComponent(project.slug)}`}
+                aria-label={`View ${project.title}`}
+                data-cursor="OPEN"
+              >
+                <div
+                  className={`campaign-card__cover ${
+                    project.cover.height > project.cover.width
+                      ? "campaign-card__cover--portrait"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={project.cover.src}
+                    alt={project.cover.alt}
+                    width={project.cover.width || 1080}
+                    height={project.cover.height || 1350}
+                    loading="lazy"
+                  />
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div className="campaign-card__meta">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>
+                      {project.city}
+                      {project.country ? `, ${project.country}` : ""}
+                    </p>
+                  </div>
+                  <strong>
+                    {siteConfig.campaigns.viewLabel} <i aria-hidden="true">↗</i>
+                  </strong>
+                </div>
+                <p className="campaign-card__type">
+                  {project.concept ? "CONCEPT PROJECT" : project.projectType} / {project.year}
+                </p>
+              </a>
+            </article>
           ))}
         </div>
       </section>
@@ -1612,8 +1677,8 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <a className="reels-next" href="#archive">
-          MORE STATIC WORK <span>↓</span>
+        <a className="reels-next" href="#hello">
+          START A PROJECT <span>↓</span>
         </a>
       </section>
       )}

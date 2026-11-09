@@ -39,6 +39,7 @@ const GROUPS = [
   ["showreel", "Showreel"],
   ["timelapse", "Not Magic. Layers."],
   ["work", "Creative work"],
+  ["campaigns", "Campaigns"],
   ["reels", "Reels & motion"],
   ["archive", "Archive"],
   ["system", "Process & system"],

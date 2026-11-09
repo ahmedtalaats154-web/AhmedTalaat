@@ -177,6 +177,12 @@ export type SiteConfig = {
       marginTopRem: number;
     }>;
   };
+  campaigns: SectionSettings & {
+    eyebrow: string;
+    headline: string;
+    description: string;
+    viewLabel: string;
+  };
   reels: SectionSettings & {
     eyebrow: string;
     headline: string;
@@ -267,7 +273,7 @@ export type SiteConfig = {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   euVisual: euVisualSeed as EuVisualConfig,
-  version: 6,
+  version: 7,
   identity: {
     browserTitle: "PLAY / EDIT — Graphic Design × Video",
     brand: "PLAY/EDIT",
@@ -299,9 +305,9 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   navigation: {
     visible: true,
     links: [
-      { id: "work", visible: true, label: "Work", href: "#work" },
+      { id: "visuals", visible: true, label: "Visuals", href: "#visuals" },
+      { id: "campaigns", visible: true, label: "Campaigns", href: "#campaigns" },
       { id: "reels", visible: true, label: "Reels", href: "#reels" },
-      { id: "archive", visible: true, label: "Archive", href: "#archive" },
       { id: "hello", visible: true, label: "Hello", href: "#hello" },
     ],
   },
@@ -417,6 +423,14 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
       { id: "06", visible: true, title: "Cut on intent.", field: "VIDEO EDITING", figure: "24 FPS", image: "/media/generated/scene-editing.webp", alt: "A physical video editing timeline made from acrylic and film", detail: "The cut lands two frames before the beat. That tiny decision makes the next shot feel faster than it is.", color: "#e6bdf4", columnStart: 7, columnSpan: 6, aspectRatio: 1.08, marginTopRem: 0 },
     ],
   },
+  campaigns: {
+    visible: true,
+    order: 72,
+    eyebrow: "CAMPAIGN SYSTEMS / 01—04",
+    headline: "IDEAS WITH MORE THAN ONE FRAME.",
+    description: "Complete visual worlds built across social design, art direction and motion. Open any campaign for the full case study.",
+    viewLabel: "VIEW CAMPAIGN",
+  },
   reels: {
     visible: true,
     order: 75,
@@ -431,7 +445,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
     ],
   },
   archive: {
-    visible: true,
+    visible: false,
     order: 80,
     eyebrow: "THE FULL NOISY ARCHIVE",
     title: "131 VISUALS. NO FILLER.",
@@ -554,6 +568,13 @@ export function mergeSiteConfig(value: unknown): SiteConfig {
     merged.archive.order = 80;
     merged.system.order = 90;
     merged.footer.order = 100;
+  }
+
+  if (incomingVersion < 7) {
+    merged.version = 7;
+    merged.navigation.links = structuredClone(DEFAULT_SITE_CONFIG.navigation.links);
+    merged.campaigns = structuredClone(DEFAULT_SITE_CONFIG.campaigns);
+    merged.archive.visible = false;
   }
 
   const hasLegacyArchiveMetadata =
