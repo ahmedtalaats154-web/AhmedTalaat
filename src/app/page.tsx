@@ -481,6 +481,7 @@ function ProjectCard({
 
 export default function Home() {
   const rootRef = useRef<HTMLElement>(null);
+  const lenisRef = useRef<Lenis | null>(null);
   const heroRef = useRef<HTMLElement>(null);
   const heroBackgroundRef = useRef<HTMLDivElement>(null);
   const heroForegroundRef = useRef<HTMLDivElement>(null);
@@ -664,6 +665,7 @@ export default function Home() {
         wheelMultiplier: siteConfig.scroll.wheelMultiplier,
         touchMultiplier: siteConfig.scroll.touchMultiplier,
       });
+      lenisRef.current = lenis;
       lenis.on("scroll", ScrollTrigger.update);
       lenisRaf = (time: number) => lenis?.raf(time * 1000);
       gsap.ticker.add(lenisRaf);
@@ -1040,6 +1042,7 @@ export default function Home() {
       timelapseTimelineRef.current = null;
       if (lenisRaf) gsap.ticker.remove(lenisRaf);
       lenis?.destroy();
+      lenisRef.current = null;
       document.documentElement.style.overflow = priorOverflow;
     };
   }, [siteConfig, timelapseFrames]);
@@ -1164,11 +1167,23 @@ export default function Home() {
                   whileHover={{ y: -3 }}
                   href={link.href}
                   onClick={(event) => {
+                    if (!link.href.startsWith("#")) return;
                     const target = document.querySelector<HTMLElement>(link.href);
                     if (!target) return;
                     event.preventDefault();
-                    target.scrollIntoView({ behavior: "smooth", block: "start" });
                     window.history.replaceState(null, "", link.href);
+                    if (lenisRef.current) {
+                      lenisRef.current.scrollTo(target, {
+                        offset: -80,
+                        duration: 1.05,
+                        force: true,
+                      });
+                    } else {
+                      window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.scrollY - 80,
+                        behavior: "auto",
+                      });
+                    }
                   }}
                   data-cursor={link.label.toUpperCase()}
                   key={link.id}
